@@ -184,20 +184,22 @@ function ReportInner({ params }: { params: Promise<{ id: string }> }) {
         </section>
       )}
 
-      {trends.length > 1 && (
-        <section className="mt-8 break-inside-avoid">
-          <h2 className="text-lg font-semibold text-brand-navy-deep">Visibility Trend</h2>
-          <p className="text-sm text-brand-muted">Presence rate per AI tool across all checks to date</p>
-          <TrendChart data={trends} />
-        </section>
-      )}
+      <section className="mt-8 break-inside-avoid">
+        <h2 className="text-lg font-semibold text-brand-navy-deep">Visibility Trend</h2>
+        <p className="text-sm text-brand-muted">Presence rate per AI tool across all checks to date</p>
+        <TrendChart data={trends} />
+      </section>
 
-      {stats.citedSources.length > 0 && (
-        <section className="mt-8 break-inside-avoid">
-          <h2 className="text-lg font-semibold text-brand-navy-deep">Sources Cited by AI Assistants</h2>
-          <p className="text-sm text-brand-muted">
-            Outlets the AI tools referenced when answering — priority targets for earned media placement.
+      <section className="mt-8 break-inside-avoid">
+        <h2 className="text-lg font-semibold text-brand-navy-deep">Sources Cited by AI Assistants</h2>
+        <p className="text-sm text-brand-muted">
+          Outlets the AI tools referenced when answering — priority targets for earned media placement.
+        </p>
+        {stats.citedSources.length === 0 ? (
+          <p className="mt-3 text-sm text-brand-muted">
+            No sources were cited in this run — the AI assistants answered from general knowledge.
           </p>
+        ) : (
           <ul className="mt-3 space-y-1">
             {stats.citedSources.slice(0, 10).map((s) => (
               <li key={s.url} className="flex items-center justify-between text-sm">
@@ -206,8 +208,8 @@ function ReportInner({ params }: { params: Promise<{ id: string }> }) {
               </li>
             ))}
           </ul>
-        </section>
-      )}
+        )}
+      </section>
 
       {/* Appendix: condensed per-prompt table */}
       <section className="mt-8 break-inside-avoid">

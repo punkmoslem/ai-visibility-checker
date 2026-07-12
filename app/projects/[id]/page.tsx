@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState, use as usePromise, FormEvent } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import TopNav from "@/components/TopNav";
 
 interface PromptTemplate {
@@ -48,12 +49,14 @@ const CATEGORY_LABELS: Record<string, string> = {
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = usePromise(params);
+  const router = useRouter();
   const [project, setProject] = useState<Project | null>(null);
   const [activeIds, setActiveIds] = useState<Set<string>>(new Set());
   const [saving, setSaving] = useState(false);
   const [runError, setRunError] = useState<string | null>(null);
   const [activeRunId, setActiveRunId] = useState<string | null>(null);
   const [activeRunStatus, setActiveRunStatus] = useState<string | null>(null);
+  const [runProgress, setRunProgress] = useState<{ done: number; total: number }>({ done: 0, total: 0 });
   const [customText, setCustomText] = useState("");
   const [addingCustom, setAddingCustom] = useState(false);
   const [customError, setCustomError] = useState<string | null>(null);
@@ -82,13 +85,18 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       if (!res.ok) return;
       const data = await res.json();
       setActiveRunStatus(data.run.status);
-      if (data.run.status === "completed" || data.run.status === "failed") {
+      setRunProgress((prev) => ({ ...prev, done: data.run.results?.length ?? 0 }));
+      if (data.run.status === "completed") {
+        clearInterval(interval);
+        // Take the user straight to the results instead of making them find the Dashboard button.
+        router.push(`/projects/${id}/dashboard?runId=${activeRunId}`);
+      } else if (data.run.status === "failed") {
         clearInterval(interval);
         loadProject();
       }
     }, 1500);
     return () => clearInterval(interval);
-  }, [activeRunId, id, loadProject]);
+  }, [activeRunId, id, loadProject, router]);
 
   function toggle(promptTemplateId: string) {
     setActiveIds((prev) => {
@@ -187,6 +195,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       setRunError(data.error ?? "Failed to start run");
       return;
     }
+    setRunProgress({ done: 0, total: activeIds.size * 3 });
     setActiveRunId(data.run.id);
     setActiveRunStatus(data.run.status);
   }
@@ -245,8 +254,10 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
           </p>
 
           <div className="mt-4 space-y-6">
-            {Object.entries(grouped).map(([category, prompts]) => (
-              <div key={category}>
+            {Object.entries(grouped)
+              .sort(([a], [b]) => (a === "custom" ? 1 : 0) - (b === "custom" ? 1 : 0))
+              .map(([category, prompts]) => (
+              <div key={category} className={category === "custom" ? "border-t-2 border-brand-line pt-5" : undefined}>
                 <span className="inline-block rounded-full bg-brand-teal-tint px-3 py-1 text-xs font-semibold tracking-wide text-brand-teal-dark uppercase">
                   {CATEGORY_LABELS[category] ?? category}
                 </span>
@@ -339,7 +350,11 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <input
                 value={competitorName}
                 onChange={(e) => setCompetitorName(e.target.value)}
-                placeholder={isPerson ? "e.g. another public figure in the same space" : "e.g. a rival brand name"}
+                placeholder={
+                  isPerson
+                    ? "e.g. another public figure — add several at once with commas"
+                    : "e.g. a rival brand — add several at once with commas"
+                }
                 className="flex-1 rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
               />
               <button
@@ -363,11 +378,44 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
           {runError && <p className="mt-2 text-sm text-red-600">{runError}</p>}
 
-          {activeRunId ? (
-            <p className="mt-4 text-sm text-brand-ink">
-              Run status: <span className="font-medium">{activeRunStatus}</span>
-              {activeRunStatus !== "completed" && activeRunStatus !== "failed" && "..."}
-            </p>
+          {activeRunId && activeRunStatus !== "completed" && activeRunStatus !== "failed" ? (
+            <div className="mt-4 animate-pulse rounded-lg border-2 border-brand-teal bg-brand-teal-tint p-5">
+              <div className="flex items-center gap-3">
+                <span className="h-5 w-5 shrink-0 animate-spin rounded-full border-[3px] border-brand-teal border-t-transparent" />
+                <div>
+                  <p className="font-semibold text-brand-teal-dark">Check in progress…</p>
+                  <p className="text-sm text-brand-ink">
+                    Asking Claude, ChatGPT and Gemini —{" "}
+                    {runProgress.total > 0
+                      ? `${runProgress.done} of ${runProgress.total} answers collected`
+                      : "collecting answers"}
+                    . You&apos;ll be taken to the dashboard when it finishes.
+                  </p>
+                </div>
+              </div>
+              {runProgress.total > 0 && (
+                <div className="mt-3 h-2 overflow-hidden rounded-full bg-white">
+                  <div
+                    className="h-full rounded-full bg-brand-teal transition-all duration-500"
+                    style={{ width: `${Math.round((runProgress.done / runProgress.total) * 100)}%` }}
+                  />
+                </div>
+              )}
+            </div>
+          ) : activeRunStatus === "failed" ? (
+            <div className="mt-4 rounded-lg border-2 border-red-200 bg-red-50 p-4">
+              <p className="text-sm font-semibold text-red-700">This check failed.</p>
+              <button
+                onClick={() => {
+                  setActiveRunId(null);
+                  setActiveRunStatus(null);
+                  triggerRun();
+                }}
+                className="mt-2 rounded-md border-2 border-red-200 px-3 py-1.5 text-sm font-medium text-red-700 hover:bg-red-100"
+              >
+                Try again
+              </button>
+            </div>
           ) : (
             <button
               onClick={triggerRun}
