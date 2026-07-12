@@ -212,28 +212,8 @@ function ReportInner({ params }: { params: Promise<{ id: string }> }) {
       {/* Appendix: condensed per-prompt table */}
       <section className="mt-8 break-inside-avoid">
         <h2 className="text-lg font-semibold text-brand-navy-deep">Appendix — Prompt-Level Detail</h2>
-        <table className="mt-3 w-full text-xs">
-          <thead>
-            <tr className="border-b-2 border-brand-line text-left tracking-wide text-brand-navy uppercase">
-              <th className="py-2 pr-2">Prompt</th>
-              <th className="py-2 pr-2">Tool</th>
-              <th className="py-2 pr-2">Mentioned</th>
-              <th className="py-2 pr-2">Sentiment</th>
-              <th className="py-2">Rank</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stats.results.map((r) => (
-              <tr key={r.id} className="border-b border-brand-line align-top">
-                <td className="max-w-xs py-1.5 pr-2">{r.promptText}</td>
-                <td className="py-1.5 pr-2">{TOOL_LABELS[r.aiTool] ?? r.aiTool}</td>
-                <td className="py-1.5 pr-2">{r.errorMessage ? "error" : r.brandMentioned ? "Yes" : "No"}</td>
-                <td className="py-1.5 pr-2">{r.errorMessage ? "—" : r.sentiment}</td>
-                <td className="py-1.5">{r.rankPosition !== null ? `#${r.rankPosition}` : "—"}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <p className="text-sm text-brand-muted">How each question performed across every AI tool</p>
+        <PerPromptAppendixTable results={stats.results} />
       </section>
 
       {/* Methodology + footer */}
@@ -253,5 +233,62 @@ function ReportInner({ params }: { params: Promise<{ id: string }> }) {
         </p>
       </footer>
     </div>
+  );
+}
+
+const TOOL_ORDER = ["claude", "openai", "gemini"];
+
+function PerPromptAppendixTable({ results }: { results: RunResult[] }) {
+  const tools = TOOL_ORDER.filter((t) => results.some((r) => r.aiTool === t));
+  const prompts: string[] = [];
+  const byPrompt = new Map<string, Map<string, RunResult>>();
+  for (const r of results) {
+    if (!byPrompt.has(r.promptText)) {
+      byPrompt.set(r.promptText, new Map());
+      prompts.push(r.promptText);
+    }
+    byPrompt.get(r.promptText)!.set(r.aiTool, r);
+  }
+
+  return (
+    <table className="mt-3 w-full text-xs">
+      <thead>
+        <tr className="border-b-2 border-brand-line text-left tracking-wide text-brand-navy uppercase">
+          <th className="py-2 pr-2">Prompt</th>
+          {tools.map((t) => (
+            <th key={t} className="py-2 pr-2 text-center">
+              {TOOL_LABELS[t] ?? t}
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {prompts.map((prompt) => {
+          const row = byPrompt.get(prompt)!;
+          return (
+            <tr key={prompt} className="border-b border-brand-line align-top">
+              <td className="max-w-xs py-1.5 pr-2">{prompt}</td>
+              {tools.map((t) => {
+                const r = row.get(t);
+                if (!r) {
+                  return (
+                    <td key={t} className="py-1.5 pr-2 text-center">
+                      —
+                    </td>
+                  );
+                }
+                return (
+                  <td key={t} className="py-1.5 pr-2 text-center">
+                    {r.errorMessage ? "error" : r.brandMentioned ? "Yes" : "No"}
+                    {!r.errorMessage && `, ${r.sentiment}`}
+                    {r.rankPosition !== null && `, #${r.rankPosition}`}
+                  </td>
+                );
+              })}
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
   );
 }

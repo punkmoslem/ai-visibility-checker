@@ -254,47 +254,99 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
             <section className="brand-card rounded-xl bg-white p-8">
               <h2 className="font-medium text-brand-navy-deep">Per-Prompt Results</h2>
-              <ul className="mt-3 divide-y divide-brand-line">
-                {stats.results.map((r) => (
-                  <li key={r.id} className="py-3">
-                    <button
-                      onClick={() => setExpandedResultId(expandedResultId === r.id ? null : r.id)}
-                      className="flex w-full items-center justify-between gap-4 text-left"
-                    >
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm text-brand-ink">{r.promptText}</p>
-                        <p className="text-xs text-brand-muted">
-                          {TOOL_LABELS[r.aiTool] ?? r.aiTool}
-                          {r.isMock && " · mock"}
-                          {r.errorMessage && " · error"}
-                        </p>
-                      </div>
-                      <div className="flex shrink-0 items-center gap-2">
-                        <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${r.brandMentioned ? "bg-brand-teal-tint text-brand-teal-dark" : "bg-brand-line text-brand-muted"}`}>
-                          {r.brandMentioned ? "Mentioned" : "Not mentioned"}
-                        </span>
-                        <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}>
-                          {r.sentiment}
-                        </span>
-                        {r.rankPosition !== null && (
-                          <span className="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-semibold text-amber-700">
-                            #{r.rankPosition}
-                          </span>
-                        )}
-                      </div>
-                    </button>
-                    {expandedResultId === r.id && (
-                      <div className="mt-2 rounded-md bg-[#F1F6F8] p-3 text-sm text-brand-ink whitespace-pre-wrap">
-                        {r.errorMessage ? `Error: ${r.errorMessage}` : r.rawResponse}
-                      </div>
-                    )}
-                  </li>
-                ))}
-              </ul>
+              <p className="text-sm text-brand-muted">How each question performed across every AI tool</p>
+              <PerPromptTable
+                results={stats.results}
+                expandedResultId={expandedResultId}
+                onToggle={(id) => setExpandedResultId(expandedResultId === id ? null : id)}
+              />
             </section>
           </div>
         )}
       </main>
+    </div>
+  );
+}
+
+const TOOL_ORDER = ["claude", "openai", "gemini"];
+
+function PerPromptTable({
+  results,
+  expandedResultId,
+  onToggle,
+}: {
+  results: RunResult[];
+  expandedResultId: string | null;
+  onToggle: (id: string) => void;
+}) {
+  const tools = TOOL_ORDER.filter((t) => results.some((r) => r.aiTool === t));
+  const prompts: string[] = [];
+  const byPrompt = new Map<string, Map<string, RunResult>>();
+  for (const r of results) {
+    if (!byPrompt.has(r.promptText)) {
+      byPrompt.set(r.promptText, new Map());
+      prompts.push(r.promptText);
+    }
+    byPrompt.get(r.promptText)!.set(r.aiTool, r);
+  }
+
+  return (
+    <div className="mt-3 overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-navy uppercase">
+            <th className="py-2 pr-4">Question</th>
+            {tools.map((t) => (
+              <th key={t} className="py-2 px-2 text-center">
+                {TOOL_LABELS[t] ?? t}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {prompts.map((prompt) => {
+            const row = byPrompt.get(prompt)!;
+            return (
+              <tr key={prompt} className="border-b border-brand-line align-top">
+                <td className="max-w-xs py-3 pr-4 text-brand-ink">{prompt}</td>
+                {tools.map((t) => {
+                  const r = row.get(t);
+                  if (!r) {
+                    return (
+                      <td key={t} className="py-3 px-2 text-center text-xs text-brand-muted">
+                        —
+                      </td>
+                    );
+                  }
+                  return (
+                    <td key={t} className="py-3 px-2 text-center">
+                      <button onClick={() => onToggle(r.id)} className="inline-flex flex-col items-center gap-1">
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-xs font-semibold ${
+                            r.brandMentioned ? "bg-brand-teal-tint text-brand-teal-dark" : "bg-brand-line text-brand-muted"
+                          }`}
+                        >
+                          {r.errorMessage ? "Error" : r.brandMentioned ? "Mentioned" : "Not mentioned"}
+                        </span>
+                        <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}>
+                          {r.sentiment}
+                          {r.rankPosition !== null && ` · #${r.rankPosition}`}
+                        </span>
+                        {r.isMock && <span className="text-[10px] text-brand-muted">mock</span>}
+                      </button>
+                      {expandedResultId === r.id && (
+                        <div className="mt-2 max-w-xs rounded-md bg-[#F1F6F8] p-2 text-left text-xs text-brand-ink whitespace-pre-wrap">
+                          {r.errorMessage ? `Error: ${r.errorMessage}` : r.rawResponse}
+                        </div>
+                      )}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }
