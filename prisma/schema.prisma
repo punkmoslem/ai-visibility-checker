@@ -1,14 +1,13 @@
 // AI Visibility Checker — data model
-// SQLite for local dev. Only Prisma-portable types are used (cuid ids, DateTime,
-// String, Int, Boolean) so switching `provider` to "postgresql" + DATABASE_URL
-// later is a one-line change plus a fresh migration.
+// Postgres (Neon) in production. Only Prisma-portable types are used (cuid ids,
+// DateTime, String, Int, Boolean), so the schema works on SQLite too if needed.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 

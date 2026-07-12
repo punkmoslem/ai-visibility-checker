@@ -2,6 +2,9 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import TopNav from "@/components/TopNav";
 
+// Queries the DB per-request; must not be prerendered at build time.
+export const dynamic = "force-dynamic";
+
 export default async function ProjectsPage() {
   const projects = await prisma.brandProject.findMany({
     orderBy: { createdAt: "desc" },
