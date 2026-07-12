@@ -1,0 +1,130 @@
+// AI Visibility Checker — data model
+// SQLite for local dev. Only Prisma-portable types are used (cuid ids, DateTime,
+// String, Int, Boolean) so switching `provider` to "postgresql" + DATABASE_URL
+// later is a one-line change plus a fresh migration.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model BrandProject {
+  id          String   @id @default(cuid())
+  name        String
+  brandName   String
+  industry    String
+  entityType  String   @default("company") // "company" | "person" — shapes which default prompts apply
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  competitors    Competitor[]
+  prompts        ProjectPrompt[]
+  customPrompts  PromptTemplate[]
+  runs           Run[]
+  schedules      Schedule[]
+}
+
+model Competitor {
+  id             String   @id @default(cuid())
+  brandProjectId String
+  brandProject   BrandProject @relation(fields: [brandProjectId], references: [id], onDelete: Cascade)
+  name           String
+  createdAt      DateTime @default(now())
+
+  @@index([brandProjectId])
+}
+
+/// Global default library (brandProjectId = null) plus per-project custom
+/// prompts (phase 3). category is one of: "recommendation" | "trust" | "leaders"
+model PromptTemplate {
+  id             String   @id @default(cuid())
+  text           String
+  category       String
+  entityType     String   @default("company") // "company" | "person" — which kind of default prompt this is
+  isDefault      Boolean  @default(true)
+  brandProjectId String?
+  brandProject   BrandProject? @relation(fields: [brandProjectId], references: [id], onDelete: Cascade)
+  createdAt      DateTime @default(now())
+
+  projectLinks ProjectPrompt[]
+
+  @@index([brandProjectId])
+}
+
+/// Which prompts are selected ("active") for a given project's runs
+model ProjectPrompt {
+  id               String   @id @default(cuid())
+  brandProjectId   String
+  brandProject     BrandProject @relation(fields: [brandProjectId], references: [id], onDelete: Cascade)
+  promptTemplateId String
+  promptTemplate   PromptTemplate @relation(fields: [promptTemplateId], references: [id], onDelete: Cascade)
+  active           Boolean  @default(true)
+  createdAt        DateTime @default(now())
+
+  @@unique([brandProjectId, promptTemplateId])
+}
+
+/// Phase 4 — recurring schedules. Table exists now, unused until phase 4.
+model Schedule {
+  id             String   @id @default(cuid())
+  brandProjectId String
+  brandProject   BrandProject @relation(fields: [brandProjectId], references: [id], onDelete: Cascade)
+  frequency      String
+  nextRunAt      DateTime
+  active         Boolean  @default(true)
+  createdAt      DateTime @default(now())
+
+  @@index([brandProjectId])
+}
+
+model Run {
+  id             String   @id @default(cuid())
+  brandProjectId String
+  brandProject   BrandProject @relation(fields: [brandProjectId], references: [id], onDelete: Cascade)
+  trigger        String   // "manual" | "scheduled"
+  status         String   // "pending" | "running" | "completed" | "failed"
+  createdAt      DateTime @default(now())
+  completedAt    DateTime?
+
+  results RunResult[]
+
+  @@index([brandProjectId])
+}
+
+model RunResult {
+  id               String   @id @default(cuid())
+  runId            String
+  run              Run @relation(fields: [runId], references: [id], onDelete: Cascade)
+  promptTemplateId String
+  promptText       String   // resolved text actually sent (snapshot)
+  aiTool           String   // "claude" | "openai" | "gemini"
+  isMock           Boolean  @default(false)
+  rawResponse      String
+  brandMentioned   Boolean
+  sentiment        String   // "positive" | "neutral" | "negative"
+  rankPosition     Int?
+  citedSources     String   // JSON-encoded string[]
+  latencyMs        Int?
+  errorMessage     String?
+  createdAt        DateTime @default(now())
+
+  competitorMentions CompetitorMention[]
+
+  @@index([runId])
+}
+
+/// Empty in phase 1 runs (no competitors tracked yet); populated from phase 2 on
+model CompetitorMention {
+  id             String   @id @default(cuid())
+  runResultId    String
+  runResult      RunResult @relation(fields: [runResultId], references: [id], onDelete: Cascade)
+  competitorName String
+  mentioned      Boolean
+  rankPosition   Int?
+
+  @@index([runResultId])
+}

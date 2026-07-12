@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #22333d;
 }
 
 @theme inline {
@@ -10,17 +10,57 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* R&R Communications brand palette — matches the Engagement Tracker app
+     so internal tools share one visual language. */
+  --color-brand-navy: #2f576e;
+  --color-brand-navy-deep: #1e3d50;
+  --color-brand-navy-darkest: #22333d;
+  --color-brand-ink: #22333d;
+  --color-brand-teal: #12a79c;
+  --color-brand-teal-dark: #0e8981;
+  --color-brand-teal-tint: #e7f4f3;
+  --color-brand-mist: #8fa5b1;
+  --color-brand-line: #d9e2e8;
+  --color-brand-muted: #5b6d78;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Dark gradient canvas used behind the white content cards on every page,
+   matching the Engagement Tracker app's tone. */
+.brand-shell {
+  background: linear-gradient(160deg, #2f576e 0%, #1e3d50 55%, #22333d 100%);
+}
+
+.brand-card {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.brand-btn-primary {
+  background: linear-gradient(135deg, #12a79c 0%, #2f576e 100%);
+}
+
+.brand-btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(18, 167, 156, 0.35);
+}
+
+.brand-note {
+  background: #f1f6f8;
+  border-left: 4px solid #12a79c;
+}
+
+/* Client report PDF export via the browser print dialog */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+  body {
+    background: white !important;
+  }
 }
