@@ -1,0 +1,559 @@
+{
+  "note": "Raw R&R Communications run captured 2026-07-12 from production.",
+  "runId": "cmrh5fowe000jl104819zspdd",
+  "runCreatedAt": "2026-07-12T02:03:08.367Z",
+  "brandName": "R&R Communications",
+  "industry": "PR agency",
+  "competitorNamesAtRunTime": [
+    "Brightminds Communications, Iris, Bening Communication"
+  ],
+  "competitorNamesCurrent": [
+    "Brightminds Communications",
+    "Iris",
+    "Bening Communication"
+  ],
+  "results": [
+    {
+      "promptText": "What are the best PR agency companies in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# PR Agencies in Indonesia\n\nHere are some well-regarded PR agencies operating in Indonesia:\n\n## International Networks with Indonesia Presence\n- **Weber Shandwick Indonesia** - Global network with strong local presence\n- **Edelman Indonesia** - One of the largest global PR firms with Jakarta operations\n- **Ogilvy Public Relations Indonesia** - Part of the global Ogilvy network\n- **FleishmanHillard Indonesia**\n- **Hill+Knowlton Strategies Indonesia**\n\n## Prominent Local Agencies\n- **Maverick Indonesia** - Known for strong digital and traditional PR integration\n- **Imogen Indonesia** - Popular for corporate communications and crisis management\n- **PR Newswire Indonesia** - Wire service with PR support\n- **Provoke PR** - Focus on strategic communications\n- **Inke Maris & Associates** - One of the pioneering PR firms in Indonesia\n- **Prominent PR** - Corporate and government relations focus\n\n## Digital/Integrated Communications\n- **Tiga Bijak** - Digital-focused PR and marketing\n- **BEE Communications** - Integrated marketing communications\n\n## Things to Consider When Choosing\n1. **Industry specialization** - Some agencies focus on tech, F&B, government relations, or consumer goods\n2. **Language capabilities** - Bahasa Indonesia and English proficiency\n3. **Media relationships** - Local journalist and outlet connections\n4. **Digital capabilities** - Social media and influencer marketing integration\n5. **Crisis management experience**\n6. **Government relations expertise** - Important given regulatory environment\n\n## Recommendations\n- Request case studies relevant to your industry\n- Check their media database and journalist relationships\n- Ask about their crisis communication protocols\n- Verify their understanding of local culture and sensitivities\n- Consider agencies with both traditional and digital PR capabilities\n\nWould you like more specific information about any of these agencies, or do you have a particular industry focus (e.g., tech, consumer goods, finance) that I could tailor recommendations for?"
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan PR agency terbaik di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Rekomendasi PR Agency Terbaik di Indonesia\n\nBerikut beberapa PR agency yang cukup dikenal dan memiliki reputasi baik di Indonesia:\n\n## PR Agency Internasional dengan Kantor di Indonesia\n- **Weber Shandwick Indonesia** - jaringan global dengan pengalaman di berbagai sektor\n- **Edelman Indonesia** - salah satu firma PR terbesar dunia\n- **Ogilvy PR Indonesia** - bagian dari jaringan Ogilvy global\n- **FleishmanHillard Indonesia**\n\n## PR Agency Lokal Terkemuka\n- **Maverick Indonesia** - fokus pada digital PR dan brand strategy\n- **Kiroyan Partners** - kuat dalam corporate communications dan public affairs\n- **IPR (Indonesia Public Relations)**\n- **PROVOKE! (kini bagian dari grup lain)** - dikenal untuk campaign kreatif\n- **Fortune Indonesia** - salah satu yang paling lama beroperasi\n- **Konsulen Komunikasi Indonesia (K2)**\n\n## PR Agency dengan Fokus Digital/Startup\n- **Boleh Digital**\n- **Semut Api Communications**\n- **Dentsu PR Indonesia**\n\n## Tips Memilih PR Agency:\n1. **Sesuaikan dengan industri** - beberapa agency punya spesialisasi (F&B, tech, corporate, government relations)\n2. **Cek portofolio & klien sebelumnya** - lihat case study yang relevan\n3. **Evaluasi jaringan media** - seberapa kuat relasi mereka dengan wartawan/media\n4. **Pertimbangkan budget** - PR agency internasional biasanya lebih mahal dibanding lokal\n5. **Minta proposal & pitch** - bandingkan strategi yang ditawarkan beberapa agency\n\n---\n\n**Catatan:** Informasi ini berdasarkan pengetahuan saya hingga awal 2025, dan landscape industri PR bisa berubah (merger, rebranding, dll). Saya sarankan untuk:\n- Cek review terbaru di Google/LinkedIn\n- Lihat award yang mereka menangkan (misalnya dari PR Indonesia Awards)\n- Konsultasi dengan asosiasi seperti **PERHUMAS** (Perhimpunan Hubungan Masyarakat Indonesia) untuk rekomendasi terkini\n\nApakah Anda mencari PR agency untuk industri atau kebutuhan spesifik tertentu? Saya bisa bantu persempit rekomendasinya."
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan PR agency terbaik di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Industri *Public Relations* (PR) di Indonesia berkembang sangat pesat seiring dengan transformasi digital. Menemukan PR agency terbaik bergantung pada kebutuhan bisnis Anda, apakah untuk hubungan media (media relations), manajemen krisis, hubungan pemerintah (government relations), komunikasi korporat, atau kampanye digital.\n\nBerikut adalah rekomendasi PR agency terbaik di Indonesia, yang dibagi menjadi kategori **Multinasional (Global)** dan **Lokal (Independen) Terbaik**:\n\n---\n\n### A. PR Agency Multinasional (Global Network)\nCocok untuk perusahaan skala besar (MNC), kampanye berskala regional/global, dan membutuhkan standar riset serta metodologi internasional.\n\n1. **Edelman Indonesia**\n   * **Kelebihan:** Edelman adalah salah satu agensi PR terbesar di dunia. Di Indonesia, mereka sangat kuat dalam komunikasi korporat, reputasi merek, manajemen krisis, serta PR digital. Mereka terkenal dengan laporan tahunan *\"Edelman Trust Barometer\"*.\n   * **Sektor Unggulan:** Korporat, Finansial, Teknologi, Konsumen (FMCG), dan Energi.\n\n2. **Weber Shandwick Indonesia**\n   * **Kelebihan:** Bagian dari Interpublic Group (IPG), agensi ini unggul dalam menyelaraskan strategi PR tradisional dengan kampanye digital yang kreatif. Mereka memiliki pendekatan berbasis data yang sangat kuat.\n   * **Sektor Unggulan:** Teknologi, Kesehatan (Healthcare), Konsumen, dan Otomotif.\n\n3. **Ogilvy Indonesia (PR Division)**\n   * **Kelebihan:** Ogilvy terkenal dengan konsep *Integrated Marketing Communication* (IMC). Divisi PR mereka bekerja sangat sinergis dengan tim periklanan dan digital untuk menghasilkan kampanye kreatif berskala besar yang berdampak luas.\n   * **Sektor Unggulan:** Lifestyle, FMCG, Korporat, dan Telekomunikasi.\n\n---\n\n### B. PR Agency Lokal / Independen Terbaik\nCocok untuk perusahaan yang membutuhkan fleksibilitas tinggi, pemahaman mendalam tentang budaya dan lanskap media lokal, serta pendekatan yang lebih personal (*agile*).\n\n1. **Inke Maris & Associates (IMA)**\n   * **Kelebihan:** Didirikan pada tahun 1986, IMA adalah salah satu pionir PR agency di Indonesia. Mereka memiliki jaringan yang sangat kuat dengan media nasional dan pembuat kebijakan (pemerintah). Sangat terpercaya dalam menangani isu-isu sensitif dan komunikasi strategis.\n   * **Sektor Unggulan:** Hubungan Pemerintah (*Government Relations*), Infrastruktur, Korporat, dan Isu Publik.\n\n2. **Imogen PR**\n   * **Kelebihan:** Agensi lokal berprestasi internasional yang tergabung dalam jaringan global *PROI Worldwide*. Imogen sangat inovatif dalam kampanye PR digital dan *influencer marketing*, serta terkenal ramah terhadap jurnalis.\n   * **Sektor Unggulan:** Konsumen, Teknologi, Startup, dan Pariwisata.\n\n3. **Praxis**\n   * **Kelebihan:** Terkenal dengan pendekatan berbasis riset dan data yang kuat dalam merumuskan strategi komunikasi. Praxis sangat aktif dalam mengedukasi industri PR dan memiliki reputasi yang sangat baik dalam menangani klien-klien sektor teknologi dan startup besar.\n   * **Sektor Unggulan:** Teknologi (Fintech, E-commerce), Edukasi, dan Korporat.\n\n4. **Piar Consulting**\n   * **Kelebihan:** Agensi butik yang sangat dinamis dan menjadi andalan banyak startup teknologi papan atas di Indonesia. Mereka sangat ahli dalam menerjemahkan konsep bisnis yang kompleks menjadi cerita (*storytelling*) yang menarik bagi media.\n   * **Sektor Unggulan:** Startup, Teknologi, Ventura, dan Gaya Hidup.\n\n---\n\n### C. Spesialis Hubungan Pemerintah & Manajemen Krisis\n\n1. **Kiroyan Partners**\n   * **Kelebihan:** Jika Anda mencari agensi yang khusus menangani *Public Affairs*, hubungan pemerintah, tanggung jawab sosial perusahaan (CSR), dan manajemen krisis tingkat tinggi, Kiroyan Partners adalah salah satu yang terbaik di Indonesia. Mereka fokus pada komunikasi strategis berbasis analisis sosial-politik.\n\n---\n\n### Tips Memilih PR Agency di Indonesia:\n\n1. **Tentukan Tujuan (KPI):** Apakah Anda butuh *brand awareness* (banyak diliput media), manajemen krisis, atau edukasi pasar untuk produk baru?\n2. **Cek Portofolio Sektor:** Pilih agensi yang sudah berpengalaman menangani industri yang sejenis dengan bisnis Anda (misal: jika Anda startup teknologi, Praxis atau Piar Consulting sangat direkomendasikan).\n3. **Hubungan dengan Media (Media Relations):** Agensi yang baik memiliki hubungan personal yang kuat dengan para jurnalis dan pemimpin redaksi, bukan sekadar mengirim rilis berita.\n4. **Anggaran (Budget):** Agensi multinasional umumnya memiliki tarif (retainer fee) yang jauh lebih tinggi dibanding agensi lokal terkemuka. Sesuaikan dengan anggaran perusahaan Anda."
+    },
+    {
+      "promptText": "What are the best PR agency companies in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "The PR landscape in Indonesia is highly dynamic, driven by a massive digital-savvy population, a booming tech ecosystem, and complex regulatory environments. \n\nThe \"best\" PR agency for your business depends on whether you need a global network with massive reach, a local powerhouse with deep government relations, or a specialized boutique agency for startups and tech.\n\nHere is a curated list of the best PR agencies in Indonesia, categorized by their strengths:\n\n---\n\n### 1. The Global Giants (Best for Multinationals & Large-Scale Campaigns)\nThese agencies have global networks, standardized methodologies, and the capacity to handle massive, multi-market campaigns.\n\n*   **Edelman Indonesia**\n    *   **Overview:** Edelman is arguably the largest and most prominent PR agency in Indonesia. They are famous for their annual *Edelman Trust Barometer* and have a massive team handling corporate, brand, and digital PR.\n    *   **Best For:** Crisis management, corporate reputation, large-scale consumer brands, and research-driven strategy.\n    *   **Notable Clients:** Unilever, Samsung, various government bodies.\n*   **Ogilvy Indonesia**\n    *   **Overview:** Part of the WPP group, Ogilvy Indonesia is a powerhouse that integrates PR with advertising, digital marketing, and influence. \n    *   **Best For:** Integrated marketing communications (IMC), creative PR campaigns, and influencer-led strategies.\n*   **Weber Shandwick Indonesia**\n    *   **Overview:** A top global agency known for its data-led approach and strong corporate communications division.\n    *   **Best For:** Healthcare PR, B2B technology, and public affairs.\n\n---\n\n### 2. Elite Local & Independent Agencies (Best for Local Nuance & Media Relations)\nIndonesian media and government relations require deep cultural understanding and personal relationships. These local agencies are highly respected and often outperform global agencies in the local market.\n\n*   **Maverick Indonesia**\n    *   **Overview:** Widely regarded as the premier independent PR agency in the country. Maverick has a reputation for being straightforward, creative, and highly ethical. They are also the Indonesian partner for the global agency network, Golin.\n    *   **Best For:** Crisis communications, media training, tech/startup PR, and advocacy.\n    *   **Notable Clients:** GoTo (Gojek-Tokopedia), Spotify, Netflix, Acer.\n*   **Inke Maris & Associates (IM&A)**\n    *   **Overview:** Established in 1986 by the late legendary journalist Inke Maris, this is one of the oldest and most respected local agencies. They have unparalleled connections within the Indonesian government and public sector.\n    *   **Best For:** Government relations, public affairs, strategic counseling, and infrastructure/energy sectors.\n*   **Kiroyan Partners**\n    *   **Overview:** A highly specialized corporate communications and public affairs consulting firm. They do not focus on lifestyle or product PR; instead, they focus on corporate reputation.\n    *   **Best For:** Corporate social responsibility (CSR), stakeholder relations, environmental/social governance (ESG), and community relations in sensitive industries (mining, plantation, energy).\n*   **Imogen PR**\n    *   **Overview:** A highly awarded independent agency that is part of the PROI Worldwide network. They are known for agile, creative consumer PR campaigns.\n    *   **Best For:** Consumer goods (FMCG), lifestyle, and digital PR.\n\n---\n\n### 3. Tech & Digital-First Agencies (Best for Startups & Fast-Growing Brands)\nIf you are a tech startup, venture capital firm, or a digital-first brand, these agencies speak your language and move at your speed.\n\n*   **Advo Indonesia**\n    *   **Overview:** A dynamic local agency that excels in digital PR, influencer marketing, and media relations for tech and lifestyle brands.\n*   **Red PR (part of Redcomm Group)**\n    *   **Overview:** Part of one of Indonesia’s biggest local digital agency groups. They excel at combining traditional PR with heavy data-driven digital marketing.\n    *   **Best For:** Social media integration, viral campaigns, and digital-first brands.\n\n---\n\n### How to Choose the Right Agency in Indonesia\n\nWhen selecting an agency in Indonesia, consider the following localized factors:\n1.  **Media Relations vs. Paid Media:** In Indonesia, the line between editorial and paid content (advertorials) can sometimes blur. Ask agencies how they navigate \"earned\" media versus \"paid\" media.\n2.  **Government & Regulatory Knowledge:** Indonesia’s regulatory landscape changes quickly (especially in tech, finance, and crypto). If you are in a regulated industry, prioritize agencies like *Inke Maris* or *Kiroyan Partners*.\n3.  **KOL/Influencer Capabilities:** Key Opinion Leaders (KOLs) are massive in Indonesia. Ensure the agency has a strong, direct relationship with influencers and understands localized platforms (TikTok, Instagram, and WhatsApp are dominant)."
+    },
+    {
+      "promptText": "What are the best PR agency companies in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan PR agency terbaik di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Kalau butuh PR agency yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# PR Agency di Indonesia\n\nUntuk rekomendasi PR agency, saya perlu jujur soal keterbatasan saya:\n\n**Kenapa saya hati-hati memberi rekomendasi spesifik:**\n- Data saya punya cut-off dan mungkin tidak mencerminkan kondisi terkini (agency bisa berubah kualitas, tutup, ganti manajemen, dll)\n- \"Reliable\" itu sangat tergantung kebutuhan spesifik brand kamu (B2B vs B2C, startup vs korporat, budget, industri)\n- Saya nggak punya akses ke review/testimoni real-time dari client mereka\n\n**Yang bisa saya bantu:**\n\n1. **Kriteria memilih PR agency yang solid:**\n   - Portfolio klien di industri sejenis\n   - Track record media relations (media tier 1 apa saja yang mereka pegang)\n   - Tim internal (jumlah, pengalaman, turnover rate)\n   - Transparansi reporting & KPI\n   - Testimoni klien yang bisa dicek langsung\n\n2. **Cara riset yang lebih akurat:**\n   - Cek asosiasi seperti PERHUMAS atau IPRA untuk directory member\n   - Lihat siapa yang handle PR brand-brand besar di Indonesia (biasanya disebut di press release atau LinkedIn)\n   - Minta rekomendasi dari network industri kamu langsung\n   - Screening 3-5 agency, minta case study & pitch\n\n**Pertanyaan balik biar saya bisa bantu lebih spesifik:**\n- Industri brand kamu apa?\n- Butuh untuk crisis management, product launch, atau ongoing media relations?\n- Budget range-nya seperti apa (boutique agency vs full-service)?\n\nDengan info lebih detail, saya bisa kasih framework yang lebih tajam untuk shortlist kandidat."
+    },
+    {
+      "promptText": "Kalau butuh PR agency yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Menurut kamu, PR agency company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# PR Agency di Indonesia - Perlu Konteks Dulu\n\nSebelum saya kasih rekomendasi, penting untuk saya jujur: saya nggak punya data real-time atau pengalaman langsung menilai performa agency-agency ini. Jadi rekomendasi saya terbatas pada apa yang umum diketahui publik, bukan review mendalam.\n\n## Beberapa nama yang sering disebut di industri:\n\n**Global network (biasanya untuk brand besar/multinasional):**\n- Weber Shandwick Indonesia\n- Edelman Indonesia\n- Hill+Knowlton Strategies\n- FleishmanHillard\n\n**Lokal/Regional yang cukup dikenal:**\n- Maverick PR\n- Tempo Public Relations\n- Inke Maris & Associates\n- ClickComm\n\n## Yang lebih penting daripada \"nama besar\":\n\n\"Worth it\" itu sangat tergantung kebutuhan spesifik kamu:\n\n1. **Budget** - agency global biasanya jauh lebih mahal daripada boutique agency lokal\n2. **Industri/niche** - ada agency yang spesialis F&B, tech, atau consumer goods tertentu\n3. **Skala** - butuh coverage nasional atau cukup regional/kota tertentu?\n4. **Jenis campaign** - crisis management, product launch, atau ongoing media relations?\n\n## Saran praktis:\n\nDaripada langsung pilih berdasarkan nama besar, coba:\n- Minta **case study** relevan dengan industri kamu\n- Cek **portfolio media placement** mereka\n- Tanya **tim yang akan handle** akun kamu (bukan cuma pitching team)\n- Bandingkan **3-4 agency** dengan proposal spesifik untuk kebutuhan kamu\n\nBoleh cerita lebih detail soal industri/kebutuhan kamu? Biar saya bisa kasih insight yang lebih relevan, atau minimal arahkan ke tipe agency yang lebih cocok."
+    },
+    {
+      "promptText": "Which PR agency brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "I should be upfront that I don't have access to current market data, rankings, or recent reviews, and PR agency quality changes over time based on staff turnover, client wins/losses, and shifting specializations. Any specific names I gave could be outdated or not matched to your actual needs. That said, here's a framework for finding the right fit:\n\n## Categories worth exploring\n\n**International networks with Jakarta presence**\nGlobal firms (like those under WPP, Omnicom, or Publicis groups) often have Indonesian offices. These tend to suit multinational corporate clients or companies needing cross-border consistency.\n\n**Established local/regional agencies**\nIndonesia has homegrown PR firms with strong government and media relationships built over decades. These often outperform international brands for local market nuance, bahasa Indonesia content, and navigating local media landscapes.\n\n**Boutique/specialized firms**\nDepending on your industry (tech startup, F&B, fashion, finance), specialized agencies with sector expertise may serve you better than generalists.\n\n## What matters more than brand name\n\n- **Media relationships**: Do they have real connections with Kompas, Tempo, Detik, CNBC Indonesia, or relevant trade press?\n- **Digital/social capability**: Traditional PR increasingly needs integration with social media management, especially for Indonesian audiences heavy on Instagram/TikTok\n- **Crisis management track record**: Ask for specific examples\n- **Client references in your industry**: Request 2-3 current clients you can actually call\n\n## Practical next steps\n\n1. Ask for recommendations from your industry association or chamber of commerce (like Kadin, or foreign chambers like AmCham/BritCham if relevant)\n2. Check recent award shortlists (PR Awards Indonesia, Asia-Pacific PR awards) for currently active, well-regarded agencies\n3. Request pitches from 3-4 agencies spanning international and local options, and compare their strategic thinking, not just their client lists\n\nWould it help if I broke down questions to ask during agency pitches, or discussed what \"reliable\" should mean for your specific situation (crisis comms vs. brand building vs. product launches)?"
+    },
+    {
+      "promptText": "Kalau butuh PR agency yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Memilih PR (*Public Relations*) *agency* yang *reliable* (andal) di Indonesia sangat bergantung pada skala bisnis Anda, industri, *budget*, serta tujuan komunikasi (apakah untuk korporat, krisis, peluncuran produk, atau hubungan pemerintah).\n\nBerikut adalah rekomendasi PR *agency* terbaik di Indonesia, yang dikelompokkan berdasarkan kategori spesialisasi mereka:\n\n---\n\n### 1. Jaringan Global (Multinasional)\n*Cocok untuk perusahaan multinasional, brand besar dengan budget tinggi, atau campaign berskala regional/global yang membutuhkan riset mendalam dan manajemen krisis tingkat tinggi.*\n\n*   **Edelman Indonesia**\n    *   **Reputasi:** Agensi PR global terbesar di dunia. Di Indonesia, mereka sangat kuat dalam manajemen krisis, komunikasi korporat, *public affairs*, dan riset (terkenal dengan *Edelman Trust Barometer*).\n    *   **Kekuatan:** Strategi berbasis data, jaringan internasional, dan penanganan isu sensitif.\n*   **Weber Shandwick Indonesia**\n    *   **Reputasi:** Salah satu jaringan PR paling kreatif di dunia. Sangat kuat dalam mengintegrasikan PR tradisional dengan kampanye digital dan sosial media.\n    *   **Kekuatan:** Kampanye kreatif, teknologi, dan consumer PR.\n*   **Ogilvy PR (GroupM)**\n    *   **Reputasi:** Bagian dari WPP, Ogilvy sangat andal dalam mengintegrasikan PR dengan periklanan dan pemasaran digital (*360-degree marketing*).\n    *   **Kekuatan:** *Brand building*, kampanye kreatif skala besar, dan pengaruh media sosial.\n\n---\n\n### 2. Agensi Lokal Terkemuka (Local Powerhouses)\n*Memiliki pemahaman mendalam tentang lanskap media lokal, budaya Indonesia, regulasi pemerintah, dan biasanya menawarkan pendekatan yang lebih personal.*\n\n*   **Inke Maris & Associates (IM&A)**\n    *   **Reputasi:** Salah satu agensi PR independen tertua dan paling dihormati di Indonesia (didirikan oleh tokoh PR legendaris alm. Inke Maris).\n    *   **Kekuatan:** *Government relations* (hubungan pemerintah), komunikasi korporat, manajemen isu/krisis, dan sektor infrastruktur/energi.\n*   **Imogen PR**\n    *   **Reputasi:** Agensi lokal yang sangat aktif dan telah memenangkan banyak penghargaan internasional. Mereka adalah representasi PROI Worldwide di Indonesia.\n    *   **Kekuatan:** *Media relations* yang sangat kuat, PR konsumen, industri teknologi, dan FMCG.\n*   **Praxis**\n    *   **Reputasi:** Agensi lokal yang modern, transparan, dan sangat populer di kalangan startup teknologi dan korporasi modern.\n    *   **Kekuatan:** *Tech PR*, komunikasi finansial, riset media, dan gaya komunikasi yang lugas (tanpa omong kosong).\n*   **Kiroyan Partners**\n    *   **Reputasi:** Spesialis dalam bidang reputasi perusahaan, hubungan pemangku kepentingan (*stakeholder relations*), dan isu keberlanjutan (ESG/CSR).\n    *   **Kekuatan:** Analisis risiko sosial-politik, *public affairs*, dan mediasi konflik.\n\n---\n\n### 3. Agensi Butik & Kreatif (Boutique/Specialist Agencies)\n*Cocok untuk startup, UMKM yang naik kelas, atau brand gaya hidup yang membutuhkan fleksibilitas, kreativitas tinggi, dan biaya yang lebih efisien.*\n\n*   **Bening Communication**\n    *   **Reputasi:** Sangat terkenal di industri teknologi (*consumer tech*, *gadget*, *gaming*, dan startup).\n    *   **Kekuatan:** Hubungan media tekno yang sangat erat dan peluncuran produk secara cepat.\n*   **Advo Indonesia**\n    *   **Reputasi:** Agensi butik yang lincah dengan pendekatan kreatif yang kuat untuk brand gaya hidup (*lifestyle*), kecantikan, dan FMCG.\n    *   **Kekuatan:** Manajemen KOL/Influencer dan *media gathering* yang intim.\n\n---\n\n### Tips Memilih yang Tepat untuk Brand Anda:\n\n1.  **Tentukan Goal Utama:** Jika butuh melobi pemerintah atau menangani krisis hukum, pilih **Kiroyan Partners** atau **Inke Maris**. Jika butuh mengenalkan aplikasi teknologi baru, pilih **Praxis** atau **Bening**.\n2.  **Cek Portofolio:** Minta *case study* proyek terdekat yang pernah mereka kerjakan yang mirip dengan industri Anda.\n3.  **Chemistry dengan Account Director:** PR adalah bisnis hubungan manusia. Pastikan tim yang akan memegang akun Anda (bukan hanya tim sales saat *pitching*) adalah orang-orang yang Anda rasa nyaman untuk bekerja sama.\n\n**Rekomendasi Utama (jika harus memilih satu yang paling seimbang antara nama besar, kredibilitas, dan lokalitas):**\nUntuk korporat/pemerintah/krisis, pilihlah **Inke Maris & Associates**. Untuk sektor konsumen/teknologi/lifestyle dengan pendekatan modern, pilihlah **Praxis** atau **Imogen PR**."
+    },
+    {
+      "promptText": "Which PR agency brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "To find a reliable PR agency in Indonesia, it helps to categorize them based on your business size, budget, and specific needs. The Indonesian market is unique, heavily relying on WhatsApp-based media relations, influencer culture (KOLs), and rapidly changing digital landscapes.\n\nHere is a curated list of the most reliable PR agencies in Indonesia, divided into **Global Giants** (best for MNCs), **Top Local Independents** (best for deep local insights), and **Tech/Startup Specialists**.\n\n---\n\n### 1. The Global Giants (Best for MNCs, Large Budgets, and Global Reach)\nThese agencies have massive networks, robust compliance standards, and are best suited for multinational corporations or large Indonesian conglomerates.\n\n*   **Edelman Indonesia**\n    *   **Overview:** Arguably the most prominent global PR agency in Jakarta. They are famous for their annual *Edelman Trust Barometer* and have a massive team handling everything from corporate reputation to crisis management.\n    *   **Best For:** Crisis management, corporate PR, healthcare, and large-scale consumer campaigns.\n*   **Weber Shandwick Indonesia**\n    *   **Overview:** A top-tier global agency known for highly creative, data-driven, and digital-first campaigns. They have a strong grasp of the Indonesian digital ecosystem.\n    *   **Best For:** Integrated marketing, technology, and consumer lifestyle brands.\n*   **Ogilvy Indonesia (PR & Influence)**\n    *   **Overview:** Ogilvy is a creative powerhouse in Indonesia. Their PR division works seamlessly with their advertising and digital teams to provide truly integrated 360-degree campaigns.\n    *   **Best For:** High-impact consumer campaigns, creative storytelling, and brand launches.\n\n---\n\n### 2. Top-Tier Local Independent Agencies (Best for Agility, Local Insights, and Value)\nThese agencies are homegrown but operate at international standards. They often have closer, more personal relationships with local journalists and key opinion leaders (KOLs).\n\n*   **Inke Maris & Associates**\n    *   **Overview:** Established in 1986, this is one of the oldest and most respected pioneering PR agencies in Indonesia. They have deep connections within the Indonesian government and public sector.\n    *   **Best For:** Public affairs, government relations, financial PR, and crisis communications.\n*   **IMOGEN PR**\n    *   **Overview:** A multi-award-winning local agency that is also the Indonesian partner of PROI Worldwide (a global network of independent agencies). They are highly agile and results-oriented.\n    *   **Best For:** Consumer goods (FMCG), electronics, and media relations.\n*   **Fortune PR**\n    *   **Overview:** A dominant player in the local PR scene for decades. They offer a full suite of services, including corporate PR, brand activation, and digital strategy.\n    *   **Best For:** Broad corporate communications and large-scale local brand building.\n*   **Magnifique**\n    *   **Overview:** A highly dynamic agency known for its lifestyle, hospitality, and entertainment portfolio. They excel at event management and high-end influencer/KOL campaigns.\n    *   **Best For:** Lifestyle, fashion, luxury brands, and experiential events.\n\n---\n\n### 3. Tech & Startup Specialists (Best for the Digital Economy)\nIf you are a fintech, e-commerce, SaaS, or web3 company, you need agencies that understand the fast-paced nature of tech media.\n\n*   **Praxis**\n    *   **Overview:** Praxis is highly regarded for its data-driven approach to PR. They have a stellar reputation for representing top tech giants, startups, and corporate clients in Indonesia.\n    *   **Best For:** Tech startups, corporate communications, and research-backed PR campaigns.\n*   **Value Dialogue**\n    *   **Overview:** A boutique agency that has carved out a strong niche in the tech, fintech, and venture capital space. They are excellent at translating complex tech concepts into mainstream media stories.\n    *   **Best For:** Fintech, B2B tech, and executive profiling.\n\n---\n\n### How to Choose the Right Agency in Indonesia\n\nBefore reaching out, consider these Indonesian market nuances:\n1.  **Media Relations vs. KOLs:** In Indonesia, \"PR\" often overlaps heavily with influencer marketing. Ask agencies how they balance traditional press relations with Key Opinion Leader (KOL) management.\n2.  **Government Relations:** If your industry is highly regulated (like fintech, health, or mining), prioritize agencies with strong public affairs experience (like *Inke Maris* or *Edelman*).\n3.  **The \"WhatsApp\" Culture:** Media relations in Indonesia are highly informal and relationship-driven. Ensure the agency you choose has executives who have direct, personal WhatsApp access to key editors, rather than just sending blast emails."
+    },
+    {
+      "promptText": "Is R&R Communications a trustworthy company?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": null,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "I don't have enough context to give you a reliable answer. \"R&R Communications\" could refer to several different companies, as this is a fairly generic business name that might apply to firms in telecommunications, PR/marketing, radio equipment, or other communications-related fields in various locations.\n\nTo help you research this properly, it would help to know:\n\n- What industry/services are you looking into (radios, PR, telecom, internet service, etc.)?\n- What location or region is the company based in?\n- Did you find them through a specific context (a quote for a project, a job posting, an online ad)?\n\nIn the meantime, here are general ways to check trustworthiness of any company:\n\n1. **Better Business Bureau (BBB)** – search for their rating and any complaints\n2. **Google/Yelp reviews** – look for patterns in customer feedback\n3. **State business registration** – verify they're a legitimate registered business\n4. **Secretary of State website** – confirm they're in good standing\n5. **Better search** – search \"[Company Name] + reviews\" or \"[Company Name] + complaints\"\n6. **Licensing** – if applicable, check for proper industry licensing\n7. **BBB accreditation** — distinct from just having a BBB profile\n\nIf you give me more details about which specific company you mean, I can help you think through what to look for or help interpret information you've already found."
+    },
+    {
+      "promptText": "Which PR agency brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Menurut kamu, PR agency company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Menentukan PR (*Public Relations*) agency mana yang paling **\"worth it\"** di Indonesia sangat bergantung pada **budget, industri bisnis Anda, dan apa tujuan (KPI) yang ingin dicapai**. Agency yang \"worth it\" untuk korporasi besar belum tentu \"worth it\" untuk startup yang baru merintis.\n\nUntuk membantu Anda memilih, berikut adalah rekomendasi PR agency terbaik di Indonesia yang dikelompokkan berdasarkan spesialisasi dan skala bisnis Anda:\n\n---\n\n### 1. Kategori: Global & Multinational (Terbaik untuk Korporasi Besar, Isu Sensitif, & Krisis)\nJika Anda memiliki budget besar, membutuhkan standar internasional, dan reputasi global.\n\n*   **Edelman Indonesia**\n    *   **Mengapa Worth It:** Edelman adalah salah satu raksasa PR global terbesar di Indonesia. Mereka sangat kuat dalam *crisis management*, riset (*Edelman Trust Barometer*), dan hubungan pemerintah.\n    *   **Cocok untuk:** Perusahaan MNC (Multinasional), BUMN besar, sektor finansial, dan teknologi global.\n*   **Weber Shandwick / Burson (dulu BCW Indonesia)**\n    *   **Mengapa Worth It:** Jaringan global yang sangat kuat dengan keahlian dalam menyusun strategi komunikasi terintegrasi (PR digital, korporasi, dan kreatif).\n\n---\n\n### 2. Kategori: Mid-Sized & Local Powerhouse (Terbaik untuk Efisiensi Budget & ROI Tinggi)\nAgency lokal papan atas yang memiliki jaringan media lokal yang sangat kuat, lebih fleksibel, dan menawarkan harga yang lebih kompetitif dibanding agency asing.\n\n*   **Praxis**\n    *   **Mengapa Worth It:** Praxis sangat terkenal di kalangan startup, teknologi, dan industri kreatif. Mereka sangat transparan, solutif, dan memiliki hubungan yang sangat baik dengan jurnalis tekno/bisnis. Mereka juga aktif mengedukasi industri PR di Indonesia.\n    *   **Cocok untuk:** Startup *unicorn/decacorn*, perusahaan teknologi, FMCG, dan *mid-to-large enterprises*.\n*   **Imogen PR**\n    *   **Mengapa Worth It:** Bagian dari PROI Worldwide (jaringan PR independen global). Imogen sangat kuat dalam komunikasi pemasaran (marketing PR) dan FMCG. Mereka sering memenangkan penghargaan PR lokal karena kampanyenya yang kreatif dan berdampak langsung pada penjualan.\n    *   **Cocok untuk:** Brand konsumen (FMCG), gaya hidup, dan farmasi.\n*   **Inke Maris & Associates**\n    *   **Mengapa Worth It:** Salah satu PR agency lokal tertua dan paling dihormati di Indonesia. Keunggulan utama mereka adalah *Government Relations* (hubungan dengan pemerintah) dan komunikasi korporat strategis.\n    *   **Cocok untuk:** Perusahaan energi, infrastruktur, edukasi, dan proyek publik.\n\n---\n\n### 3. Kategori: Niche & Corporate Affairs (Terbaik untuk Reputasi & ESG)\n*   **Kiroyan Partners**\n    *   **Mengapa Worth It:** Jika masalah Anda adalah konflik dengan masyarakat sekitar tambang, isu lingkungan (ESG), atau kebijakan pemerintah, Kiroyan adalah masternya. Mereka fokus pada *Corporate Affairs* dan komunikasi strategis, bukan sekadar rilis berita di media.\n    *   **Cocok untuk:** Perusahaan pertambangan, energi, perkebunan, dan industri berat.\n\n---\n\n### 4. Kategori: Boutique & Creative PR (Terbaik untuk Startup & UMKM/Lifestyle)\nJika budget Anda terbatas namun butuh taktik yang lincah (*agile*), kreatif, dan fokus pada KOL/Influencer serta media digital.\n\n*   **Dialogue Communications / KAWI PR**\n    *   **Mengapa Worth It:** Sangat kuat di ranah *lifestyle*, kecantikan, fesyen, dan Gen-Z. Mereka tahu cara membuat brand Anda diperbincangkan di media sosial dan media gaya hidup.\n\n---\n\n### Cara Menentukan Mana yang Paling \"Worth It\" buat Anda:\n\nUntuk memilih, ajukan pertanyaan ini saat melakukan *pitching*:\n\n1.  **\"Bagaimana jaringan jurnalis Anda di sektor industri saya?\"** (Minta bukti liputan sebelumnya di industri yang sama).\n2.  **\"Siapa tim yang akan menghandle akun saya setiap hari?\"** (Seringkali saat *pitching* yang datang adalah direktur senior, tapi setelah kontrak ditandatangani, akun Anda dipegang oleh junior/intern).\n3.  **\"Bagaimana cara Anda mengukur kesuksesan (KPI)?\"** (Pilih agency yang mengukur berdasarkan *quality of coverage* atau dampak bisnis, bukan sekadar nilai PR Value/AVE yang sering kali tidak realistis).\n\n**Ringkasan Rekomendasi:**\n*   Jika Anda **perusahaan teknologi/startup** dan ingin eksposur media yang organik dan cerdas: Pilih **Praxis**.\n*   Jika Anda **perusahaan FMCG/Consumer Brand** yang butuh aktivasi kreatif: Pilih **Imogen PR**.\n*   Jika Anda **korporasi besar** dengan isu krisis yang kompleks: Pilih **Edelman** atau **Inke Maris**."
+    },
+    {
+      "promptText": "Apakah R&R Communications merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Saya tidak memiliki informasi spesifik yang cukup tentang perusahaan bernama \"R&R Communications\" untuk memberikan penilaian yang akurat, karena:\n\n1. Ada kemungkinan beberapa perusahaan berbeda dengan nama serupa\n2. Saya tidak memiliki akses ke database real-time untuk mengecek reputasi terkini\n\n**Cara yang bisa Anda lakukan untuk memverifikasi kredibilitas perusahaan ini:**\n\n🔍 **Cek Legalitas:**\n- Verifikasi di OSS (Online Single Submission) atau Kemenkumham jika di Indonesia\n- Cek Nomor Induk Berusaha (NIB) atau akta pendirian\n\n⭐ **Cek Reputasi Online:**\n- Google Reviews atau Google Maps\n- Media sosial resmi perusahaan\n- Forum diskusi atau komunitas terkait industri mereka\n\n⚠️ **Waspadai Tanda Bahaya:**\n- Tidak ada alamat kantor fisik yang jelas\n- Tidak memiliki website resmi atau kontak yang bisa diverifikasi\n- Meminta pembayaran di muka dalam jumlah besar tanpa kontrak jelas\n- Testimoni yang terlihat terlalu sempurna atau mencurigakan\n\n📞 **Verifikasi Langsung:**\n- Hubungi nomor kontak resmi mereka\n- Tanyakan referensi klien sebelumnya\n- Minta dokumen legal perusahaan\n\nBisakah Anda memberi tahu saya konteks lebih spesifik? Misalnya, apakah ini terkait dengan penawaran pekerjaan, kerja sama bisnis, atau layanan tertentu? Ini akan membantu saya memberikan saran yang lebih relevan dan spesifik untuk situasi Anda."
+    },
+    {
+      "promptText": "Menurut kamu, PR agency company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Is R&R Communications a trustworthy company?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 2,
+      "sentiment": "positive",
+      "citedSources": [
+        "https://www.whois.com/"
+      ],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Because **\"R&R Communications\"** is a relatively common name shared by several different businesses, whether they are trustworthy depends entirely on **which** company you are dealing with. \n\nTo help you figure out if the company you are dealing with is legitimate, here is a breakdown of the most common entities using this name, along with potential scam warnings.\n\n---\n\n### 1. The Amateur (Ham) Radio Dealer (Delaware)\n* **What they do:** A well-known dealer of amateur radio equipment, parts, and repairs, historically run by an owner named Russ in Wilmington, Delaware. \n* **Trustworthiness:** **Highly Trustworthy.** Within the amateur radio (ham) community, R&R Communications has been a staple for decades. They have a strong reputation for being honest, helpful, and knowledgeable, though they have scaled back operations/closed physical storefronts in recent years. \n\n### 2. Local Telecommunications/Cabling Contractors\n* **What they do:** There are several local businesses across the U.S. (such as in Georgia, Indiana, or Pennsylvania) named \"R&R Communications\" that install fiber optics, business phone systems, or security cameras.\n* **Trustworthiness:** **Generally Legitimate.** These are standard local B2B contractors. \n* **How to verify them:** Check their Google Maps reviews, their Better Business Bureau (BBB) rating, and ensure they have a physical address and a local phone number on their website.\n\n### 3. RED FLAG: Are you dealing with a \"Job Offer\" or \"Cold Call\"?\nIf you are asking about R&R Communications because they contacted you out of the blue, **proceed with extreme caution.** Scammers frequently use generic-sounding names like \"R&R Communications\" or \"R&R Consulting\" to run fraudulent schemes.\n\n#### **A. The Remote Job/Data Entry Scam**\nIf you received an unsolicited text, email, or WhatsApp message offering a remote job (such as \"Data Entry Specialist\" or \"Virtual Assistant\") at R&R Communications:\n* **The Scam:** They will \"interview\" you via Telegram or Signal, \"hire\" you immediately, and send you a fake check to buy home office equipment. The check will bounce after you have already sent real money to their \"vendor.\"\n* **Red Flags:** \n  * They communicate exclusively via text/messaging apps.\n  * The pay is unusually high for entry-level work (e.g., $35+/hour).\n  * The email address they used does not match a legitimate company domain (e.g., they use Gmail, or a slightly misspelled domain name).\n\n#### **B. The Phone Bill / Utility Scam**\nIf you received a call from \"R&R Communications\" claiming your internet, cable, or phone bill is overdue, or offering you a 50% discount if you prepay with eBay/Amazon gift cards:\n* **The Scam:** This is a phishing/payment scam. Legitimate telecom providers do not ask for payment in gift cards or cryptocurrency.\n\n---\n\n### How to protect yourself:\nTo give you a more precise answer, ask yourself:\n1. **How did you hear about them?** (Did you seek them out, or did they contact you?)\n2. **What is their website URL?** (Legitimate companies have established websites; scam sites are often only a few weeks or months old, which you can check on [Whois.com](https://www.whois.com/)).\n3. **Where are they located?** \n\n*If you can share a few details about **how** you are interacting with them (e.g., buying ham radio gear, hiring a local contractor, or responding to a job post), I can give you a much more specific answer.*"
+    },
+    {
+      "promptText": "Is R&R Communications a trustworthy company?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Who are the leading players in the PR agency industry in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Leading PR Agencies in Indonesia\n\nHere are some of the prominent players in Indonesia's PR agency landscape:\n\n## International Networks (with Indonesian offices)\n- **Edelman Indonesia** - Global network with strong local presence\n- **Weber Shandwick Indonesia**\n- **Ogilvy PR Indonesia** (part of Ogilvy's broader network)\n- **FleishmanHillard Indonesia**\n- **Hill+Knowlton Strategies Indonesia**\n- **BCW (Burson Cohn & Wolfe) Indonesia**\n\n## Established Local/Regional Agencies\n- **Maverick Indonesia** - One of the well-known homegrown PR firms, particularly strong in corporate and government relations\n- **Imogen Group** - Known for integrated communications\n- **Blackbox Communications**\n- **Kiroyan Partners** - Strong in corporate reputation and public affairs\n- **Wieler PR**\n- **Praxis Public Relations**\n\n## Boutique & Specialized Firms\n- Various smaller agencies focusing on niches like:\n  - Tech/startup PR\n  - Digital and influencer-driven campaigns\n  - Government/public affairs\n  - Financial services communications\n\n## Important Notes\n\n1. **Market dynamics**: The Indonesian PR industry has seen significant growth in digital and social media-focused agencies, especially given Indonesia's massive social media user base.\n\n2. **Verification recommended**: This list reflects agencies that have historically been recognized in the market, but rankings and market presence change frequently. For current standing, I'd recommend checking:\n   - PR industry awards (like PR Indonesia Awards)\n   - Industry reports from firms like PRovoke Media (formerly Holmes Report)\n   - Local business publications' rankings\n\nWould you like me to focus on a specific niche (corporate PR, digital/influencer PR, government relations, etc.) or industry sector for more targeted recommendations?"
+    },
+    {
+      "promptText": "Apakah R&R Communications merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apakah R&R Communications merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 8,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Secara umum, **R&R Communications** (sering dikenal sebagai R&R PR atau PT Ricomm Media Selaras/R&R Public Relations) adalah agensi hubungan masyarakat (Public Relations/PR) lokal yang **sah (legal), memiliki reputasi baik, dan dapat dipercaya** di Indonesia.\n\nBerikut adalah beberapa fakta mengenai kredibilitas R&R Communications:\n\n1. **Rekam Jejak yang Panjang:** Perusahaan ini telah berdiri selama lebih dari 20 tahun di Indonesia dan merupakan salah satu agensi PR independen lokal yang cukup terpandang di Jakarta.\n2. **Klien Perusahaan Besar:** Mereka memiliki portofolio klien yang mencakup perusahaan multinasional, merek besar (gaya hidup, teknologi, FMCG), hingga lembaga pemerintahan dan organisasi nirlaba.\n3. **Keterlibatan Industri:** Pendiri dan manajemennya aktif dalam asosiasi industri PR di Indonesia (seperti APPRI - Asosiasi Perusahaan Public Relations Indonesia).\n\n---\n\n### **⚠️ CATATAN PENTING: Waspada Penipuan Lowongan Kerja (Scam)**\n\nJika Anda menanyakan kredibilitas R&R Communications karena **menerima tawaran pekerjaan, tugas *freelance* (seperti menyukai video, memberi rating), atau wawancara melalui WhatsApp/Telegram**, Anda harus sangat waspada.\n\nSeringkali, **nama perusahaan terkenal (termasuk R&R Communications) dicatut oleh sindikat penipu** untuk menjebak korban. \n\n**Ciri-ciri penipuan yang mencatut nama perusahaan:**\n* Menghubungi Anda secara tiba-tiba via WhatsApp atau Telegram.\n* Menawarkan pekerjaan mudah dengan bayaran besar (misal: hanya bertugas memberi *like*, *share*, atau rating).\n* Meminta Anda membayar sejumlah uang (deposit/uang jaminan) dengan alasan \"tugas berbayar\" atau \"pembelian bahan\".\n* Menggunakan alamat email gratisan (seperti `@gmail.com` atau `@yahoo.com`) bukan email resmi perusahaan (yang biasanya berakhiran `@rrcommunications...` atau domain resmi mereka).\n\n### **Kesimpulan**\n* **Perusahaan Asli:** R&R Communications yang bergerak di bidang PR/Komunikasi di Jakarta adalah perusahaan yang **sangat bisa dipercaya dan kredibel**.\n* **Jika Anda dihubungi via WA/Telegram untuk tugas sampingan:** Itu hampir dipastikan adalah **penipuan yang mengatasnamakan mereka**. Jangan mengirimkan uang atau data pribadi sensitif. \n\nJika Anda ingin memastikan kebenaran tawaran tersebut, sebaiknya hubungi R&R Communications secara langsung melalui kontak resmi mereka di situs web resmi atau akun LinkedIn resmi mereka."
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri PR agency Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Pemain Utama Industri PR Agency di Indonesia\n\nPerlu dicatat bahwa lanskap industri ini terus berubah, jadi informasi berikut adalah gambaran umum berdasarkan pengetahuan saya (bisa jadi sudah ada perubahan terkini yang saya tidak ketahui):\n\n## Agency PR Multinasional/Jaringan Global\n- **Edelman Indonesia**\n- **Weber Shandwick Indonesia**\n- **Ogilvy PR** (bagian dari Ogilvy Indonesia)\n- **FleishmanHillard Indonesia**\n- **Hill+Knowlton Strategies Indonesia**\n\n## Agency PR Lokal Ternama\n- **Maverick** - salah satu PR agency lokal yang cukup dikenal\n- **Inke Maris & Associates** - salah satu agency PR senior di Indonesia\n- **PR INDONESIA** - juga aktif sebagai media/komunitas industri PR\n- **Kiroyan Partners**\n- **IndoPacific Edelman** (sebelum merger penuh)\n\n## Boutique/Spesialis\nAda juga banyak agency boutique yang fokus pada niche tertentu seperti:\n- PR digital/social media\n- PR untuk sektor spesifik (F&B, teknologi, kesehatan, dll)\n- Agency yang fokus pada startup/tech PR\n\n## Catatan Penting\n- Industri PR Indonesia juga banyak diisi **konsultan independen** dan **freelancer** yang bekerja untuk brand-brand tertentu\n- Banyak perusahaan besar juga memiliki **in-house PR/comms team** yang kuat, bukan hanya mengandalkan agency eksternal\n- Assosiasi seperti **PERHUMAS** (Perhimpunan Hubungan Masyarakat Indonesia) juga berperan penting dalam industri ini\n\n**Rekomendasi**: Untuk informasi paling update dan akurat (termasuk ranking, portofolio klien, atau agency baru yang muncul), saya sarankan cek:\n- Laporan industri terbaru dari PR INDONESIA atau PERHUMAS\n- LinkedIn untuk melihat agency yang sedang aktif merekrut/growing\n- Award PR seperti PR Indonesia Awards untuk melihat siapa yang menang di kategori tertentu\n\nApakah Anda mencari informasi untuk keperluan tertentu (misalnya riset kompetitor, cari agency untuk klien, atau riset karir)? Saya bisa bantu lebih spesifik."
+    },
+    {
+      "promptText": "Who are the leading players in the PR agency industry in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "The Public Relations (PR) industry in Indonesia is dynamic and rapidly growing, driven by the country’s massive digital economy, high social media penetration, and complex regulatory landscape. \n\nThe leading players in Indonesia's PR agency industry can be categorized into **Global Multinational Networks** (which bring global standards and cross-border capabilities) and **Leading Local Independent Agencies** (which offer deep local insights, strong media relations, and government connections).\n\nHere are the leading PR agencies in Indonesia, categorized by their market positioning:\n\n---\n\n### 1. The Global Giants (Multinational Networks)\nThese agencies are preferred by multinational corporations (MNCs) and large Indonesian conglomerates looking for integrated, high-standard global campaigns.\n\n*   **Edelman Indonesia**\n    *   **Overview:** One of the oldest and largest international PR firms in Indonesia. Edelman is highly regarded for its corporate reputation management, crisis counseling, and public affairs.\n    *   **Key Strength:** Known for its annual *Edelman Trust Barometer* (Indonesia edition) and strong data-driven, research-backed strategy.\n*   **Ogilvy Indonesia**\n    *   **Overview:** Part of the WPP group, Ogilvy operates as an integrated agency where PR works closely with advertising and digital marketing. \n    *   **Key Strength:** Creative storytelling, influencer marketing, and large-scale consumer PR campaigns.\n*   **Weber Shandwick Indonesia**\n    *   **Overview:** Part of the Interpublic Group (IPG), Weber Shandwick is a dominant player in tech, consumer, and corporate PR.\n    *   **Key Strength:** Digital advocacy, content creation, and navigating complex corporate communications.\n*   **Burson Indonesia** (Formerly BCW / Hill & Knowlton)\n    *   **Overview:** Following global mergers (rebranding as Burson in 2024), this entity combines deep corporate affairs expertise with cutting-edge digital strategy.\n    *   **Key Strength:** Crisis management, government relations, and high-stakes corporate communications.\n\n---\n\n### 2. The Local Powerhouses (Indonesian-Owned)\nLocal agencies often have a competitive edge in Indonesia due to their deep-rooted relationships with local journalists, editors, government officials, and community leaders.\n\n*   **Praxis**\n    *   **Overview:** One of the most successful and award-winning independent PR agencies in Indonesia. \n    *   **Key Strength:** Highly versatile. They are market leaders in the **tech and startup** sectors, while also handling massive corporate, consumer, and public affairs clients.\n*   **Inke Maris & Associates**\n    *   **Overview:** Founded in 1986, this is one of the pioneer boutique PR agencies in Indonesia.\n    *   **Key Strength:** Highly respected for **Government Relations**, public affairs, and strategic communications for state-owned enterprises (BUMN) and multinational clients.\n*   **Imogen PR**\n    *   **Overview:** A highly active independent agency affiliated with the global PR network PROI Worldwide. \n    *   **Key Strength:** Consumer PR, brand activation, and digital PR. The agency’s leadership is highly influential in APPRI (the Indonesian PR Association).\n*   **Fortune PR**\n    *   **Overview:** Part of the publicly listed FORU group, Fortune PR is a legacy local agency that pioneered integrated communications in Indonesia.\n    *   **Key Strength:** Integrated marketing communications (IMC), healthcare PR, and consumer brand campaigns.\n*   **Kiroyan Partners**\n    *   **Overview:** A highly specialized corporate affairs and public affairs consultancy.\n    *   **Key Strength:** **Crisis management**, stakeholder engagement, ESG (Environmental, Social, and Governance) consulting, and reputation risk analysis.\n\n---\n\n### 3. Boutique & Tech-Focused Specialists\nWith Indonesia’s booming digital economy, several boutique agencies have emerged as leaders in handling fintech, e-commerce, and venture capital clients.\n\n*   **Artemis IP (Artemis Impact)**: Known for sustainability, ESG communication, and impact-driven PR.\n*   **IDPR (Indonesia Public Relations)**: Strong in media relations and corporate communications for local businesses.\n*   **SAC Indonesia**: An integrated digital and PR agency focusing on youth-centric and digital-first campaigns.\n\n---\n\n### Key Trends Driving the Industry in Indonesia:\n1.  **Government & Public Affairs:** Indonesia is a heavily regulated market. Agencies like Inke Maris, Burson, and Kiroyan Partners are heavily sought after for navigating local laws and state-owned enterprise (BUMN) relations.\n2.  **Influencer and KOL Marketing:** PR agencies in Indonesia are increasingly acting as talent managers and influencer strategists, as Key Opinion Leaders (KOLs) hold massive sway over Indonesian consumers.\n3.  **Local Industry Association:** Most reputable agencies in the country are members of **APPRI** (Asosiasi Perusahaan Public Relations Indonesia), which regulates industry standards and ethics."
+    },
+    {
+      "promptText": "Who are the leading players in the PR agency industry in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Which companies dominate the PR agency market in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# PR Agency Landscape in Indonesia\n\nI can share what's generally known about this market, though I'd recommend verifying current standings since agency rankings shift over time.\n\n**International Network Agencies with Indonesia Operations:**\n- Edelman Indonesia\n- Weber Shandwick (through local partnerships)\n- FleishmanHillard\n- Ogilvy Public Relations\n- Hill+Knowlton Strategies\n- BCW (Burson Cohn & Wolfe)\n\n**Prominent Local/Regional Agencies:**\n- Maverick Indonesia\n- Fortune Indonesia (part of Fortune PR Group)\n- IMOGEN PR\n- Metta Wangsa\n- PR agencies under larger local holding groups\n\n**Important Caveats:**\n\n1. **Market fragmentation** - Indonesia's PR market is quite fragmented with no single dominant player; different agencies lead in different sectors (corporate, consumer, government relations, tech/startup PR)\n\n2. **Data currency** - My training data has a cutoff, and agency market positions, mergers, and new entrants (especially digital-first and influencer-focused agencies) change frequently\n\n3. **Sector specialization** - Some agencies dominate specific niches (e.g., tech PR, government/public affairs, consumer brands) rather than the market overall\n\n4. **Local vs. network distinction** - International networks often operate through local affiliates/licenses rather than wholly-owned offices\n\n**For accurate, current information, I'd suggest:**\n- PR industry publications like PRWeek Asia or Mix Marketing Communications\n- Indonesian PR associations (Perhumas)\n- Industry award winners (Indonesia PR awards, PRIA)\n- Recent market reports from firms like Provoke Media\n\nWould you like me to focus on a specific sector (tech, corporate, consumer) or discuss what factors typically determine PR agency success in the Indonesian market?"
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri PR agency Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Brand PR agency mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Agensi PR & Brand Communication Terkemuka di Indonesia\n\nBerikut beberapa agensi PR yang dikenal memiliki reputasi kuat dan sering menjadi rujukan di industri Indonesia:\n\n## Agensi PR Lokal Besar\n- **Maverick** – salah satu agensi PR/komunikasi strategis terbesar, menangani klien korporat dan brand besar\n- **Weber Shandwick Indonesia** – jaringan global dengan operasi lokal kuat\n- **Fortune Indonesia** – salah satu agensi PR tertua dan cukup dihormati\n- **IMOGEN** – fokus pada corporate communication dan brand reputation\n\n## Jaringan Global dengan Kantor Indonesia\n- **Edelman Indonesia** – bagian dari Edelman global, kuat di corporate & crisis communication\n- **Ogilvy PR Indonesia** – bagian dari jaringan Ogilvy\n- **Burson (dulu Burson-Marsteller)** – jaringan global dengan reputasi kuat\n\n## Catatan Penting\n\nPerlu saya sampaikan dengan jujur:\n1. **\"Market leader\"** di industri PR sulit ditentukan secara pasti karena tidak ada data pangsa pasar publik yang terverifikasi seperti di industri consumer goods\n2. Ranking bisa berbeda tergantung **kategori** (corporate PR, digital PR, crisis management, entertainment PR, dll)\n3. Informasi saya mungkin **tidak update** karena industri ini dinamis—ada merger, akuisisi, atau pergantian kepemimpinan pasar\n\n## Saran\n\nUntuk mendapatkan info paling akurat dan terkini, saya sarankan:\n- Cek laporan tahunan **PR Week Asia Awards** atau **Indonesia PR & Communications Awards**\n- Lihat ranking dari **PRWeek** atau **Campaign Asia**\n- Tanyakan langsung ke asosiasi **PERHUMAS** (Perhimpunan Hubungan Masyarakat Indonesia)\n\nApakah Anda mencari agensi untuk kategori tertentu (misalnya corporate, tech startup, F&B, atau entertainment)? Saya bisa bantu persempit rekomendasinya."
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri PR agency Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Industri *Public Relations* (PR) atau hubungan masyarakat di Indonesia sangat dinamis dan berkembang pesat, terutama dengan adanya transformasi digital. Pemain utama di industri ini umumnya dibagi menjadi dua kategori besar: **Agensi Multinasional (Global)** yang memiliki jaringan internasional, dan **Agensi Lokal/Independen** yang memiliki pemahaman mendalam tentang lanskap budaya dan media lokal.\n\nBerikut adalah beberapa pemain utama dalam industri PR agency di Indonesia:\n\n---\n\n### 1. Agensi Multinasional (Global Networks)\nAgensi-agensi ini didukung oleh jaringan global, metodologi riset yang kuat, dan sering kali menangani klien-klien korporasi skala besar (multinasional).\n\n*   **Edelman Indonesia**\n    *   **Profil:** Salah satu agensi PR terbesar di dunia dan pionir di Indonesia. Edelman terkenal dengan laporan tahunan *\"Edelman Trust Barometer\"* yang menjadi acuan industri.\n    *   **Keahlian:** Komunikasi korporat, manajemen krisis, hubungan pemerintah, komunikasi digital, dan sektor teknologi.\n*   **Burson (sebelumnya BCW - Burson Cohn & Wolfe / Hill & Knowlton)**\n    *   **Profil:** Bagian dari raksasa periklanan WPP. Setelah merger global baru-baru ini, entitas ini memperkuat posisinya sebagai salah satu agensi komunikasi strategis terbesar di dunia dan Indonesia.\n    *   **Keahlian:** *Public affairs*, komunikasi krisis, korporat, dan komunikasi kebijakan publik.\n*   **Ogilvy Indonesia (PR & Influence)**\n    *   **Profil:** Juga bagian dari WPP. Ogilvy mengintegrasikan PR dengan periklanan dan pemasaran digital secara sangat baik (*integrated marketing*).\n    *   **Keahlian:** PR Kreatif, manajemen reputasi, advokasi merek, dan kampanye media sosial.\n*   **Weber Shandwick Indonesia**\n    *   **Profil:** Bagian dari Interpublic Group (IPG). Terkenal dengan pendekatan berbasis data dan konten kreatif.\n    *   **Keahlian:** Komunikasi konsumen (*lifestyle*), teknologi, kesehatan (*healthcare*), dan manajemen krisis.\n*   **Zeno Group Indonesia**\n    *   **Profil:** Saudara kandung Edelman (di bawah DJE Holdings), namun beroperasi secara independen. Zeno sangat populer di kalangan merek anak muda dan teknologi.\n    *   **Keahlian:** Komunikasi digital, *influencer marketing*, dan komunikasi merek (*brand communications*).\n\n---\n\n### 2. Agensi Lokal / Independen Terkemuka\nAgensi-agensi lokal ini tidak kalah bersaing dengan pemain global. Mereka memiliki jaringan media lokal yang sangat kuat dan pemahaman mendalam tentang dinamika sosial-politik di Indonesia.\n\n*   **Inke Maris & Associates**\n    *   **Profil:** Didirikan oleh mendiang tokoh PR legendaris Indonesia, Inke Maris, pada tahun 1986. Merupakan salah satu agensi PR lokal tertua dan paling dihormati.\n    *   **Keahlian:** Hubungan pemerintah (*government relations*), komunikasi korporat, isu-isu strategis, dan manajemen krisis.\n*   **Maverick Indonesia**\n    *   **Profil:** Didirikan pada tahun 2002, Maverick terkenal dengan pendekatan komunikasinya yang jujur, kreatif, dan tidak konvensional. Mereka sangat aktif dalam edukasi industri PR di Indonesia.\n    *   **Keahlian:** Manajemen krisis, pelatihan media, komunikasi teknologi, dan advokasi isu.\n*   **Imogen PR**\n    *   **Profil:** Perwakilan dari PROI Worldwide (jaringan agensi PR independen terbesar di dunia) di Indonesia. Sering memenangkan penghargaan lokal dan regional.\n    *   **Keahlian:** PR konsumen, komunikasi digital, dan hubungan media (*media relations*).\n*   **Praxis**\n    *   **Profil:** Agensi PR lokal yang berkembang pesat dengan pendekatan berbasis data dan hasil yang terukur.\n    *   **Keahlian:** Komunikasi korporat, startup & teknologi, dan riset persepsi publik.\n*   **Fortune PR**\n    *   **Profil:** Merupakan bagian dari Rajawali Corpora (FORU). Salah satu pemain lokal senior yang memiliki sejarah panjang dalam kampanye PR berskala nasional.\n    *   **Keahlian:** Komunikasi pemasaran, manajemen isu, dan kampanye publik terintegrasi.\n*   **Piar Consulting**\n    *   **Profil:** Sangat dikenal di ekosistem startup teknologi, modal ventura (*venture capital*), dan ekonomi digital di Indonesia.\n    *   **Keahlian:** PR untuk startup, *growth hacking* melalui PR, dan komunikasi korporat teknologi.\n\n---\n\n### 3. Spesialis Komunikasi Strategis & Public Affairs\nAda juga agensi yang sangat spesifik menangani isu-isu sensitif, kebijakan publik, dan hubungan tingkat tinggi.\n\n*   **Kiroyan Partners**\n    *   **Profil:** Spesialis dalam urusan publik (*public affairs*) dan komunikasi reputasi korporat.\n    *   **Keahlian:** Analisis risiko sosial-politik, *Corporate Social Responsibility* (CSR) strategis, hubungan pemangku kepentingan (*stakeholder engagement*), dan penanganan krisis lingkungan/sosial.\n\n### Mengapa Industri Ini Terus Tumbuh di Indonesia?\nPemain-pemain utama ini sukses karena mereka tidak lagi hanya mengirimkan siaran pers (*press release*), melainkan telah bertransformasi menjadi **konsultan komunikasi strategis** yang mengintegrasikan:\n1.  **Digital PR & SEO:** Memastikan reputasi klien baik di dunia maya.\n2.  **Influencer & KOL Management:** Menghubungkan merek dengan sosok berpengaruh.\n3.  **Crisis & Issue Management:** Mengingat netizen Indonesia sangat aktif, manajemen krisis digital menjadi layanan yang sangat dicari."
+    },
+    {
+      "promptText": "Which companies dominate the PR agency market in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Which companies dominate the PR agency market in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "The PR agency market in Indonesia is dynamic, driven by the country’s rapid digital transformation, a massive consumer class, and a complex regulatory environment. The market is dominated by a mix of **global multinational networks** and **highly sophisticated local independent agencies**. \n\nHere is a breakdown of the dominant players in the Indonesian PR landscape, categorized by their market positioning.\n\n---\n\n### 1. The Global Giants (Multinational Networks)\nThese agencies dominate high-value corporate accounts, MNCs (Multinational Corporations), and cross-border campaigns. They have deep pockets, global tools, and strong integration with advertising and digital networks.\n\n*   **Edelman Indonesia**\n    *   **Overview:** Arguably the most prominent global PR brand in Indonesia. Edelman is highly respected for its thought leadership (such as the annual Edelman Trust Barometer) and its ability to handle complex corporate affairs, crisis management, and brand PR.\n    *   **Strength:** Corporate reputation, crisis communication, and data-driven strategy.\n*   **Ogilvy Indonesia (PR & Influence)**\n    *   **Overview:** Part of the WPP network, Ogilvy is a massive creative and PR powerhouse in Jakarta. They excel at integrated campaigns where PR, social media, and advertising overlap.\n    *   **Strength:** Creative PR, influencer marketing, and large-scale consumer campaigns.\n*   **Burson Indonesia (formerly BCW & Hill & Knowlton)**\n    *   **Overview:** Following the global merger of BCW (Burson Cohn & Wolfe) and Hill & Knowlton in 2024, Burson operates as a massive force in Jakarta. They are a go-to agency for government relations, public affairs, and corporate communications.\n    *   **Strength:** Public affairs, government relations, and corporate communications.\n*   **Weber Shandwick Indonesia**\n    *   **Overview:** Part of the Interpublic Group (IPG), Weber Shandwick has a strong footprint in Jakarta, particularly in technology, healthcare, and consumer PR.\n    *   **Strength:** Digital PR, content creation, and tech-sector client management.\n\n---\n\n### 2. The Powerhouse Local Independents\nLocal agencies in Indonesia are exceptionally strong because PR in the country relies heavily on *silaturahmi* (relationship-building) with local media, government officials, and communities—something local agencies excel at.\n\n*   **Maverick Indonesia**\n    *   **Overview:** Established in 1999, Maverick is widely regarded as the premier independent PR agency in Indonesia. They are known for their crisis management expertise, media training, and representing major global tech giants (like Google and Spotify) in the local market.\n    *   **Strength:** Crisis control, media relations, and tech/consumer PR.\n*   **Inke Maris & Associates**\n    *   **Overview:** Founded in 1986 by the late veteran journalist Inke Maris, this is one of the oldest and most respected local PR firms. They have deep ties with the Indonesian government, state-owned enterprises (BUMN), and major local conglomerates.\n    *   **Strength:** Government relations, public sector PR, and strategic advisory.\n*   **Kiroyan Partners**\n    *   **Overview:** A highly specialized corporate communications and public affairs consulting firm. They do not typically handle \"lifestyle\" PR; instead, they focus on high-stakes reputation management, ESG (Environmental, Social, and Governance), and community relations for mining, energy, and infrastructure companies.\n    *   **Strength:** Public affairs, ESG, stakeholder engagement, and conflict resolution.\n*   **Praxis**\n    *   **Overview:** A fast-growing, highly active local agency that has won numerous awards. Praxis is known for its agility, strong media relations, and data-driven insights. They handle a mix of corporate, tech, and public sector clients.\n    *   **Strength:** Media relations, digital PR, and public education campaigns.\n*   **Imogen PR**\n    *   **Overview:** A top-tier local agency that is the Indonesian partner of the PROI Worldwide network. They are highly regarded for marketing PR, consumer goods (FMCG), and brand activations.\n    *   **Strength:** Consumer PR, influencer engagement, and event integration.\n\n---\n\n### 3. Key Market Drivers: What Makes These Agencies Dominant?\n\nTo dominate the Indonesian PR market, these agencies must master several localized challenges:\n\n1.  **Media Fragmentation:** Indonesia has thousands of media outlets spread across its massive archipelago. Dominant agencies must have the capability to run national campaigns that reach beyond Jakarta to tier-2 and tier-3 cities.\n2.  **Government & Regulatory Relations:** With shifting policies in sectors like technology, mining, and FMCG, agencies with strong **public affairs** capabilities (like Burson, Inke Maris, and Kiroyan) hold a massive competitive advantage.\n3.  **Digital and Influencer Marketing (KOLs):** Indonesia is one of the world's most active social media markets (Instagram, TikTok, X). Dominant PR agencies have had to transition into digital agencies, managing Key Opinion Leaders (KOLs) and viral social media campaigns alongside traditional press releases."
+    },
+    {
+      "promptText": "Apa saja PR agency lokal di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# PR Agency Lokal di Indonesia\n\nBerikut beberapa PR agency lokal yang cukup dikenal di Indonesia:\n\n## Agency Besar & Established\n\n1. **Maverick Indonesia** - salah satu PR agency terkemuka, menangani klien korporat besar\n2. **Fortune Indonesia** - PR agency dengan pengalaman panjang di berbagai sektor\n3. **Weber Shandwick Indonesia** - jaringan global dengan operasi lokal\n4. **Edelman Indonesia** - bagian dari network global, kuat di corporate communications\n5. **Imogen Indonesia** - fokus pada corporate & financial PR\n\n## Agency Menengah & Boutique\n\n6. **PR INDONESIA** - selain jadi agency juga media komunitas PR\n7. **Inspiro Consulting** - PR & marketing communications\n8. **Kinerja Consulting** - komunikasi korporat dan public affairs\n9. **IndoPacific Edelman** - joint venture untuk pasar Indonesia\n10. **Kastari Sentra Komunikasi** - PR dan event management\n\n## Spesialisasi Digital PR & Influencer\n\n11. **Loveable People** - fokus digital PR dan influencer marketing\n12. **Praxis Indonesia** - integrated communications\n\n## Tips Memilih PR Agency:\n\n- **Sesuaikan dengan industri** - beberapa agency punya spesialisasi (F&B, teknologi, finance, dll)\n- **Cek portfolio & track record** - lihat klien yang pernah ditangani\n- **Pertimbangkan skala** - agency besar vs boutique sesuai budget dan kebutuhan\n- **Network media** - pastikan agency punya koneksi kuat dengan media relevan\n\nApakah Anda mencari PR agency untuk industri atau kebutuhan spesifik? Saya bisa berikan rekomendasi yang lebih terarah."
+    },
+    {
+      "promptText": "Brand PR agency mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Di Indonesia, industri Public Relations (PR) sangat dinamis. Predikat \"market leader\" atau \"paling terkenal\" biasanya dibagi menjadi dua kategori besar: **Agensi Global (Multinasional)** yang memiliki jaringan internasional, dan **Agensi Lokal/Independen** yang memiliki pemahaman mendalam tentang lanskap sosial-politik Indonesia.\n\nBerikut adalah daftar PR agency yang dianggap sebagai market leader dan paling terkenal di Indonesia saat ini:\n\n---\n\n### A. Raksasa Global (Global Giants)\nAgensi-agensi ini biasanya menangani perusahaan multinasional (MNC), tech giants, dan kampanye berskala besar.\n\n1. **Edelman Indonesia**\n   * **Reputasi:** Bisa dibilang sebagai PR agency global terbesar dan paling terkenal di Indonesia. Mereka terkenal dengan laporan tahunan *\"Edelman Trust Barometer\"* yang menjadi rujukan industri global.\n   * **Keahlian:** Corporate PR, Crisis Management, Government Relations, dan Digital PR.\n   * **Klien:** Google, perusahaan energi besar, dan berbagai perusahaan Fortune 500.\n\n2. **Ogilvy PR Indonesia (bagian dari WPP Group)**\n   * **Reputasi:** Ogilvy adalah nama legendaris di dunia periklanan dan PR. Di Indonesia, divisi PR mereka sangat kuat karena terintegrasi dengan divisi kreatif dan digital.\n   * **Keahlian:** Creative PR, Consumer PR, dan Brand Marketing.\n\n3. **Weber Shandwick Indonesia**\n   * **Reputasi:** Salah satu jaringan PR global terbesar yang sangat aktif di Indonesia. Mereka terkenal sangat kuat dalam memanfaatkan data dan analisis untuk kampanye PR.\n   * **Keahlian:** Tech PR, Corporate Communications, dan Healthcare.\n\n---\n\n### B. Agensi Lokal/Independen Terkemuka (Local Champions)\nAgensi lokal ini tidak kalah kelas dengan agensi global. Mereka sering memenangkan penghargaan regional (seperti Campaign Asia atau PR Awards) dan sangat ahli dalam navigasi media lokal serta isu pemerintahan.\n\n1. **Inke Maris & Associates (IM&A)**\n   * **Reputasi:** Salah satu pionir PR agency independen tertua dan paling dihormati di Indonesia (didirikan oleh tokoh jurnalis senior alm. Inke Maris).\n   * **Keahlian:** Government Relations, Strategic Advisory, Crisis Management, dan Corporate Communications. Sangat kuat untuk sektor infrastruktur, finansial, dan pemerintahan.\n\n2. **Praxis**\n   * **Reputasi:** Agensi lokal yang sangat populer di kalangan industri teknologi, startup, dan brand anak muda. Praxis terkenal dengan pendekatan komunikasinya yang kreatif, modern, dan blak-blakan (*insightful*).\n   * **Keahlian:** Tech PR, Startup Launch, Media Relations, dan Public Affairs.\n\n3. **Imogen PR**\n   * **Reputasi:** Agensi lokal yang sangat konsisten memenangkan penghargaan nasional dan regional. Imogen adalah representasi Indonesia di PROI Worldwide (jaringan agensi PR independen global).\n   * **Keahlian:** Consumer PR, Brand Activation, dan Influencer Marketing.\n\n4. **Kiroyan Partners**\n   * **Reputasi:** Spesialis khusus di bidang *Corporate Affairs* dan komunikasi strategis. Mereka adalah rujukan utama jika perusahaan menghadapi krisis besar, masalah reputasi, atau isu hubungan masyarakat dengan komunitas (CSR).\n   * **Keahlian:** Crisis PR, Stakeholder Engagement, dan ESG/Sustainability Communication.\n\n---\n\n### C. Pemimpin Berdasarkan Spesialisasi\n\n* **Terkuat di Bidang Media Monitoring & Data-Driven PR:** **Indonesia Indicator (IGICO)** dan **Binokular**. Mereka menguasai pasar analisis media dan data intelijen komunikasi di Indonesia yang sering digunakan oleh instansi pemerintah dan korporasi besar.\n\n---\n\n### Kesimpulan: Siapa yang Terbaik?\n* Jika Anda mencari **prestise global dan riset berskala internasional**, **Edelman** dan **Ogilvy** adalah pemimpinnya.\n* Jika Anda membutuhkan **koneksi mendalam dengan pemerintah dan pemahaman lokal yang kuat**, **Inke Maris & Associates** atau **Kiroyan Partners** adalah rajanya.\n* Jika Anda adalah **perusahaan teknologi/startup** yang butuh agensi yang lincah dan kreatif, **Praxis** adalah salah satu yang paling populer saat ini."
+    },
+    {
+      "promptText": "Brand PR agency mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa saja PR agency lokal di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa saja PR agency lokal di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Brightminds Communications, Iris, Bening Communication",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Indonesia memiliki industri hubungan masyarakat (Public Relations/PR) yang sangat dinamis. Selain agensi multinasional, banyak **PR agency lokal** yang memiliki reputasi luar biasa, pemahaman mendalam tentang lanskap media lokal, serta jaringan yang kuat dengan pemerintah dan komunitas di Indonesia.\n\nBerikut adalah beberapa PR agency lokal terkemuka di Indonesia:\n\n### 1. Maverick Indonesia\n*   **Profil:** Didirikan pada tahun 2002, Maverick adalah salah satu PR agency independen terbesar dan paling disegani di Indonesia. Mereka terkenal dengan pendekatan yang strategis, kreatif, dan berbasis data.\n*   **Keahlian:** Manajemen krisis (*crisis management*), komunikasi korporat, *media relations*, *digital PR*, dan pelatihan media (*media training*).\n*   **Klien terkenal:** Netflix, Spotify, Airbus, GoTo.\n\n### 2. Inke Maris & Associates (IM&A)\n*   **Profil:** Didirikan oleh mendiang tokoh jurnalis senior Inke Maris pada tahun 1986. Ini adalah salah satu agensi PR lokal tertua dan pionir di Indonesia.\n*   **Keahlian:** Hubungan pemerintah (*government relations*), komunikasi publik/sosial, penanganan isu sensitif, komunikasi korporat, dan manajemen acara strategis.\n*   **Klien terkenal:** Berbagai kementerian RI, BUMN, serta perusahaan multinasional di sektor energi dan infrastruktur.\n\n### 3. Kiroyan Partners\n*   **Profil:** Didirikan oleh Noke Kiroyan, agensi ini sangat spesifik bergerak di bidang *Public Affairs* dan komunikasi strategis. Mereka tidak fokus pada PR gaya hidup, melainkan pada isu-isu korporat yang kompleks.\n*   **Keahlian:** Manajemen reputasi, hubungan pemangku kepentingan (*stakeholder engagement*), resolusi konflik, komunikasi CSR/keberlanjutan, dan konsultasi isu politik-ekonomi.\n*   **Klien terkenal:** Perusahaan pertambangan, energi, perkebunan, dan industri berat lainnya.\n\n### 4. Praxis\n*   **Profil:** Praxis adalah agensi komunikasi strategis lokal yang dikenal sangat analitis dan taktis. Mereka sering merilis riset/survei independen untuk mendukung kampanye PR mereka.\n*   **Keahlian:** Komunikasi korporat, teknologi, edukasi konsumen, manajemen krisis, dan advokasi kebijakan.\n*   **Klien terkenal:** Berbagai perusahaan teknologi, *startup unicorn*, keuangan, dan edukasi.\n\n### 5. Imogen PR\n*   **Profil:** Agensi lokal yang sangat aktif dan merupakan representatif eksklusif dari PROI Worldwide (jaringan PR independen global) di Indonesia. Dipimpin oleh Jojo S. Nugroho, tokoh asosiasi PR Indonesia (APPRI).\n*   **Keahlian:** PR konsumen (*consumer PR*), komunikasi pemasaran, *digital influencer marketing*, dan media relations.\n*   **Klien terkenal:** Brand FMCG (Fast Moving Consumer Goods), elektronik, otomotif, dan pariwisata.\n\n### 6. ID COMM (Indonesia Communications)\n*   **Profil:** Didirikan oleh praktisi PR senior, Sari Soegondo. ID COMM dikenal memiliki kepedulian tinggi pada isu-isu sosial, pembangunan, dan kesehatan masyarakat.\n*   **Keahlian:** Kampanye perubahan sosial, komunikasi publik, hubungan media, advokasi kebijakan, dan kemitraan strategis dengan LSM/NGO.\n*   **Klien terkenal:** UNICEF, WHO, berbagai kementerian, dan yayasan nirlaba internasional.\n\n### 7. Media Buffet PR\n*   **Profil:** Agensi PR lokal yang lebih modern dan lincah, sangat populer di kalangan perusahaan teknologi, *startup*, dan *fintech*. Mereka menggabungkan PR konvensional dengan *Search Engine Optimization* (SEO) dan pertumbuhan digital.\n*   **Keahlian:** *Digital PR*, *growth hacking PR*, hubungan media untuk startup, dan manajemen media sosial.\n*   **Klien terkenal:** Startup teknologi keuangan, e-commerce, dan brand gaya hidup modern.\n\n### 8. Bening Communication\n*   **Profil:** Agensi lokal yang memiliki spesialisasi kuat di industri teknologi informasi, telekomunikasi, dan elektronik konsumen.\n*   **Keahlian:** Peluncuran produk teknologi, hubungan media khusus jurnalis tekno, dan edukasi pasar.\n*   **Klien terkenal:** Brand smartphone global, penyedia layanan cloud, dan perusahaan keamanan siber.\n\n---\n\n### Mengapa Memilih PR Agency Lokal di Indonesia?\n1.  **Pemahaman Budaya (*Local Insight*):** Mereka memahami sensitivitas budaya, bahasa daerah, dan selera audiens Indonesia di berbagai wilayah.\n2.  **Hubungan Media yang Erat:** Konsultan PR lokal biasanya memiliki hubungan personal yang sangat baik dengan para pemimpin redaksi dan jurnalis senior di Indonesia.\n3.  **Navigasi Regulasi:** Untuk sektor yang sensitif (seperti kesehatan, energi, atau keuangan), agensi lokal memiliki pemahaman yang lebih baik tentang birokrasi dan cara berkomunikasi dengan pemerintah Indonesia."
+    }
+  ]
+}

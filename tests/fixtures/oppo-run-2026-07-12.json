@@ -1,0 +1,598 @@
+{
+  "note": "Raw OPPO run captured 2026-07-12 from production. At run time the project had ONE competitor row: 'Samsung, Vivo, iPhone, Huawei, RealMe' (comma-joined), which is why all competitorMentions were false. Use split names in ParseContext when asserting expected extraction.",
+  "runId": "cmrhhj2yx000vk004896r2cfd",
+  "runCreatedAt": "2026-07-12T07:41:41.961Z",
+  "brandName": "OPPO",
+  "industry": "Mobile phone",
+  "competitorNamesAtRunTime": [
+    "Samsung, Vivo, iPhone, Huawei, RealMe"
+  ],
+  "competitorNamesCurrent": [
+    "Samsung",
+    "Vivo",
+    "iPhone",
+    "Huawei",
+    "RealMe"
+  ],
+  "results": [
+    {
+      "promptText": "What are the best Mobile phone companies in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 3,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Popular Mobile Phone Companies/Brands in Indonesia\n\nBased on market presence and popularity, here are the leading mobile phone brands in Indonesia:\n\n## Top Market Leaders\n\n1. **Samsung** - Consistently one of the top brands, strong across all price segments from budget to premium (Galaxy A, S, and Z series)\n\n2. **Xiaomi** - Very popular for offering excellent specs at competitive prices; Redmi and Poco series are especially strong sellers\n\n3. **Oppo** - Major player known for camera-focused phones and strong marketing/retail presence throughout Indonesia\n\n4. **Vivo** - Similar to Oppo, competitive in the mid-range segment with good camera features\n\n5. **Realme** - Rapidly growing brand, popular among younger consumers for value-for-money devices\n\n6. **Apple** - Strong presence in the premium/flagship segment, popular among higher-income consumers\n\n## Other Notable Brands\n\n- **Infinix** - Growing budget-friendly option\n- **Asus** (particularly ROG Phone series) - Popular among gaming enthusiasts\n- **Advan** - Local Indonesian brand offering budget devices\n\n## Factors to Consider\n\nThe \"best\" choice depends on your priorities:\n- **Budget-conscious**: Xiaomi, Realme, Infinix\n- **Camera quality**: Oppo, Vivo, Samsung\n- **Premium/Status**: Apple, Samsung flagship models\n- **Gaming**: Asus ROG Phone, Poco (Xiaomi)\n- **After-sales service network**: Samsung and Oppo have extensive service centers across Indonesia\n\n**Note:** Market rankings can shift year to year, and pricing/availability may vary by region within Indonesia. For the most current information, I'd recommend checking recent sales data from sources like IDC or Counterpoint Research, or Indonesian tech review sites for updated comparisons.\n\nWould you like more specific recommendations based on a particular budget or use case?"
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan Mobile phone terbaik di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 6,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Rekomendasi Brand Smartphone Terbaik di Indonesia\n\nBerikut beberapa merek ponsel yang populer dan direkomendasikan di pasar Indonesia berdasarkan kategori:\n\n## 🏆 Kategori Flagship/Premium\n- **Samsung** (Galaxy S series, Z Fold/Flip) - Ekosistem lengkap, kamera bagus, purna jual kuat\n- **Apple** (iPhone) - Performa stabil, ekosistem iOS, resale value tinggi\n- **Xiaomi** (seri Ultra/Pro) - Spek tinggi dengan harga lebih terjangkau dari kompetitor\n\n## 💰 Kategori Mid-Range (Value for Money)\n- **Xiaomi/Redmi/POCO** - Rasio harga-performa terbaik\n- **Samsung** (seri A) - Reliable, mudah cari sparepart\n- **Oppo/Vivo** - Kamera bagus untuk selfie, desain menarik\n- **Realme** - Spek gaming oke di harga terjangkau\n\n## 📸 Fokus Kamera\n- **Samsung Galaxy S/Ultra series**\n- **Oppo Find X series**\n- **Vivo X series**\n- **iPhone Pro series**\n\n## 🎮 Fokus Gaming\n- **ASUS ROG Phone**\n- **POCO F series**\n- **Xiaomi/Redmi Note series** (Snapdragon variant)\n\n## 💵 Budget/Entry Level\n- **Xiaomi Redmi series**\n- **Samsung Galaxy A/M series**\n- **Infinix**\n- **Realme C series**\n\n---\n\n**Pertanyaan untuk rekomendasi lebih spesifik:**\n1. Berapa budget yang Anda siapkan?\n2. Prioritas utama: kamera, gaming, baterai, atau daya tahan?\n3. Preferensi ekosistem (Android/iOS)?\n\nDengan info tersebut, saya bisa berikan rekomendasi model spesifik yang lebih sesuai kebutuhan Anda! 😊"
+    },
+    {
+      "promptText": "What are the best Mobile phone companies in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 4,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "When discussing \"mobile phone companies\" in Indonesia, the market is divided into two categories: **Smartphone Manufacturers (the devices)** and **Mobile Network Operators (the carriers/service providers)**. \n\nHere is a breakdown of the best companies in both categories as of 2024.\n\n---\n\n### Part 1: Best Smartphone Brands in Indonesia (Devices)\nThe Indonesian smartphone market is highly competitive, dominated by Android brands, though Apple holds a prestigious status symbol. \n\n#### 1. Samsung (Best All-Rounder & Premium Android)\n*   **Market Position:** Historically the market leader or close second.\n*   **Why they are the best:** Samsung offers the most reliable after-sales service in Indonesia. They dominate the premium segment with the Galaxy S-series and Z-Fold/Flip, while their Galaxy A-series is incredibly popular for mid-range and budget buyers. \n\n#### 2. Oppo & Vivo (Best for Camera & Offline Buying)\n*   **Market Position:** Consistently in the top 3 for market share.\n*   **Why they are the best:** Oppo and Vivo have an massive offline retail footprint in Indonesia—you can find their shops in almost every small town. They are highly favored by locals for their selfie cameras, sleek designs, and aggressive marketing.\n\n#### 3. Xiaomi (Best Value for Money)\n*   **Market Position:** Highly popular among youth and tech enthusiasts.\n*   **Why they are the best:** Under its Xiaomi, Redmi, and POCO brands, it offers the best hardware specifications (processors, screens) for the lowest price. \n\n#### 4. Infinix / Tecno / Itel (Best Ultra-Budget)\n*   **Market Position:** Fastest growing brands in Indonesia (under Transsion Holdings).\n*   **Why they are the best:** They have taken over the entry-level market (under IDR 2 million / $130 USD), offering high-refresh-rate screens and large batteries targeted at budget mobile gamers.\n\n#### 5. Apple (The Ultimate Status Symbol)\n*   **Market Position:** Leader in the premium segment.\n*   **Why they are the best:** iPhones are highly coveted in Indonesia as a status symbol. They hold their resale value better than any Android phone. \n*   *Note:* Apple devices must be officially registered with the Indonesian government (IMEI registration) to work on local networks.\n\n---\n\n### Part 2: Best Mobile Network Operators (Carriers)\nIf you are looking for the best cellular service, data packages, and coverage, these are the top operators.\n\n#### 1. Telkomsel (Best Coverage & Speed)\n*   **The Verdict:** The undisputed king of telecommunications in Indonesia.\n*   **Pros:** It has the widest coverage by far. If you travel outside of Java (to Bali, Sumatra, Sulawesi, Papua, or remote islands), Telkomsel is often the *only* network with a stable signal. They also have the fastest 4G/5G speeds.\n*   **Cons:** The most expensive packages.\n*   **Sub-brands:** **by.U** (a digital-first, cheaper prepaid card utilizing Telkomsel's network, very popular with Gen Z).\n\n#### 2. Indosat Ooredoo Hutchison / IOH (Best Value for Money)\n*   **The Verdict:** Formed by the merger of Indosat (IM3) and Tri (3), it is now the second-largest operator.\n*   **Pros:** Great balance of price and coverage. It is highly popular in urban areas and offers very cheap, large-quota data packages.\n*   **Cons:** Coverage in remote areas or inside deep concrete buildings can be spotty compared to Telkomsel.\n\n#### 3. XL Axiata (Best for Urban Areas & Java)\n*   **The Verdict:** A strong competitor to Telkomsel, especially on the island of Java.\n*   **Pros:** Very fast speeds in major cities (Jakarta, Surabaya, Bandung) and reliable internet packages.\n*   **Cons:** Signal strength drops significantly once you go deep into rural areas outside Java.\n*   **Sub-brands:** **AXIS** (cheaper packages aimed at students).\n\n#### 4. Smartfren (Cheapest Unlimited Data)\n*   **The Verdict:** A budget-focused operator.\n*   **Pros:** Extremely cheap \"unlimited\" data packages.\n*   **Cons:** They operate on a different frequency band, meaning some older international phones might not support their network. Coverage is mostly limited to major cities.\n\n---\n\n### Summary Recommendation for Expats/Tourists:\n*   **If you want the best phone:** Buy a **Samsung** (for Android) or **iPhone** (if budget allows) from official local distributors like *iBox* or *Erafone* to avoid IMEI blocking issues.\n*   **If you want the best mobile network:** Get a **Telkomsel** SIM card. It is slightly more expensive, but it ensures you will have a signal whether you are on a beach in Bali or in a skyscraper in Jakarta."
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan Mobile phone terbaik di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 22,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Pasar ponsel pintar (smartphone) di Indonesia sangat dinamis dan kompetitif. Berdasarkan data dari lembaga riset pasar seperti IDC dan Canalys, serta reputasi layanan purna jual di Indonesia, berikut adalah rekomendasi perusahaan dan merek *mobile phone* terbaik di Indonesia yang dibagi berdasarkan kategori keunggulannya:\n\n---\n\n### 1. Samsung (Raja Segmen Premium & Layanan Purna Jual)\nSamsung (asal Korea Selatan) adalah salah satu pemimpin pasar konsisten di Indonesia. Mereka menawarkan produk dari kelas pemula (*entry-level*) hingga kelas super premium (ponsel lipat).\n*   **Kelebihan:**\n    *   Layanan purna jual (*service center*) paling luas dan tepercaya di Indonesia.\n    *   Pembaruan perangkat lunak (Android OS) paling panjang dan stabil (hingga 4-7 tahun untuk seri tertentu).\n    *   Layar (Super AMOLED) terbaik di industri.\n    *   Gengsi (prestige) tinggi untuk seri flagship (Galaxy S dan Galaxy Z Fold/Flip).\n*   **Seri Populer:** Galaxy A Series (menengah), Galaxy S Series (flagship), Galaxy Z Series (lipat).\n*   **Cocok untuk:** Pengguna yang mencari durabilitas jangka panjang, keamanan data (Samsung Knox), dan layanan purna jual yang mudah diakses.\n\n### 2. Apple (Standar Emas Kelas Premium & Ekosistem)\nMeskipun harganya mahal, iPhone dari Apple selalu menjadi idola di Indonesia. Distribusi resminya dipegang oleh distributor seperti iBox (Erajaya Group) dan Digimap (Mitra Adiperkasa).\n*   **Kelebihan:**\n    *   Gengsi sosial tinggi dan nilai jual kembali (*resale value*) yang sangat stabil.\n    *   Performa chipset bionik yang sangat kencang dan efisien.\n    *   Kualitas perekaman video terbaik di kelas smartphone.\n    *   Dukungan sistem operasi iOS yang sangat lancar dan update hingga 5-6 tahun.\n*   **Seri Populer:** iPhone 13, iPhone 14, iPhone 15, dan seri Pro/Pro Max.\n*   **Cocok untuk:** Profesional, konten kreator, dan mereka yang sudah masuk dalam ekosistem Apple (iPad, Macbook, Apple Watch).\n\n### 3. Xiaomi / Redmi / POCO (Raja *Value for Money*)\nXiaomi dikenal sebagai perusak harga pasar karena selalu menawarkan spesifikasi tinggi dengan harga yang jauh lebih murah dibanding kompetitornya.\n*   **Kelebihan:**\n    *   Spesifikasi di atas kertas sangat tinggi untuk harganya (*price-to-performance ratio*).\n    *   Sub-brand **POCO** sangat diminati oleh para *gamers* karena performanya yang ekstrem di harga miring.\n    *   Komunitas pengguna (Mi Fans) yang sangat besar di Indonesia.\n*   **Seri Populer:** Redmi Note Series (menengah), Xiaomi Series (flagship), POCO (performa/gaming).\n*   **Cocok untuk:** Pemain game mobile, pencinta teknologi yang paham spesifikasi, dan pengguna dengan anggaran terbatas tetapi ingin performa maksimal.\n\n### 4. Oppo & Vivo (Unggul di Kamera, Desain, & Penjualan Offline)\nKedua merek di bawah naungan BBK Electronics ini sangat kuat di pasar offline Indonesia. Mereka memiliki toko fisik hampir di setiap kota di Indonesia.\n*   **Kelebihan:**\n    *   Kamera depan (selfie) dan kamera potret belakang yang sangat bagus (terutama seri Oppo Reno dan Vivo V Series).\n    *   Desain bodi yang selalu modis, tipis, dan mengikuti tren anak muda.\n    *   Teknologi pengisian daya super cepat (SuperVOOC di Oppo, FlashCharge di Vivo).\n*   **Seri Populer:** Oppo Reno & Find Series, Vivo V & X Series.\n*   **Cocok untuk:** Penggemar fotografi ponsel (khususnya foto orang/portrait), anak muda yang peduli estetika ponsel, dan pembeli yang lebih suka membeli langsung di toko fisik.\n\n### 5. Infinix & Tecno (Penguasa Kelas Budget/Entry-Level)\nBerada di bawah naungan Transsion Holdings, kedua merek ini sedang naik daun dengan sangat pesat di Indonesia dalam 2-3 tahun terakhir.\n*   **Kelebihan:**\n    *   Menawarkan memori besar (RAM/ROM) dan layar dengan refresh rate tinggi di harga di bawah Rp2 juta.\n    *   Desain futuristik dan sering berkolaborasi dengan game populer (seperti Free Fire atau Mobile Legends).\n*   **Seri Populer:** Infinix Hot & Note Series, Tecno Pova & Spark Series.\n*   **Cocok untuk:** Pelajar, driver ojek online, dan gamer pemula yang memiliki anggaran terbatas (di bawah Rp2,5 juta).\n\n---\n\n### Faktor Penting Saat Membeli HP di Indonesia:\n1.  **Garansi Resmi (IMEI Terdaftar):** Pastikan membeli ponsel dengan garansi resmi (misalnya TAM, Eranya, atau garansi resmi merek terkait) agar IMEI terdaftar di database Kemenperin dan sinyal seluler tidak terblokir.\n2.  **TKDN (Tingkat Komponen Dalam Negeri):** Semua merek di atas sudah merakit ponselnya di Indonesia untuk memenuhi regulasi pemerintah, sehingga ketersediaan suku cadang relatif aman.\n\n**Kesimpulan Rekomendasi:**\n*   Pilih **Samsung** jika ingin aman, awet, dan layanan purna jual terbaik.\n*   Pilih **Apple** jika memiliki anggaran besar dan ingin gengsi serta performa video terbaik.\n*   Pilih **Xiaomi/POCO** jika Anda seorang gamer yang mencari performa maksimal dengan budget terbatas.\n*   Pilih **Oppo/Vivo** jika Anda mengutamakan kamera untuk media sosial dan desain yang cantik.\n*   Pilih **Infinix/Tecno** jika anggaran Anda di bawah Rp2 juta namun ingin spesifikasi yang mumpuni."
+    },
+    {
+      "promptText": "What are the best Mobile phone companies in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Kalau butuh Mobile phone yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 5,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Rekomendasi Brand HP yang Reliable di Indonesia\n\nTergantung kebutuhan dan budget kamu, berikut beberapa opsi yang umum dipertimbangkan:\n\n## Budget Terbatas (1-3 jutaan)\n- **Xiaomi/Redmi** - Value for money bagus, spesifikasi tinggi di harga murah\n- **Infinix/Tecno** - Semakin populer, battery life bagus\n- **Samsung A-series (entry)** - Ekosistem Samsung, update lumayan konsisten\n\n## Kelas Menengah (3-7 jutaan)\n- **Samsung A-series (mid)** - Build quality solid, One UI stabil, jaringan service center luas\n- **Oppo/Vivo** - Kamera bagus, desain menarik, service center banyak\n- **Poco** - Performa tinggi untuk gaming\n\n## Kelas Atas (7 juta+)\n- **Samsung S/Z series** - Ekosistem lengkap, update software lama\n- **iPhone** - Value resale tinggi, ekosistem Apple, optimasi hardware-software\n- **Google Pixel** - Kamera komputasional bagus (tapi resmi masih terbatas di Indonesia)\n\n## Yang Perlu Dipertimbangkan:\n1. **Service center** - Pastikan brand punya SC resmi di kota kamu\n2. **Garansi resmi TAM** (untuk yang non-lokal) vs garansi distributor\n3. **Update software** - Berapa lama dapat update OS & security patch\n4. **Ketersediaan sparepart** - Penting untuk jangka panjang\n\n**Pertanyaan untuk mempersempit rekomendasi:**\n- Budget kamu berapa?\n- Prioritas utama: kamera, gaming, battery life, atau kamera?\n- Preferensi OS: Android atau iOS?\n\nKasih tau detail kebutuhannya, biar rekomendasinya lebih spesifik! 😊"
+    },
+    {
+      "promptText": "Apa saja rekomendasi perusahaan Mobile phone terbaik di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Which Mobile phone brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 5,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Mobile Phone Brand Recommendations for Indonesia\n\nHere are reliable options popular and well-supported in the Indonesian market:\n\n## Budget-Friendly (Under Rp 2 million)\n- **Xiaomi/Redmi** - Excellent value, strong specs for the price, widely available service centers\n- **Realme** - Popular among younger users, good camera performance for the price\n- **Infinix** - Solid budget option with decent battery life\n\n## Mid-Range (Rp 2-5 million)\n- **Samsung (A-series)** - Very strong presence in Indonesia, excellent resale value, extensive service network\n- **OPPO** - Strong local presence, good camera features, widely available in malls/counters\n- **Vivo** - Similar to OPPO in market position, good after-sales support\n\n## Premium (Above Rp 5 million)\n- **Samsung (S-series/Note)** - Best overall ecosystem and support in Indonesia\n- **iPhone** - Strong resale value, though pricier due to import taxes; check if it's TKDN-compliant (local certification)\n- **Google Pixel** - Growing presence, though service centers are less widespread\n\n## Key Considerations for Indonesia:\n1. **IMEI Registration** - Ensure the phone is registered for Indonesian use (check Bea Cukai/customs registration) to avoid network blocking\n2. **Service Center Availability** - Samsung, Xiaomi, OPPO, and Vivo have the most extensive official service networks across the archipelago\n3. **Local Warranty** - Look for \"garansi resmi\" (official warranty) rather than \"garansi distributor\"\n4. **Network Compatibility** - Ensure compatibility with local carriers (Telkomsel, Indosat, XL, Smartfren)\n\n## My Top Recommendations:\n- **Best Value**: Xiaomi/Redmi series\n- **Best Overall Reliability**: Samsung\n- **Best Camera on Budget**: OPPO or Vivo\n\nWould you like more specific recommendations based on your budget range or particular needs (camera, gaming, battery life)?"
+    },
+    {
+      "promptText": "Kalau butuh Mobile phone yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Menurut kamu, Mobile phone company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Rekomendasi HP \"Worth It\" di Indonesia\n\nJawabannya tergantung budget dan kebutuhan kamu. Ini breakdown-nya:\n\n## Budget Ketat (1-3 jutaan)\n**Xiaomi/Redmi & Infinix** biasanya juara di sini\n- Spek per rupiah paling kompetitif\n- Redmi Note series terkenal awet dan RAM besar\n- Infinix punya baterai gede + fast charging bagus\n\n## Menengah (3-6 jutaan)\n**Samsung A-series & Xiaomi Poco**\n- Samsung: after-sales service paling luas di Indonesia, One UI makin matang\n- Poco: performa gaming lebih kuat di harga sama\n\n## Menengah-Atas (6-10 jutaan)\n**Samsung, Xiaomi (seri non-budget), atau iPhone SE/bekas**\n- Samsung masih unggul soal ekosistem & update software\n- iPhone 11/12 second bisa jadi opsi kalau mau coba iOS\n\n## Flagship (10 jutaan+)\n**iPhone atau Samsung S-series**\n- iPhone: resale value paling stabil, iOS lancar bertahun-tahun\n- Samsung: kamera fleksibel, One UI powerful, ekosistem lengkap\n\n---\n\n## Faktor yang Sering Dilupakan:\n1. **Service center** — Samsung & Xiaomi punya jaringan luas di Indonesia\n2. **Update software** — Samsung makin bagus (4 tahun major update untuk flagship)\n3. **Garansi resmi** — pastikan beli yang ada garansi TAM/resmi Indonesia\n4. **Resale value** — iPhone & Samsung flagship lebih gampang dijual lagi\n\n---\n\nKalau boleh tau, budget kamu berapa dan kebutuhan utamanya buat apa (gaming, foto, kerja, dll)? Biar rekomendasinya lebih spesifik."
+    },
+    {
+      "promptText": "Kalau butuh Mobile phone yang reliable di Indonesia, brand apa yang kamu rekomendasikan?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 19,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Untuk mencari HP yang **reliable (andal/awet)** di Indonesia, definisinya tidak hanya soal spesifikasi tinggi, tetapi juga mencakup:\n1. **Dukungan Software:** Sistem operasi stabil (minim *bug*) dan pembaruan jangka panjang.\n2. **Durabilitas Fisik:** Ponsel tidak mudah rusak saat dipakai harian.\n3. **Layanan Purna Jual (After-Sales):** Service center resmi mudah ditemukan di Indonesia dan ketersediaan suku cadang terjamin.\n\nBerdasarkan kriteria tersebut, berikut adalah rekomendasi brand HP paling *reliable* di Indonesia saat ini, yang diurutkan berdasarkan kategori:\n\n---\n\n### 1. Samsung (Raja Android yang Paling Aman)\nSamsung adalah pilihan paling aman dan paling *reliable* untuk pengguna Android di Indonesia.\n\n*   **Mengapa Reliable?**\n    *   **After-Sales Terbaik:** Service center Samsung tersebar dari kota besar hingga kabupaten. Proses klaim garansi relatif mudah.\n    *   **Software Stabil (One UI):** One UI adalah salah satu *skin* Android terbaik, sangat stabil, minim *bug*, dan tidak ada iklan mengganggu (seperti di HP Tiongkok murah).\n    *   **Update Software Terlama:** Samsung menjamin pembaruan OS hingga 4 tahun (untuk kelas menengah seperti seri A55) bahkan hingga 7 tahun (untuk seri flagship S24).\n    *   **Nilai Jual Kembali:** Relatif lebih bertahan dibanding brand Android lainnya.\n*   **Rekomendasi Seri:**\n    *   *Mid-range:* Samsung Galaxy A35 atau A55 5G (tahan air/debu IP67, build quality kokoh).\n    *   *Flagship:* Samsung Galaxy S24 Series.\n\n---\n\n### 2. Apple / iPhone (Investasi Jangka Panjang Terbaik)\nJika Anda memiliki *budget* lebih, iPhone adalah definisi nyata dari *reliability*.\n\n*   **Mengapa Reliable?**\n    *   **Sistem Operasi (iOS) Sangat Stabil:** Performa tetap mulus bahkan setelah digunakan selama 3-4 tahun.\n    *   **Dukungan Update Hingga 5-6 Tahun:** iPhone lama masih mendapat pembaruan sistem keamanan dan iOS terbaru.\n    *   **Service Center Resmi Luas:** Sekarang sangat mudah mengklaim garansi resmi (TAM/iBox/GDN) melalui jaringan retail resmi seperti iBox, Digimap, atau Erafone.\n    *   **Nilai Jual Kembali Tinggi:** Harga bekasnya paling stabil di pasaran Indonesia.\n*   **Rekomendasi Seri:** iPhone 13 (opsi *value-for-money* saat ini), iPhone 15, atau iPhone 15 Pro.\n\n---\n\n### 3. Oppo & Vivo (Juara Ketahanan Fisik & Layanan Offline)\nKedua brand di bawah naungan BBK Group ini terkenal sangat andal untuk penggunaan harian dan memiliki standar kontrol kualitas yang sangat ketat.\n\n*   **Mengapa Reliable?**\n    *   **Fisik yang Kuat (\"Bandel\"):** Oppo terkenal dengan uji durabilitasnya yang ekstrem (tahan jatuh, cipratan air).\n    *   **Sistem Dingin & Stabil:** ColorOS (Oppo) dan FuntouchOS (Vivo) sangat optimal dalam manajemen baterai dan jarang mengalami *crash*.\n    *   **Service Center Sangat Ramah:** Layanan purna jual mereka di Indonesia terkenal sangat cepat (bisa ditunggu) dan ramah pelanggan.\n*   **Rekomendasi Seri:**\n    *   Oppo Reno Series (misal: Reno 11 atau 12) atau Oppo A-series untuk kelas terjangkau.\n    *   Vivo V-Series (misal: Vivo V30 atau V40).\n\n---\n\n### 4. Xiaomi (Khusus untuk \"Value for Money\")\nXiaomi andal jika Anda mencari spesifikasi tinggi dengan harga yang lebih ramah kantong.\n\n*   **Mengapa Reliable?**\n    *   Komunitasnya sangat besar di Indonesia, suku cadang non-resmi pun mudah dicari jika garansi habis.\n    *   Layanan service center resmi (Xiaomi Authorized Service Center) sudah sangat luas.\n*   **Catatan:** Untuk reliabilitas software, sistem operasi mereka (HyperOS) kadang masih memiliki *bug* minor di kelas *entry-level*. Jika ingin yang paling stabil, pilihlah seri flagship atau seri Redmi Note kelas atas.\n*   **Rekomendasi Seri:** Redmi Note 13 Pro 5G atau Xiaomi 14.\n\n---\n\n### Kesimpulan & Saran:\n\n1.  **Pilih SAMSUNG** jika Anda ingin HP Android yang serba seimbang, software-nya matang, awet dipakai 4-5 tahun, dan tidak pusing jika ada kerusakan karena service center-nya ada di mana-mana.\n2.  **Pilih iPHONE** jika Anda punya budget lebih, ingin performa konsisten tanpa lemot hingga bertahun-tahun, dan gengsi yang tinggi.\n3.  **Pilih OPPO / VIVO** jika Anda sering bekerja di lapangan (butuh HP fisik kuat) dan menyukai layanan servis yang cepat dan nyaman.\n\n**Tips Tambahan untuk Indonesia:** Pastikan Anda membeli HP dengan **Garansi Resmi** (bukan barang BM/Black Market) agar nomor IMEI terdaftar di Kemenperin dan sinyal tidak terblokir."
+    },
+    {
+      "promptText": "Which Mobile phone brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 6,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "In Indonesia, the term \"provider\" can refer to two different things: the **smartphone brand (hardware)** or the **cellular network carrier (telecom provider)**. \n\nTo give you the most accurate recommendation, here is a breakdown of the most reliable **smartphone brands** and **network providers** currently operating in Indonesia.\n\n---\n\n### Part 1: Top Smartphone Brands in Indonesia (Hardware)\n\nWhen looking for a reliable phone brand in Indonesia, the key factors are **after-sales service (service centers)**, **durability**, and **local TKDN compliance** (to ensure the phone doesn’t get its signal blocked by the government).\n\n#### 1. Samsung (The Best Overall & Most Reliable)\nSamsung is the market leader for reliability in Indonesia. They have the most extensive network of official service centers (Samsung Service Center) across the country, even in smaller cities.\n*   **Why buy:** Excellent build quality, long software support (up to 4–7 years on newer models), and hassle-free warranty claims.\n*   **Recommended series:** \n    *   *Galaxy A Series (A15, A35, A55)* for mid-range budget.\n    *   *Galaxy S Series (S24)* for premium flagship performance.\n\n#### 2. Oppo & Vivo (Best for Offline Support & Durability)\nThese two sister brands have a massive footprint in Indonesia. You can find their physical stores and service centers in almost every mall and district.\n*   **Why buy:** Very durable hardware, fast charging, great selfie cameras, and excellent offline customer service.\n*   **Recommended series:** *Oppo Reno Series* or *Vivo V Series* for great mid-range performance and design.\n\n#### 3. Xiaomi / Redmi / Poco (Best Value for Money)\nIf you want high-end specs (processor, screen, battery) at a lower price, Xiaomi is the go-to brand in Indonesia. \n*   **Why buy:** Highly active local community, official service centers are widely available (Xiaomi Authorized Service Center), and unbeatable price-to-performance ratio.\n*   **Recommended series:** *Redmi Note Series* for budget, *Poco (X or F series)* for gaming performance.\n\n#### 4. Apple iPhone (Best Premium Option)\niPhones are highly popular and hold their resale value incredibly well in Indonesia. \n*   **Why buy:** Longest lifespan, premium build, and best camera for social media (Instagram/TikTok optimization).\n*   **Important Note:** **Only buy from official distributors** like **iBox, Digimap, or Eraspace**. Do not buy \"Inter\" (international) phones from unofficial sellers, as their IMEI numbers might get blocked by the Indonesian government, leaving you with no cellular signal.\n\n---\n\n### Part 2: Top Mobile Network Providers in Indonesia (Sim Cards/Carrier)\n\nIf you are looking for the most reliable cellular network to put inside your phone, here are the top recommendations:\n\n#### 1. Telkomsel (Best Coverage & Reliability)\nTelkomsel is a state-owned enterprise and the undisputed king of coverage. \n*   **Pros:** If you travel outside of major cities in Java, or go to Sumatra, Kalimantan, Sulawesi, or Papua, **Telkomsel is often the only provider with a stable signal**. They also have the fastest 4G/5G speeds in most areas.\n*   **Cons:** Most expensive packages.\n*   **Pro-Tip:** If you want Telkomsel's network but cheaper prices, get **by.U** (Telkomsel’s digital sub-brand aimed at younger users).\n\n#### 2. Indosat Ooredoo Hutchison / IM3 (Best Balance of Price & Quality)\nFollowing their merger with Tri (3), Indosat has become the second-largest provider.\n*   **Pros:** Great signal in major cities and suburban areas, very affordable data packages, and generous rollover data.\n*   **Cons:** Indoor coverage in deep concrete buildings can sometimes be weak.\n\n#### 3. XL Axiata (Best for Urban Areas & Java)\nXL is highly reliable, especially on the islands of Java, Bali, and Lombok.\n*   **Pros:** Excellent internet speeds in urban areas, good customer service, and competitive pricing.\n*   **Cons:** Signal drops quickly once you go into remote or mountainous areas.\n\n---\n\n### Summary Recommendation\n\n*   If you want the **absolute most reliable setup** in Indonesia: Buy a **Samsung Galaxy (A-series or S-series)** and use a **Telkomsel** SIM card.\n*   If you are on a **budget** but still want reliability: Buy a **Redmi/Xiaomi** phone and use an **Indosat (IM3)** or **by.U** SIM card."
+    },
+    {
+      "promptText": "Which Mobile phone brands would you recommend to someone in Indonesia looking for a reliable provider?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Is OPPO a trustworthy company?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 3,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Is OPPO Trustworthy?\n\nThis is a nuanced question that depends on what aspects you're asking about. Here's a balanced overview:\n\n## Company Background\nOPPO is a major Chinese consumer electronics company, part of the BBK Electronics family (along with OnePlus, Vivo, and Realme). It's one of the largest smartphone manufacturers globally.\n\n## Considerations\n\n**Product Quality**\n- Generally well-regarded for build quality, camera technology, and fast charging innovations\n- Competitive in the mid-range and flagship markets, especially in Asia, Europe, and other regions\n\n**Privacy Concerns**\n- Like many Chinese tech companies, OPPO has faced scrutiny over data collection practices\n- Some countries/governments have raised concerns about Chinese tech companies and potential data-sharing requirements under Chinese law\n- OPPO's ColorOS (their Android skin) has had criticism for bloatware and background app behavior in some reviews\n\n**Regional Availability**\n- OPPO doesn't operate in the US consumer market (unlike Samsung or Apple), so this is less of a live concern for American users\n- More prominent in Europe, Asia, Africa, and South America\n\n**Business Practices**\n- Has faced some criticism/lawsuits in various markets over patents, competition practices, or marketing claims (common in this competitive industry)\n- No major unique scandals that set it apart from other large tech manufacturers\n\n## Bottom Line\nOPPO makes competent, often innovative devices. Whether it's \"trustworthy\" often comes down to:\n1. Your comfort level with Chinese tech companies generally\n2. Specific privacy/security requirements you have\n3. Regional context and regulations where you live\n\nIf you have a specific concern (data privacy, product reliability, customer service, etc.), I can give more targeted information."
+    },
+    {
+      "promptText": "Menurut kamu, Mobile phone company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apakah OPPO merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 1,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# OPPO: Analisis Kredibilitas Perusahaan\n\nPertanyaan ini cukup luas, jadi saya coba uraikan dari beberapa sudut pandang:\n\n## Latar Belakang Perusahaan\n- OPPO adalah perusahaan elektronik asal Tiongkok, didirikan tahun 2004\n- Bagian dari BBK Electronics (grup yang sama dengan Vivo, OnePlus, Realme)\n- Salah satu produsen smartphone terbesar di dunia, termasuk pasar Indonesia\n\n## Aspek Positif\n- **Produk**: Umumnya diterima baik, kualitas build bagus, fitur kamera dan fast charging jadi keunggulan\n- **Layanan purna jual**: Punya banyak service center resmi di Indonesia\n- **Garansi**: Umumnya memberikan garansi resmi yang bisa diklaim\n\n## Hal yang Perlu Diperhatikan\n- **Privasi data**: Seperti banyak perusahaan teknologi asal China, ada kekhawatiran terkait pengumpulan data pengguna dan bagaimana data tersebut dikelola\n- **ColorOS (custom UI)**: Beberapa pengguna mengeluhkan bloatware (aplikasi bawaan yang tidak perlu) dan notifikasi iklan\n- **Update software**: Kecepatan update Android terkadang tidak secepat brand lain\n- **Isu keamanan**: Pernah ada laporan/kekhawatiran terkait aplikasi bawaan tertentu, meski ini juga dialami banyak brand Android lain\n\n## Konteks yang Perlu Dipertimbangkan\n- \"Dipercaya\" untuk apa? Untuk kualitas produk, layanan, atau privasi data - jawabannya bisa berbeda\n- Bandingkan dengan kompetitor sekelas (Xiaomi, Samsung, Vivo) untuk konteks yang lebih adil\n- Cek review terbaru karena kebijakan perusahaan bisa berubah\n\n**Saran**: Jika Anda mempertimbangkan untuk membeli produk OPPO, sebaiknya cek review terkini, kebijakan privasi mereka, dan sesuaikan dengan prioritas Anda (harga, fitur, atau privasi).\n\nApakah ada aspek spesifik yang ingin Anda ketahui lebih lanjut - misalnya soal produk tertentu, keamanan data, atau layanan purna jual?"
+    },
+    {
+      "promptText": "Menurut kamu, Mobile phone company mana yang paling worth it buat dipakai di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 9,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Menentukan merek HP (mobile phone company) yang paling \"worth it\" di Indonesia sangat bergantung pada **budget** dan **kebutuhan spesifik** kamu. Pasar Indonesia sangat unik karena didominasi oleh merek-merek yang bertarung sengit di kelas menengah (*mid-range*) dan entry-level.\n\nBerikut adalah analisis merek HP yang paling *worth it* di Indonesia berdasarkan beberapa kategori utama:\n\n---\n\n### 1. Paling *Worth It* untuk \"Harga vs Spesifikasi\" (Value for Money)\nJika kamu mencari HP dengan spesifikasi tinggi (RAM besar, chipset kencang untuk game, layar bagus) tapi dengan harga semurah mungkin:\n\n*   **Xiaomi (termasuk Redmi dan POCO):**\n    *   **Mengapa worth it:** Sejak dulu, Xiaomi adalah raja *value for money*. Seri POCO (seperti POCO X atau F series) menawarkan chipset kelas flagship dengan harga kelas menengah. Cocok banget buat gamers atau antusias teknologi dengan budget terbatas.\n    *   **Kekurangan:** Kadang ada isu iklan di sistem operasi (HyperOS/MIUI) dan optimasi software yang butuh waktu.\n*   **Infinix / Tecno (Transsion Group):**\n    *   **Mengapa worth it:** Merek ini sedang merusak harga pasar di kelas entry-level hingga mid-range (1–3 jutaan). Mereka menawarkan layar AMOLED, fast charging sangat cepat, dan desain modern dengan harga yang sangat miring.\n\n### 2. Paling *Worth It* untuk \"Keamanan Jangka Panjang & Layanan Purna Jual\" (The Safe Choice)\nJika kamu tipe orang yang pakai HP untuk 3–5 tahun, malas gonta-ganti, dan ingin klaim garansi yang mudah di seluruh Indonesia:\n\n*   **Samsung:**\n    *   **Mengapa worth it:** Service center Samsung adalah yang paling tersebar merata di Indonesia. Seri Galaxy A (seperti A35 atau A55) menawarkan pembaruan software (OS update) hingga 4 tahun, yang merupakan salah satu yang terlama di Android. HP Samsung juga terkenal awet dan memiliki *build quality* yang solid.\n    *   **Kekurangan:** Di kelas harga murah (bawah 2 juta), spesifikasi Samsung biasanya kalah saing dengan merek Tiongkok.\n\n### 3. Paling *Worth It* untuk \"Kamera Sosmed & Kemudahan Offline\"\nJika kamu sering belanja langsung ke toko fisik, suka foto-foto untuk Instagram/TikTok, dan ingin HP yang estetik:\n\n*   **Oppo & Vivo:**\n    *   **Mengapa worth it:** Mereka punya jaringan toko fisik dan promotor terbanyak di Indonesia (bahkan sampai ke pelosok daerah). Kamera depannya sangat dioptimalkan untuk warna kulit orang Indonesia. Seri mid-range mereka (seperti Oppo Reno atau Vivo V series) punya desain yang sangat premium dan kemampuan portrait yang bagus.\n    *   **Kekurangan:** Kadang harganya sedikit lebih mahal dibanding Xiaomi dengan spesifikasi chipset yang setara.\n\n### 4. Paling *Worth It* untuk \"Investasi Jangka Panjang & Gengsi\" (Premium)\nJika kamu punya budget lebih (di atas 10 juta) dan mencari HP yang tidak turun harga drastis saat dijual kembali:\n\n*   **Apple (iPhone):**\n    *   **Mengapa worth it:** Dukungan software hingga 5-6 tahun, optimasi aplikasi pihak ketiga (seperti Instagram dan TikTok) adalah yang terbaik, dan harga jual bekas (*resale value*) di Indonesia sangat stabil dibanding Android. iPhone juga menjadi simbol status sosial di Indonesia.\n    *   **Kekurangan:** Harganya sangat mahal, ekosistemnya tertutup, dan aksesoris originalnya mahal.\n\n---\n\n### Kesimpulan & Rekomendasi:\n\n1.  **Jika budget kamu di bawah Rp3 Juta:** Cari **Infinix** atau **Redmi (Xiaomi)**. Kamu akan dapat spek paling maksimal di harga ini.\n2.  **Jika budget kamu Rp3 Juta – Rp6 Juta:**\n    *   Pilih **POCO** jika kamu fokus pada performa game.\n    *   Pilih **Samsung (A-series)** jika kamu ingin HP awet jangka panjang dan layar bagus.\n    *   Pilih **Vivo/Oppo** jika fokusmu adalah kamera portrait dan desain yang tipis/cantik.\n3.  **Jika budget kamu Rp7 Juta – Rp10 Juta:** **Samsung Galaxy S FE series** atau flagship \"flagship killer\" seperti **Xiaomi T-Series** sangat worth it.\n4.  **Jika budget kamu di atas Rp10 Juta:** **iPhone** (untuk ekosistem & gengsi) atau **Samsung Galaxy S-Series** (untuk produktivitas & kamera zoom terbaik) adalah pilihan paling mutlak.\n\n**Rekomendasi Utama saya:** Untuk rata-rata masyarakat Indonesia saat ini, **Samsung (kelas menengah seperti seri A35/A55)** dan **Xiaomi/POCO** adalah dua brand yang paling *worth it* secara keseluruhan."
+    },
+    {
+      "promptText": "Is OPPO a trustworthy company?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Who are the leading players in the Mobile phone industry in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": "{\"error\":{\"code\":429,\"message\":\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-3.5-flash\\nPlease retry in 14.636409282s.\",\"status\":\"RESOURCE_EXHAUSTED\",\"details\":[{\"@type\":\"type.googleapis.com/google.rpc.Help\",\"links\":[{\"description\":\"Learn more about Gemini API quotas\",\"url\":\"https://ai.google.dev/gemini-api/docs/rate-limits\"}]},{\"@type\":\"type.googleapis.com/google.rpc.QuotaFailure\",\"violations\":[{\"quotaMetric\":\"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\"quotaId\":\"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\"quotaDimensions\":{\"location\":\"global\",\"model\":\"gemini-3.5-flash\"},\"quotaValue\":\"5\"}]},{\"@type\":\"type.googleapis.com/google.rpc.RetryInfo\",\"retryDelay\":\"14s\"}]}}",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Is OPPO a trustworthy company?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 1,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Whether OPPO is a \"trustworthy\" company depends on how you define trust. \n\nIf you mean **\"Does OPPO make high-quality, reliable products and honor its warranties?\"** the answer is **yes**. \n\nIf you mean **\"Can I trust OPPO with my personal data and privacy, given its status as a Chinese company?\"** the answer is more complex and depends on your personal risk tolerance.\n\nHere is a detailed breakdown of OPPO’s trustworthiness across different categories:\n\n---\n\n### 1. Product Quality and Reliability (High Trust)\nOPPO is one of the largest smartphone manufacturers in the world (often ranking in the top 5 globally) and is owned by BBK Electronics (the same parent company behind OnePlus, Vivo, and Realme).\n* **Hardware:** OPPO is known for excellent build quality, industry-leading fast-charging technology (SuperVOOC), and innovative camera systems. \n* **Software:** Its Android skin, ColorOS, has evolved from a bloated iOS-clone into one of the most stable, smooth, and highly customizable software skins on the market.\n* **Support:** For its flagship phones (like the Find X series), OPPO offers **4 years of major Android updates and 5 years of security patches**, which matches the industry standard set by Samsung and Google. \n\n### 2. Privacy and Data Security (Medium Trust / Geopolitical Risk)\nLike any major Chinese tech company (such as Xiaomi or Lenovo), OPPO is subject to scrutiny regarding data privacy and its relationship with the Chinese government.\n\n* **The Concern:** Under China’s National Intelligence Law of 2017, Chinese companies are legally required to cooperate with state intelligence agencies if requested. \n* **The Reality for Users:** There has been **no public evidence** or major scandal proving that OPPO has built \"backdoors\" for the Chinese government to spy on international users.\n* **Data Storage:** For users outside of China, OPPO states that it stores user data on local servers (for example, European user data is stored in servers located in Europe, compliant with strict EU GDPR laws). \n* **Security Certifications:** OPPO's security and privacy practices have been certified by independent international bodies, including ePrivacyseal and ISO/IEC 27001 (information security management).\n\n### 3. Business Practices and Global Standing (High/Medium Trust)\nOPPO operates as a legitimate global corporation. It complies with local laws in the countries where it operates.\n* **Patent Disputes:** OPPO recently went through a major patent dispute with Nokia, which temporarily forced it to stop selling phones in Germany. However, they resolved this dispute globally in early 2024, demonstrating that OPPO is willing to play by international legal and intellectual property rules.\n* **US Market:** OPPO does not officially sell its phones in the US (largely due to carrier dominance and geopolitical tensions), but it is highly popular and trusted in Europe, Asia, Australia, and the Middle East.\n\n---\n\n### The Verdict\n\n* **For the Average Consumer:** **Yes, OPPO is trustworthy.** They make highly reliable, premium hardware, offer good software support, and comply with local privacy laws (like GDPR in Europe). You can buy an OPPO phone with the same confidence you would have buying a phone from Samsung, Motorola, or Xiaomi.\n* **For Government/High-Security Users:** If you work in government, defense, or an industry with strict cybersecurity requirements regarding Chinese-owned technology, you may want to avoid OPPO (along with other Chinese brands) due to theoretical geopolitical risks and stick to Google, Apple, or Samsung."
+    },
+    {
+      "promptText": "Who are the leading players in the Mobile phone industry in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 3,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Leading Players in Indonesia's Mobile Phone Industry\n\nIndonesia has one of the largest smartphone markets in Southeast Asia. Here are the key players:\n\n## Top Smartphone Brands (by Market Share)\n\n1. **Xiaomi** - Consistently one of the top brands, popular for value-for-money devices with strong specs\n\n2. **Samsung** - Strong presence across all price segments, from budget to premium (Galaxy series)\n\n3. **OPPO** - Very popular, especially known for camera-focused marketing and retail presence\n\n4. **Vivo** - Strong competitor to OPPO, popular among younger consumers\n\n5. **Realme** - Rapidly growing brand, popular for budget and mid-range offerings\n\n6. **Infinix/Transsion Group** (including Tecno, Itel) - Growing presence in budget segment\n\n7. **Apple** - Strong in premium segment, popular among urban/affluent consumers\n\n## Telecommunications/Network Operators\n(Related but distinct from phone manufacturers)\n\n- **Telkomsel** - Market leader, subsidiary of state-owned Telkom Indonesia\n- **Indosat Ooredoo Hutchison** - Major operator after merger\n- **XL Axiata** - Significant player, part of Axiata Group\n- **Smartfren** - Known for data-focused plans\n\n## Key Market Trends\n\n- **Price sensitivity**: Budget and mid-range segments dominate due to Indonesia's large population and diverse income levels\n- **Local assembly requirements**: Government TKDN (local content) regulations require manufacturers to assemble/produce components locally\n- **E-commerce growth**: Platforms like Tokopedia, Shopee, and Lazada are major sales channels\n- **5G rollout**: Ongoing expansion affecting device demand\n\nWould you like more specific information about any particular segment (e.g., market share percentages, specific regulations, or e-commerce trends)?"
+    },
+    {
+      "promptText": "Apakah OPPO merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri Mobile phone Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 3,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Pemain Utama Industri Mobile Phone di Indonesia\n\n## Brand Global Dominan\n- **Samsung** - Konsisten menjadi salah satu market leader di berbagai segmen\n- **Xiaomi** - Sangat kuat di segmen entry-level hingga mid-range\n- **OPPO** - Populer dengan strategi marketing agresif dan kemitraan influencer\n- **Vivo** - Kuat di segmen menengah dengan fokus fitur kamera\n- **Realme** - Berkembang pesat, terutama di kalangan anak muda\n- **Apple** - Mendominasi segmen premium/flagship\n\n## Brand Lokal/Regional\n- **Advan** - Salah satu merek lokal dengan harga terjangkau\n- **Evercoss** - Pemain lokal yang sudah lama beroperasi\n- **Polytron** - Brand elektronik lokal yang juga masuk ke smartphone\n- **Mito** - Brand lokal dengan segmen harga rendah\n\n## Faktor Regulasi Penting\n- **Aturan TKDN (Tingkat Komponen Dalam Negeri)** - Mewajibkan konten lokal minimum 30-40% untuk perangkat 4G/5G, sehingga banyak brand membangun pabrik atau fasilitas perakitan di Indonesia\n- Brand seperti Samsung, Oppo, Vivo, dan Xiaomi memiliki fasilitas manufaktur/perakitan di Indonesia untuk memenuhi regulasi ini\n\n## Karakteristik Pasar\n- Persaingan sangat ketat di segmen **entry-level dan mid-range** (Rp1-5 juta) karena mayoritas konsumen Indonesia berada di segmen ini\n- **E-commerce** (Tokopedia, Shopee, Lazada) menjadi kanal distribusi yang sangat penting\n- Strategi pemasaran melalui **KOL/influencer** dan media sosial sangat dominan\n- Fitur kamera dan daya tahan baterai menjadi pertimbangan utama konsumen\n\n## Catatan\nData pangsa pasar berubah cukup dinamis setiap kuartal. Untuk data terkini dan akurat mengenai market share terbaru, saya sarankan mengecek laporan dari:\n- **Canalys**\n- **IDC (International Data Corporation)**\n- **Counterpoint Research**\n\nApakah ada aspek tertentu dari industri ini yang ingin Anda ketahui lebih dalam?"
+    },
+    {
+      "promptText": "Which companies dominate the Mobile phone market in Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 13,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Mobile Phone Market in Indonesia\n\nThe Indonesian smartphone market has been dominated by several key players, though rankings shift periodically based on quarterly reports. Here's a general overview of the major companies:\n\n## Leading Brands\n\n**Oppo**\n- Consistently one of the top-selling brands\n- Strong retail presence and marketing in the country\n- Popular across various price segments\n\n**Samsung**\n- Major player with strong brand recognition\n- Competitive across budget, mid-range, and premium segments\n\n**Vivo**\n- Significant market share, especially in mid-range segment\n- Known for camera-focused marketing\n\n**Xiaomi**\n- Popular for value-for-money devices\n- Strong presence in budget and mid-range categories\n\n**Realme**\n- Growing rapidly in recent years\n- Popular among younger, budget-conscious consumers\n\n**Infinix/Transsion brands**\n- Gaining traction in the budget segment\n\n## Key Market Characteristics\n\n- **Chinese manufacturers** (Oppo, Vivo, Xiaomi, Realme) collectively hold a substantial majority of the market\n- **Apple** has a smaller but notable presence, mainly in the premium segment\n- **Local brands** like Advan and Evercoss have a presence but limited market share compared to international players\n- The market is highly **price-sensitive**, favoring brands offering good value\n\n## Important Note\nMarket share rankings can change quarter to quarter based on new product launches, pricing strategies, and promotional campaigns. For the most current and precise figures, I'd recommend checking recent reports from sources like:\n- Counterpoint Research\n- IDC (International Data Corporation)\n- Canalys\n\nWould you like me to focus on any particular aspect of the Indonesian mobile market, such as pricing trends or specific segments?"
+    },
+    {
+      "promptText": "Apakah OPPO merupakan perusahaan yang bisa dipercaya?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Secara umum, **ya, OPPO adalah perusahaan teknologi yang bisa dipercaya dan memiliki reputasi yang kuat**, baik di Indonesia maupun di kancah global. \n\nUntuk membantu Anda menilai secara objektif, berikut adalah analisis mengenai kelebihan (mengapa mereka dipercaya) dan beberapa hal yang perlu dipertimbangkan:\n\n### Mengapa OPPO Bisa Dipercaya?\n\n1. **Pangsa Pasar dan Skala Global yang Besar**\n   OPPO adalah salah satu dari 5 produsen smartphone terbesar di dunia. Di Indonesia, OPPO sering kali menempati posisi nomor 1 atau 2 dalam hal pangsa pasar. Mereka adalah bagian dari **BBK Electronics**, konglomerat teknologi raksasa yang juga membawahi merek Vivo, OnePlus, Realme, dan iQOO.\n\n2. **Layanan Purna Jual (After-Sales) yang Sangat Baik**\n   Salah satu kekuatan utama OPPO di Indonesia adalah jaringan *Service Center* resmi yang sangat luas dan tersebar di berbagai kota, bahkan hingga ke daerah tingkat dua. Layanan garansi mereka dikenal cepat, ramah, dan transparan.\n\n3. **Kualitas Produk dan Durabilitas**\n   Smartphone OPPO dikenal memiliki kualitas rakitan (*build quality*) yang kokoh dan awet. Sebelum dipasarkan, produk mereka melewati uji ketahanan yang ketat (seperti uji jatuh, suhu ekstrem, dan kelembapan).\n\n4. **Inovasi Teknologi yang Diakui**\n   OPPO adalah pelopor dalam beberapa teknologi industri, seperti pengisian daya super cepat (**VOOC Flash Charge**) dan inovasi kamera (seperti kolaborasi dengan Hasselblad pada seri *flagship* Find X).\n\n5. **Keamanan Data dan Privasi**\n   Sistem operasi mereka, **ColorOS** (berbasis Android), telah mendapatkan berbagai sertifikasi keamanan internasional, termasuk ISO/IEC 27001 (manajemen keamanan informasi) dan kepatuhan terhadap GDPR (regulasi perlindungan data Uni Eropa yang sangat ketat). Sejauh ini, OPPO tidak pernah terlibat dalam skandal kebocoran data skala besar atau masalah spionase.\n\n---\n\n### Hal-Hal yang Perlu Dipertimbangkan (Kritik & Kekurangan)\n\nMeskipun terpercaya, seperti perusahaan teknologi lainnya, OPPO juga memiliki beberapa catatan:\n\n1. **Pembaruan Perangkat Lunak (Software Update)**\n   Untuk seri *flagship* (Find Series) dan kelas menengah atas (Reno Series), OPPO memberikan dukungan update yang panjang. Namun, untuk seri murah (*entry-level* seperti seri A), pembaruan sistem operasi Android terkadang lebih lambat dan tidak sekerap kompetitornya seperti Samsung.\n\n2. **Iklan dan Aplikasi Bawaan (Bloatware)**\n   Pada beberapa model kelas menengah ke bawah, ColorOS terkadang membawa aplikasi bawaan (*bloatware*) atau notifikasi rekomendasi aplikasi yang bisa mengganggu estetika pengguna, meskipun sebagian besar bisa dihapus atau dimatikan.\n\n3. **Sentimen Geopolitik (Asal Negara)**\n   Sebagai perusahaan yang berbasis di Dongguan, Tiongkok, OPPO terkadang terkena dampak sentimen politik global terkait privasi data perusahaan Tiongkok. Namun, secara hukum dan operasional, OPPO mematuhi hukum lokal di setiap negara tempat mereka beroperasi, termasuk aturan TKDN (Tingkat Komponen Dalam Negeri) di Indonesia.\n\n### Kesimpulan\n\nJika Anda mencari merek smartphone yang **layanan servisnya mudah ditemukan, produknya awet, pengisian dayanya cepat, dan kameranya bagus**, OPPO adalah pilihan yang sangat aman dan dapat dipercaya. Mereka bukan perusahaan \"kloning\" atau abal-abal, melainkan raksasa teknologi legal yang memiliki standar kualitas global."
+    },
+    {
+      "promptText": "Who are the leading players in the Mobile phone industry in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri Mobile phone Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Brand Mobile phone mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 10,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Brand Smartphone Terkemuka di Indonesia\n\nBerdasarkan data pasar beberapa tahun terakhir, berikut brand-brand yang mendominasi market share di Indonesia:\n\n## Top Market Leaders\n\n**1. Samsung**\n- Konsisten di posisi teratas selama bertahun-tahun\n- Kuat di segmen mid-range hingga flagship\n- Brand recognition sangat tinggi\n\n**2. Xiaomi**\n- Populer karena value for money (spek tinggi, harga bersaing)\n- Kuat di segmen entry-level dan mid-range\n- Sering jadi pilihan generasi muda\n\n**3. OPPO**\n- Gencar dengan marketing dan endorsement selebriti\n- Fokus pada fitur kamera dan desain\n- Distribusi luas hingga ke daerah\n\n**4. Vivo**\n- Strategi mirip OPPO, fokus kamera untuk selfie\n- Sering menjadi sponsor event olahraga/musik\n\n**5. Realme**\n- Brand yang naik pesat beberapa tahun terakhir\n- Menyasar segmen anak muda dengan harga kompetitif\n\n## Catatan Penting\n- **Ranking bisa berubah** setiap kuartal berdasarkan laporan lembaga riset seperti Canalys, IDC, atau Counterpoint Research\n- Samsung dan Xiaomi biasanya bersaing ketat di posisi 1-2\n- Apple (iPhone) meski tidak selalu top 5 dari segi unit terjual, tetap sangat kuat di brand image/status sosial\n\nApakah Anda ingin saya bahas lebih detail tentang salah satu brand tertentu, atau data spesifik untuk periode/kuartal tertentu?"
+    },
+    {
+      "promptText": "Siapa saja pemain utama di industri Mobile phone Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 1,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Industri telepon seluler (khususnya *smartphone*) di Indonesia sangat dinamis dan kompetitif. Sebagai salah satu pasar terbesar di Asia Tenggara, Indonesia didominasi oleh merek-merek global, terutama dari Tiongkok dan Korea Selatan.\n\nBerdasarkan data dari berbagai lembaga riset pasar (seperti Canalys, IDC, dan Counterpoint) hingga tahun 2024, berikut adalah pemain utama di industri *mobile phone* Indonesia yang dibagi berdasarkan pangsa pasar dan segmennya:\n\n---\n\n### 1. Penguasa Pangsa Pasar (The Big Five)\nLima merek ini secara konsisten saling sikut di posisi teratas dalam hal volume pengiriman (*shipment*) dan pangsa pasar:\n\n*   **Oppo**\n    *   **Kekuatan:** Sangat kuat di pasar *offline* (toko fisik) dengan jaringan distribusi yang luas hingga ke daerah pelosok. Mereka terkenal dengan pemasaran yang agresif, fokus pada fitur kamera (terutama *selfie*), serta seri Reno dan A-series yang sangat populer di kelas menengah.\n*   **Samsung**\n    *   **Kekuatan:** Raksasa teknologi asal Korea Selatan ini memiliki keunggulan dalam hal loyalitas merek (*brand loyalty*) dan kepercayaan konsumen. Samsung menguasai berbagai segmen, mulai dari kelas bawah (Galaxy A0x), kelas menengah (Galaxy A-series), hingga kelas premium dan ponsel lipat (Galaxy S-series dan Z Fold/Flip).\n*   **Xiaomi (termasuk Redmi dan POCO)**\n    *   **Kekuatan:** Dikenal sebagai pelopor ponsel dengan spesifikasi tinggi namun harga terjangkau (*value for money*). Xiaomi memiliki komunitas penggemar yang sangat loyal (Mi Fans). Sub-merek mereka, **POCO**, sangat populer di kalangan *gamer* anggaran terbatas.\n*   **Vivo**\n    *   **Kekuatan:** Mirip dengan Oppo, Vivo kuat di jalur penjualan *offline* dan fokus pada desain yang estetis serta teknologi kamera (terutama kolaborasi dengan ZEISS untuk seri *flagship* mereka). Seri Y (entry-level) dan V-series (mid-range) menjadi tulang punggung penjualan mereka.\n*   **Transsion Group (Infinix, Tecno, dan Itel)**\n    *   **Kekuatan:** Ini adalah \"kuda hitam\" yang kini telah menjadi pemain raksasa di Indonesia. Melalui merek **Infinix**, **Tecno**, dan **Itel**, grup ini menawarkan spesifikasi gaming dan memori besar dengan harga yang sangat merusak pasar (biasanya di bawah Rp2-3 juta). Infinix saat ini sangat populer di kalangan anak muda dan *gamer* pemula.\n\n---\n\n### 2. Penguasa Segmen Premium\n*   **Apple (iPhone)**\n    *   **Kekuatan:** Meskipun secara volume pengiriman tidak sebesar merek Android di atas, Apple mendominasi segmen pasar premium (harga Rp10 juta ke atas) di Indonesia. iPhone dianggap sebagai simbol status sosial, memiliki ekosistem yang matang, dan nilai jual kembali (*resale value*) yang tinggi.\n\n---\n\n### 3. Pemain Kuat Lainnya (Penantang)\n*   **Realme**\n    *   Meskipun sempat masuk dalam 5 besar, Realme kini bersaing ketat di papan tengah. Mereka menyasar anak muda dengan desain yang trendi dan teknologi pengisian daya cepat (*fast charging*).\n*   **Asus (ROG Phone)**\n    *   Asus tidak bermain di volume besar untuk ponsel harian, tetapi mereka adalah raja di ceruk pasar ponsel gaming premium melalui seri **ROG Phone**.\n\n---\n\n### 4. Pemain Lokal (Niche Market)\n*   **Advan**\n    *   Sebagai salah satu dari sedikit merek lokal Indonesia yang masih bertahan, Advan kini lebih banyak berfokus pada perangkat tablet murah, modem, dan laptop pintar, meskipun masih memproduksi beberapa ponsel pintar kelas *entry-level*.\n\n---\n\n### Faktor Kunci Kemenangan di Pasar Indonesia:\n1.  **TKDN (Tingkat Komponen Dalam Negeri):** Pemerintah Indonesia mewajibkan kandungan lokal minimal 35% untuk perangkat 4G dan 5G. Semua pemain utama di atas telah bekerja sama dengan pabrik perakitan lokal (seperti PT Sat Nusapersada di Batam) atau membangun pabrik sendiri untuk memenuhi regulasi ini.\n2.  **Sensitivitas Harga:** Pasar terbesar di Indonesia berada di kelas *entry-to-mid range* (rentang harga Rp1,5 juta hingga Rp3,5 juta). Brand yang mampu memberikan RAM/penyimpanan besar dan baterai awet di rentang harga ini biasanya akan memenangkan pasar."
+    },
+    {
+      "promptText": "Which companies dominate the Mobile phone market in Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa brand handphone terbaik di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 7,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Brand Handphone Populer di Indonesia\n\nTidak ada jawaban tunggal \"terbaik\" karena tergantung kebutuhan dan budget Anda. Berikut gambaran beberapa brand populer:\n\n## Kelas Flagship/Premium\n- **Samsung** - Ekosistem lengkap, kamera bagus, banyak pilihan harga\n- **iPhone (Apple)** - Performa stabil, ekosistem iOS, resale value tinggi\n- **Google Pixel** - Kamera AI terbaik, update software cepat\n\n## Kelas Menengah (Value for Money)\n- **Xiaomi/Redmi/POCO** - Spek tinggi harga terjangkau, sering jadi favorit\n- **Samsung (A-series)** - Kualitas build bagus, brand trusted\n- **Realme** - Fast charging, desain menarik\n\n## Kelas Menengah-Foto Oriented\n- **OPPO** - Fokus kamera selfie & fitur kecantikan\n- **Vivo** - Kamera bagus, desain premium di harga menengah\n\n## Yang Perlu Dipertimbangkan:\n1. **Budget** - Berapa dana yang tersedia?\n2. **Prioritas** - Kamera, gaming, baterai, atau kamera?\n3. **Ekosistem** - Sudah pakai produk Apple/Google lain?\n4. **After-sales** - Ketersediaan service center di kota Anda\n\n---\n\n**Pertanyaan untuk saya bisa kasih rekomendasi lebih spesifik:**\n- Budget berapa yang Anda siapkan?\n- Kebutuhan utama: gaming, fotografi, kerja, atau harian biasa?\n\nKalau Anda kasih detail ini, saya bisa rekomendasikan model spesifik yang cocok! 😊"
+    },
+    {
+      "promptText": "Which companies dominate the Mobile phone market in Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 2,
+      "sentiment": "positive",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "The mobile phone market in Indonesia—the largest in Southeast Asia—is highly competitive and currently dominated by a mix of **Chinese smartphone manufacturers** and South Korea's **Samsung**. \n\nAccording to recent data from market research firms like IDC, Canalys, and Counterpoint Research (covering late 2023 into 2024), five brands control over 80% of the market. \n\nHere is a breakdown of the companies that dominate the Indonesian mobile phone market, ranked by their market share and influence:\n\n---\n\n### 1. OPPO (BBK Electronics)\n*   **Market Position:** Consistently battles Samsung for the **No. 1 spot** (often holding the top position in terms of shipment volume).\n*   **Strategy:** OPPO’s dominance is built on an incredibly strong offline distribution network. You can find OPPO branding in almost every retail store across Indonesia, from major cities to rural villages. \n*   **Key Drivers:** The budget-friendly **OPPO A-series** drives the majority of their sales, while the Reno series captures the mid-range market.\n\n### 2. Samsung\n*   **Market Position:** **No. 1 or No. 2** (dominates the premium and mid-high segments).\n*   **Strategy:** As the longest-standing giant in the Indonesian Android market, Samsung enjoys high brand loyalty and trust. It is the only non-Chinese brand in the top five.\n*   **Key Drivers:** The affordable **Galaxy A-series** (like the A15 and A25) drives mass volume, while the Galaxy S-series and Galaxy Z (foldables) dominate the premium Android segment. \n\n### 3. vivo (BBK Electronics)\n*   **Market Position:** Solidly in the **No. 3 spot**.\n*   **Strategy:** Similar to its sister company OPPO, vivo relies on aggressive offline marketing, sponsorships, and a vast network of physical retail stores. \n*   **Key Drivers:** The **vivo Y-series** (budget) and **V-series** (mid-range, focused on selfie and portrait cameras) are highly popular among younger Indonesian consumers.\n\n### 4. Xiaomi\n*   **Market Position:** **No. 4** (historically has reached No. 1, but fluctuates based on supply chain and product release cycles).\n*   **Strategy:** Xiaomi is beloved by tech-savvy Indonesians for its \"value-for-money\" proposition. While they started with an online-first model, they have expanded massively into physical \"Mi Shops.\"\n*   **Key Drivers:** The highly affordable **Redmi and Redmi Note** series are their main volume drivers, offering high specs (like good processors and screens) at lower price points than competitors.\n\n### 5. Transsion Group (Infinix, Tecno, and itel)\n*   **Market Position:** **No. 5 (and the fastest-growing)**.\n*   **Strategy:** Transsion (a Chinese conglomerate famous for dominating the African market) has made massive inroads in Indonesia. They target the ultra-budget and entry-level segments with specs that outperform competitors at the same price point.\n*   **Key Drivers:** **Infinix** is particularly popular among young Indonesian mobile gamers on a budget (promoting \"gaming phones\" under $150 USD). Tecno and itel cater to the entry-level market.\n\n---\n\n### Other Notable Players\n\n*   **realme:** Another brand under the BBK Electronics umbrella, realme is highly popular among Gen Z and gamers. It frequently hovers just outside or at the bottom of the Top 5.\n*   **Apple:** While Apple does not rank in the top five for *volume* (due to the high price of iPhones in a price-sensitive market), it **dominates the premium segment** (phones over $600 USD). Owning an iPhone is a major status symbol in Indonesia.\n\n---\n\n### Key Market Dynamics in Indonesia\n\n1.  **Price Sensitivity:** The \"sweet spot\" for the Indonesian market is the **under-$200 USD (IDR 3 million) segment**. This is why brands like OPPO, Xiaomi, and Infinix do so well.\n2.  **The TKDN Regulation:** The Indonesian government enforces a \"Tingkat Komponen Dalam Negeri\" (Local Content Requirement) of at least 35% for 4G and 5G smartphones. To sell phones in Indonesia, **all the dominant companies listed above have built local assembly factories** or partnered with local Indonesian manufacturers.\n3.  **Mobile Gaming Culture:** Indonesia has one of the largest mobile gaming populations in the world (Mobile Legends, PUBG Mobile, Free Fire). Brands that market their phones as \"gaming-ready\" at low prices (like Infinix and Xiaomi) have a massive advantage."
+    },
+    {
+      "promptText": "Brand Mobile phone mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 1,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Di Indonesia, pasar telepon seluler (smartphone) sangat dinamis. Untuk menentukan brand mana yang menjadi **market leader (pemimpin pasar)** dan **paling terkenal**, kita harus membaginya ke dalam dua kategori: **berdasarkan volume penjualan (pangsa pasar)** dan **berdasarkan popularitas/prestise (gengsi)**.\n\nBerdasarkan data terbaru dari lembaga riset global seperti **IDC, Canalys, dan Counterpoint (2023 - 2024)**, berikut adalah petanya di Indonesia:\n\n---\n\n### 1. Market Leader Berdasarkan Volume Penjualan (Pangsa Pasar Terbesar)\n\nUntuk kategori ini, persaingan ketat terjadi antara brand asal Tiongkok dan Korea Selatan. Pemimpin pasarnya adalah:\n\n*   **OPPO**\n    *   **Status:** Sering kali menduduki peringkat **nomor 1** dalam pangsa pasar (market share) di Indonesia.\n    *   **Mengapa sukses?** OPPO memiliki jaringan penjualan *offline* (toko fisik) yang luar biasa kuat hingga ke pelosok daerah. Strategi pemasaran mereka yang agresif dan fokus pada kamera (terutama seri Oppo A dan Reno) sangat diminati masyarakat kelas menengah Indonesia.\n*   **Samsung**\n    *   **Status:** Berada di posisi **nomor 1 atau 2** (saling kejar-mengejar dengan OPPO).\n    *   **Mengapa sukses?** Samsung adalah \"raksasa tua\" yang kepercayaannya paling stabil di Indonesia. Mereka menguasai semua lini, mulai dari kelas bawah (Galaxy A0s), kelas menengah (Galaxy A series yang sangat populer), hingga kelas premium (Galaxy S dan Z Fold/Flip).\n*   **Xiaomi & Vivo**\n    *   Dua brand ini konsisten berada di posisi 5 besar. Xiaomi terkenal dengan *value for money* (spesifikasi tinggi, harga murah), sedangkan Vivo kuat di sektor kamera dan desain yang estetik untuk anak muda.\n*   **Infinix (Transsion Group)**\n    *   Ini adalah *dark horse* (kuda hitam) yang sedang naik daun sangat pesat di Indonesia pada tahun 2023-2024, menggeser dominasi brand lain di kelas harga murah (entry-level) karena menawarkan spesifikasi gaming dengan harga sangat terjangkau.\n\n---\n\n### 2. Brand Paling Terkenal, Populer, dan Bergengsi (Top of Mind & Prestige)\n\nJika beralih ke faktor **popularitas, gengsi (status sosial), dan loyalitas konsumen**, jawaranya berbeda:\n\n*   **Apple (iPhone)**\n    *   **Status:** Brand smartphone **paling terkenal, paling diinginkan (aspirasional), dan paling prestisius** di Indonesia.\n    *   **Mengapa?** Meskipun pangsa pasarnya secara volume tidak sebesar Android (karena harganya yang mahal), iPhone dianggap sebagai simbol status sosial di Indonesia. iPhone juga sangat terkenal karena kualitas kameranya yang dianggap terbaik untuk media sosial (Instagram/TikTok) dan nilai jual kembali (resale value) yang sangat stabil.\n*   **Samsung (Flagship Series)**\n    *   Samsung juga sangat terkenal sebagai rival utama iPhone. Seri premium mereka seperti **Galaxy S24 Ultra** atau **Galaxy Z Flip/Fold** memiliki gengsi yang setara dengan iPhone di kalangan profesional dan pecinta teknologi.\n\n---\n\n### Kesimpulan\n\n*   Jika Anda bertanya **siapa yang paling banyak menjual HP di Indonesia (Market Leader)**: Jawabannya adalah **OPPO** dan **Samsung** (saling berebut posisi pertama).\n*   Jika Anda bertanya **siapa brand yang paling terkenal, dianggap terbaik, dan paling diinginkan**: Jawabannya adalah **Apple (iPhone)**."
+    },
+    {
+      "promptText": "Brand Mobile phone mana yang jadi market leader dan paling terkenal di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa brand handphone paling worth it di Indonesia?",
+      "aiTool": "claude",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "# Brand HP Paling Worth It di Indonesia\n\nTergantung budget dan kebutuhan kamu, berikut rekomendasinya:\n\n## Budget Rp1-2 Juta\n- **Infinix** - spesifikasi tinggi untuk harga murah, baterai awet\n- **Redmi (Xiaomi)** - build quality bagus, MIUI/HyperOS makin matang\n\n## Budget Rp2-4 Juta\n- **Samsung (Galaxy A series)** - resale value tinggi, update software lama, garansi resmi luas\n- **Xiaomi/Redmi Note series** - kamera bagus, performa gaming oke\n- **Realme** - fast charging kencang, desain menarik\n\n## Budget Rp4-7 Juta\n- **Samsung A5x/A7x series** - paling stabil untuk jangka panjang\n- **Xiaomi/Poco** - value terbaik untuk performa gaming\n\n## Budget Flagship (>Rp10 Juta)\n- **iPhone** - resale value paling stabil, ekosistem premium, awet lama\n- **Samsung S series** - kamera terbaik, fitur lengkap\n\n## Faktor yang Perlu Dipertimbangkan:\n1. **Garansi resmi & service center** - Samsung & Xiaomi paling luas di Indonesia\n2. **Resale value** - iPhone dan Samsung biasanya lebih stabil\n3. **Update software** - Samsung terkenal royal kasih update lama\n4. **Ketersediaan spare part** - penting untuk perbaikan jangka panjang\n\n## Rekomendasi Personal:\n- **Untuk pemula/budget terbatas**: Redmi/Infinix\n- **Untuk value seimbang**: Samsung Galaxy A series\n- **Untuk investasi jangka panjang**: iPhone (kalau budget cukup)\n\nMau saya bantu rekomendasi lebih spesifik? Boleh kasih tahu:\n- Budget kamu berapa?\n- Kebutuhan utama (gaming, foto, kerja, dll)?"
+    },
+    {
+      "promptText": "Apa brand handphone terbaik di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa brand handphone paling worth it di Indonesia?",
+      "aiTool": "openai",
+      "errorMessage": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [],
+      "rawResponse": ""
+    },
+    {
+      "promptText": "Apa brand handphone paling worth it di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": false,
+      "rankPosition": null,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Menentukan brand handphone (HP) paling *worth it* (paling bernilai dibanding uang yang dikeluarkan) di Indonesia sangat bergantung pada **budget** dan **kebutuhan** Anda. Di pasar Indonesia saat ini, persaingan sangat ketat, dan beberapa brand menguasai kategori tertentu.\n\nBerikut adalah analisis brand HP paling *worth it* di Indonesia berdasarkan kategorinya untuk tahun 2024:\n\n---\n\n### 1. Raja \"Spesifikasi Tinggi, Harga Murah\" (Budget 1 - 3 Jutaan)\nJika Anda mencari performa kencang, RAM besar, dan memori lega dengan harga sekecil mungkin, brand di bawah naungan **Transsion Holdings** dan **Xiaomi** adalah pemenangnya.\n\n*   **Infinix & Tecno (Transsion Group)**\n    *   **Mengapa worth it:** Mereka merusak harga pasar. Di kelas 1-2 jutaan, Anda sudah bisa mendapatkan HP dengan RAM 8GB, storage 256GB, layar 120Hz, dan chipset yang mumpuni untuk game ringan hingga menengah (contoh: Infinix Note series atau Tecno Pova series).\n    *   **Kekurangan:** Pembaruan sistem (software update) biasanya lambat dan hanya 1-2 tahun.\n*   **POCO (Sub-brand Xiaomi)**\n    *   **Mengapa worth it:** POCO adalah raja performa di kelas *mid-range*. Dengan budget 3 jutaan (contoh: POCO X-series), Anda bisa mendapatkan chipset kelas flagship/high-end yang sangat lancar untuk gaming berat.\n    *   **Kekurangan:** Desain terkadang terlalu mencolok (sangat bergaya gaming) dan sistem operasi (HyperOS/MIUI) kadang memiliki *bug* di awal rilis.\n\n---\n\n### 2. Raja \"Keseimbangan & Jangka Panjang\" (Budget 3 - 7 Jutaan)\nJika Anda mencari HP yang awet dipakai 3-5 tahun, sistem operasi stabil, kamera bagus, dan layanan purna jual (service center) yang mudah ditemukan di seluruh Indonesia.\n\n*   **Samsung (Galaxy A-Series, contoh: Galaxy A35 dan A55)**\n    *   **Mengapa worth it:** Samsung memberikan jaminan **software update hingga 4 kali Android update dan 5 tahun keamanan**. Keamanan data (Samsung Knox), layar Super AMOLED terbaik di kelasnya, fitur tahan air (IP67), dan *user interface* (One UI) yang sangat stabil dan minim *bug*.\n    *   **Kekurangan:** Pengisian daya (charging) relatif lambat (hanya 25W) dan kepala charger sering dijual terpisah.\n\n---\n\n### 3. Raja \"Investasi & Gengsi\" (Budget Flagship > 10 Juta)\nJika Anda memiliki budget besar dan mencari HP yang tidak rugi saat dijual kembali, serta memiliki performa video terbaik.\n\n*   **Apple (iPhone)**\n    *   **Mengapa worth it:** Harga jual bekas (resale value) iPhone di Indonesia sangat stabil dibanding Android. Selain itu, masa pakai sangat panjang (bisa 5-6 tahun tetap lancar), kualitas perekaman video adalah yang terbaik untuk kreator konten, dan gengsi sosial yang tinggi.\n    *   **Kekurangan:** Harga awal sangat mahal, aksesori mahal, dan kustomisasi sistem operasi terbatas.\n\n---\n\n### 4. Alternatif Terbaik untuk Fotografi & Desain (Semua Kelas)\n*   **Vivo (V-Series & X-Series)**\n    *   **Mengapa worth it:** Untuk urusan foto portrait dan estetika desain bodi, Vivo sangat unggul. Vivo X-series (yang bekerja sama dengan ZEISS) adalah salah satu HP dengan kamera terbaik di Indonesia saat ini.\n\n---\n\n### Kesimpulan: Mana yang Harus Anda Pilih?\n\n1.  **Budget mepet (1-2,5 Juta) & butuh memori besar:** Pilih **Infinix** atau **Tecno**.\n2.  **Budget medium (3-5 Juta) untuk Gaming berat:** Pilih **POCO**.\n3.  **Budget medium (3-6 Juta) untuk pemakaian harian jangka panjang, aman, & awet:** Pilih **Samsung (A-Series)**.\n4.  **Budget tanpa batas untuk performa, kamera harian, & gengsi:** Pilih **iPhone** (minimal seri 13 ke atas) atau **Samsung Galaxy S-Series**."
+    },
+    {
+      "promptText": "Apa brand handphone terbaik di Indonesia?",
+      "aiTool": "gemini",
+      "errorMessage": null,
+      "brandMentioned": true,
+      "rankPosition": 10,
+      "sentiment": "neutral",
+      "citedSources": [],
+      "storedCompetitorMentions": [
+        {
+          "name": "Samsung, Vivo, iPhone, Huawei, RealMe",
+          "mentioned": false,
+          "rank": null
+        }
+      ],
+      "rawResponse": "Menentukan brand handphone (HP) \"terbaik\" di Indonesia sangat bergantung pada apa yang Anda prioritaskan: **gengsi (prestige), performa gaming, kualitas kamera, daya tahan baterai, atau anggaran (budget).**\n\nNamun, berdasarkan data penjualan, kepopuleran, dan kualitas produk di Indonesia saat ini (2024), berikut adalah pembagian brand HP terbaik berdasarkan kategorinya:\n\n---\n\n### 1. Brand Premium Terbaik (Flagship & Gengsi)\n*   **Apple (iPhone)**\n    *   **Kelebihan:** Sistem operasi (iOS) sangat stabil, kualitas perekaman video terbaik di industri, masa pakai jangka panjang (update software hingga 5-6 tahun), gengsi tinggi, dan nilai jual kembali (resale value) yang stabil.\n    *   **Kekurangan:** Harga sangat mahal, ekosistem cenderung tertutup, dan aksesoris original mahal.\n*   **Samsung**\n    *   **Kelebihan:** Raja Android global. Seri flagship-nya (Galaxy S-series dan Z-foldable) memiliki layar terbaik, kamera zoom luar biasa, fitur produktivitas (S-Pen), dan *update* Android paling terjamin (hingga 7 tahun untuk seri terbaru). Service center resmi paling mudah ditemukan di Indonesia.\n    *   **Kekurangan:** Seri flagship-nya juga sangat mahal, pengisian daya (charging) cenderung lambat dibanding brand Tiongkok.\n\n### 2. Brand \"Value for Money\" Terbaik (Spesifikasi Tinggi, Harga Bersahabat)\n*   **Xiaomi (termasuk Redmi dan POCO)**\n    *   **Kelebihan:** Terkenal dengan jargon \"perusak harga pasar\". Menawarkan spesifikasi chipset (performa) tinggi dengan harga yang jauh lebih murah dibanding kompetitornya. POCO sangat populer di kalangan gamer budget terbatas.\n    *   **Kekurangan:** Kadang ada isu optimasi software (MIUI/HyperOS) dan iklan di dalam sistem (untuk seri murah).\n\n### 3. Brand Kamera & Desain Terbaik (Kelas Menengah - Atas)\n*   **Oppo**\n    *   **Kelebihan:** Sangat populer di Indonesia karena kualitas kamera portrait/selfie, pengisian daya super cepat (SuperVOOC), dan desain yang *stylish*. Layanan purna jualnya sangat bagus di Indonesia. Seri Find-series adalah salah satu flagship terbaik.\n*   **Vivo**\n    *   **Kelebihan:** Kolaborasi dengan lensa **Zeiss** pada seri flagship-nya (seperti Vivo X-series) menghasilkan salah satu kamera foto terbaik saat ini. Desainnya elegan dan memiliki manajemen RAM/performa yang stabil.\n\n### 4. Brand HP Murah Terbaik (Di Bawah Rp2 Juta)\n*   **Infinix & Tecno (Transsion Group)**\n    *   **Kelebihan:** Saat ini merajai pasar HP *entry-level* di Indonesia. Dengan harga 1 hingga 2 jutaan, mereka berani memberikan layar 120Hz, RAM besar, dan chipset yang mumpuni untuk game ringan.\n    *   **Kekurangan:** Build quality biasanya standar (plastik), pembaruan sistem operasi (OS update) cukup jarang.\n\n---\n\n### Siapa Pemimpin Pasar di Indonesia?\nBerdasarkan data lembaga riset pasar (seperti Canalys atau IDC) tahun 2023-2024, **Oppo, Samsung, dan Xiaomi** secara bergantian menduduki posisi 3 besar penguasa pasar (market share) terbesar di Indonesia.\n\n### Kesimpulan: Mana yang Harus Anda Pilih?\n1.  **Pilih Apple (iPhone)** jika Anda punya budget besar, ingin HP yang awet bertahun-tahun, mengutamakan video/sosial media (Instagram/TikTok), dan gengsi.\n2.  **Pilih Samsung** jika Anda ingin HP Android terbaik dengan layar terindah, fitur lengkap, dan layanan servis yang aman di Indonesia.\n3.  **Pilih Xiaomi/POCO** jika Anda seorang gamer yang mencari performa kencang dengan budget terbatas.\n4.  **Pilih Oppo/Vivo** jika Anda mengutamakan estetika desain, pengisian daya cepat, dan suka fotografi (terutama portrait).\n5.  **Pilih Infinix** jika budget Anda di bawah Rp2 juta tapi ingin spesifikasi yang lumayan kencang."
+    }
+  ]
+}

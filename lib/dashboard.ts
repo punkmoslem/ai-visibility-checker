@@ -1,12 +1,7 @@
 import { prisma } from "./db";
+import { toShareOfVoice, ShareOfVoiceEntry } from "./parsing/sov";
 
-export interface ShareOfVoiceEntry {
-  name: string;
-  isBrand: boolean;
-  mentions: number;
-  shareOfVoice: number; // 0..1 of all tracked-entity mentions in the run
-  avgRank: number | null;
-}
+export type { ShareOfVoiceEntry } from "./parsing/sov";
 
 export async function computeDashboardStats(runId: string) {
   const run = await prisma.run.findUnique({
@@ -51,7 +46,7 @@ export async function computeDashboardStats(runId: string) {
 
   // ---- Share of voice: brand vs tracked competitors across this run ----
   const brandRanks = mentionedResults.map((r) => r.rankPosition).filter((n): n is number => n !== null);
-  const entities: Omit<ShareOfVoiceEntry, "shareOfVoice">[] = [
+  const entities = [
     {
       name: run.brandProject.brandName,
       isBrand: true,
@@ -61,7 +56,9 @@ export async function computeDashboardStats(runId: string) {
   ];
   for (const competitor of run.brandProject.competitors) {
     const cms = run.results.flatMap((r) =>
-      r.competitorMentions.filter((cm) => cm.competitorName === competitor.name && cm.mentioned)
+      r.competitorMentions.filter(
+        (cm) => cm.competitorName.toLowerCase() === competitor.name.toLowerCase() && cm.mentioned
+      )
     );
     const ranks = cms.map((cm) => cm.rankPosition).filter((n): n is number => n !== null);
     entities.push({
@@ -71,10 +68,7 @@ export async function computeDashboardStats(runId: string) {
       avgRank: ranks.length > 0 ? ranks.reduce((a, b) => a + b, 0) / ranks.length : null,
     });
   }
-  const totalMentions = entities.reduce((sum, e) => sum + e.mentions, 0);
-  const shareOfVoice: ShareOfVoiceEntry[] = entities
-    .map((e) => ({ ...e, shareOfVoice: totalMentions > 0 ? e.mentions / totalMentions : 0 }))
-    .sort((a, b) => b.mentions - a.mentions);
+  const shareOfVoice: ShareOfVoiceEntry[] = toShareOfVoice(entities);
 
   const okCount = okResults.length;
   const overallPresenceRate = okCount > 0 ? mentionedResults.filter((r) => !r.errorMessage).length / okCount : 0;

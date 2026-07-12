@@ -113,9 +113,28 @@ function scoreSentiment(window: string): Sentiment {
   return positiveHits > negativeHits ? "positive" : "negative";
 }
 
+// A tracked name that still contains commas is a list that was never split
+// (legacy rows predating the comma-split on input) — match each part on its own.
+export function normalizeTrackedNames(names: string[]): string[] {
+  const seen = new Set<string>();
+  const normalized: string[] = [];
+  for (const raw of names) {
+    for (const part of raw.split(",")) {
+      const name = part.trim();
+      if (!name || seen.has(name.toLowerCase())) continue;
+      seen.add(name.toLowerCase());
+      normalized.push(name);
+    }
+  }
+  return normalized;
+}
+
 export const heuristicParser: ResponseParser = {
   parse(rawText: string, ctx: ParseContext): ParsedResult {
-    const allNames = [ctx.brandName, ...ctx.competitorNames];
+    const competitorNames = normalizeTrackedNames(ctx.competitorNames).filter(
+      (n) => n.toLowerCase() !== ctx.brandName.toLowerCase()
+    );
+    const allNames = [ctx.brandName, ...competitorNames];
     const listItems = extractListItems(rawText);
 
     const brandIndex = findMentionIndex(rawText, ctx.brandName);
@@ -124,7 +143,7 @@ export const heuristicParser: ResponseParser = {
     const sentiment: Sentiment = brandMentioned ? scoreSentiment(sentenceAround(rawText, brandIndex)) : "neutral";
     const citedSources = extractCitedSources(rawText);
 
-    const competitorMentions: EntityMention[] = ctx.competitorNames.map((name) => {
+    const competitorMentions: EntityMention[] = competitorNames.map((name) => {
       const idx = findMentionIndex(rawText, name);
       const mentioned = idx >= 0;
       return {
