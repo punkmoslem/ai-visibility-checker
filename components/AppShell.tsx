@@ -27,7 +27,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col items-center px-5 pt-6 pb-4">
           <Image src="/logo-mark.png" alt="R&R" width={56} height={56} className="h-14 w-14" priority />
           <span className="mt-3 text-[13px] font-bold tracking-tight text-white">AI Visibility Checker</span>
-          <span className="mt-1 text-center text-[10px] leading-snug text-white/40">Track how AI assistants talk about your brand</span>
+          <span className="mt-1 text-center text-[10px] leading-snug text-white/40">Track how ChatGPT, Gemini and Claude talk about your brand/company/persona</span>
         </div>
 
         {/* Nav links */}
