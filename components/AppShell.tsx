@@ -23,13 +23,11 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     <div className="flex h-screen">
       {/* Sidebar */}
       <aside className="sidebar-bg flex h-full w-56 shrink-0 flex-col overflow-y-auto">
-        {/* Logo */}
-        <div className="flex items-center gap-3 px-5 py-5">
-          <Image src="/logo-mark.png" alt="R&R" width={36} height={36} className="h-9 w-9 rounded-lg" priority />
-          <div className="flex flex-col">
-            <span className="text-[13px] font-bold tracking-tight text-white">AI Visibility</span>
-            <span className="text-[10px] font-normal tracking-wide text-white/40">R&R Communications</span>
-          </div>
+        {/* Logo + app title */}
+        <div className="flex flex-col items-center px-5 pt-6 pb-4">
+          <Image src="/logo-mark.png" alt="R&R" width={56} height={56} className="h-14 w-14" priority />
+          <span className="mt-3 text-[13px] font-bold tracking-tight text-white">AI Visibility Checker</span>
+          <span className="mt-1 text-center text-[10px] leading-snug text-white/40">Track how AI assistants talk about your brand</span>
         </div>
 
         {/* Nav links */}
@@ -74,8 +72,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       {/* Main content */}
       <main className="flex-1 overflow-y-auto bg-shell-bg">
         {children}
-        <footer className="flex items-center justify-center py-8 opacity-30">
-          <Image src="/logo-mark.png" alt="R&R" width={32} height={32} className="h-8 w-8 grayscale" />
+        <footer className="flex items-center justify-center py-10 opacity-20">
+          <Image src="/logo-mark.png" alt="R&R" width={64} height={64} className="h-16 w-16 grayscale" />
         </footer>
       </main>
     </div>
