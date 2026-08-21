@@ -19,19 +19,19 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     )?.id;
 
   if (!runId) {
-    return NextResponse.json({ stats: null, trends: [], insights: [], recommendations: [] });
+    return NextResponse.json({ stats: null, trends: [], insights: [], recommendations: [], keywords: null });
   }
 
   const stats = await computeDashboardStats(runId);
   if (!stats) {
-    return NextResponse.json({ stats: null, trends: [], insights: [], recommendations: [] });
+    return NextResponse.json({ stats: null, trends: [], insights: [], recommendations: [], keywords: null });
   }
 
   const allTrends = await computeTrends(id);
   const idx = allTrends.findIndex((t) => t.runId === runId);
   const trendsUpToRun = idx >= 0 ? allTrends.slice(0, idx + 1) : allTrends;
   const insights = generateInsights(stats, trendsUpToRun);
-  const recommendations = generateRecommendations(stats);
+  const { recommendations, keywords } = generateRecommendations(stats);
 
-  return NextResponse.json({ stats, trends: allTrends, insights, recommendations });
+  return NextResponse.json({ stats, trends: allTrends, insights, recommendations, keywords });
 }

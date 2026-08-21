@@ -19,6 +19,19 @@ interface Recommendation {
   details?: string[];
 }
 
+interface KeywordEntry {
+  phrase: string;
+  count: number;
+  associatedWith: string[];
+}
+
+interface KeywordAnalysis {
+  brandKeywords: KeywordEntry[];
+  competitorKeywords: KeywordEntry[];
+  gaps: KeywordEntry[];
+  targetKeywords: string[];
+}
+
 const CATEGORY_META: Record<string, { label: string; fullLabel: string; color: string }> = {
   geo: { label: "GEO", fullLabel: "Generative Engine Optimization", color: "bg-purple-100 text-purple-800" },
   aeo: { label: "AEO", fullLabel: "Answer Engine Optimization", color: "bg-blue-100 text-blue-800" },
@@ -89,6 +102,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
   const [trends, setTrends] = useState<TrendPointDatum[]>([]);
   const [insights, setInsights] = useState<string[]>([]);
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
+  const [keywords, setKeywords] = useState<KeywordAnalysis | null>(null);
   const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
   const [recFilter, setRecFilter] = useState<string>("all");
 
@@ -101,6 +115,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
         setTrends(data.trends ?? []);
         setInsights(data.insights ?? []);
         setRecommendations(data.recommendations ?? []);
+        setKeywords(data.keywords ?? null);
       });
   }, [id, runId]);
 
@@ -196,7 +211,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
             {/* GEO / AEO / SEO Recommendations */}
             {recommendations.length > 0 && (
-              <section className="brand-card p-6">
+              <section id="action-plan" className="brand-card p-6 scroll-mt-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
                     <h2 className="font-bold text-brand-ink">Action Plan</h2>
@@ -232,7 +247,74 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               </section>
             )}
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* Keyword Intelligence */}
+            {keywords && (keywords.brandKeywords.length > 0 || keywords.gaps.length > 0) && (
+              <section id="keywords" className="brand-card p-6 scroll-mt-6">
+                <h2 className="font-bold text-brand-ink">Keyword Intelligence</h2>
+                <p className="text-xs text-brand-muted">Phrases AI models associate with your {stats.entityType === "person" ? "persona" : "brand"} vs competitors</p>
+
+                <div className="mt-4 grid gap-6 md:grid-cols-2">
+                  {/* Your keywords */}
+                  {keywords.brandKeywords.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-brand-ink">Your Keywords</h3>
+                      <p className="mb-3 text-[10px] text-brand-muted">Phrases AI already links to {stats.brandName}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {keywords.brandKeywords.slice(0, 12).map((kw) => (
+                          <span
+                            key={kw.phrase}
+                            className="inline-flex items-center gap-1 rounded-full bg-brand-teal-tint px-2.5 py-1 text-xs font-medium text-brand-teal-dark"
+                          >
+                            {kw.phrase}
+                            <span className="text-[10px] text-brand-teal-dark/50">×{kw.count}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Keyword gaps */}
+                  {keywords.gaps.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-brand-ink">Keyword Gaps</h3>
+                      <p className="mb-3 text-[10px] text-brand-muted">Phrases competitors own — target these in your content</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {keywords.gaps.slice(0, 12).map((kw) => (
+                          <span
+                            key={kw.phrase}
+                            className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                            title={`Used for: ${kw.associatedWith.join(", ")}`}
+                          >
+                            {kw.phrase}
+                            <span className="text-[10px] text-red-400">×{kw.count}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Target keywords summary */}
+                {keywords.targetKeywords.length > 0 && (
+                  <div className="mt-5 rounded-xl border border-brand-line bg-[var(--bg)] p-4">
+                    <h3 className="text-sm font-bold text-brand-ink">Target Keywords for Content Strategy</h3>
+                    <p className="mb-2 text-[10px] text-brand-muted">Create content around these phrases to close the gap</p>
+                    <div className="flex flex-wrap gap-2">
+                      {keywords.targetKeywords.map((kw) => (
+                        <span
+                          key={kw}
+                          className="rounded-full border border-brand-teal bg-white px-3 py-1.5 text-xs font-bold text-brand-teal-dark shadow-[0_1px_3px_rgba(23,166,141,.15)]"
+                        >
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
+
+            <div id="charts" className="grid grid-cols-1 gap-6 md:grid-cols-2 scroll-mt-6">
               <section className="brand-card p-6">
                 <h2 className="font-semibold text-brand-ink">Presence Rate by Tool</h2>
                 <p className="text-xs text-brand-muted">% of prompts where the {stats.entityType === "person" ? "name" : "brand"} was mentioned</p>
@@ -302,7 +384,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               )}
             </section>
 
-            <section className="brand-card p-6">
+            <section id="per-prompt" className="brand-card p-6 scroll-mt-6">
               <h2 className="font-semibold text-brand-ink">Per-Prompt Results</h2>
               <p className="text-xs text-brand-muted">How each question performed across every AI tool</p>
               <PerPromptTable

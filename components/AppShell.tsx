@@ -91,6 +91,22 @@ function ProjectLinks({ pathname }: { pathname: string }) {
     { href: `/projects/${projectId}/report`, label: "Client Report", icon: ReportIcon },
   ];
 
+  const isDashboard = pathname.startsWith(`/projects/${projectId}/dashboard`);
+
+  const dashboardSections = [
+    { anchor: "action-plan", label: "Action Plan" },
+    { anchor: "keywords", label: "Keywords" },
+    { anchor: "charts", label: "Charts & Data" },
+    { anchor: "per-prompt", label: "Per-Prompt Results" },
+  ];
+
+  function scrollToSection(anchor: string) {
+    const el = document.getElementById(anchor);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   return (
     <div className="mt-4 border-t border-white/8 pt-4">
       <p className="mb-2 px-3 text-[10px] font-bold tracking-[0.14em] text-white/30 uppercase">
@@ -99,19 +115,33 @@ function ProjectLinks({ pathname }: { pathname: string }) {
       {links.map((item) => {
         const active = pathname === item.href || pathname.startsWith(item.href + "?");
         return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-300 ${
-              active
-                ? "bg-white/12 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.08)]"
-                : "text-white/50 hover:bg-white/6 hover:text-white/80"
-            }`}
-            style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
-          >
-            <item.icon active={active} />
-            {item.label}
-          </Link>
+          <div key={item.href}>
+            <Link
+              href={item.href}
+              className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-300 ${
+                active
+                  ? "bg-white/12 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.08)]"
+                  : "text-white/50 hover:bg-white/6 hover:text-white/80"
+              }`}
+              style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+            >
+              <item.icon active={active} />
+              {item.label}
+            </Link>
+            {active && isDashboard && item.href.endsWith("/dashboard") && (
+              <div className="ml-7 mt-0.5 space-y-0.5 border-l border-white/10 pl-3">
+                {dashboardSections.map((s) => (
+                  <button
+                    key={s.anchor}
+                    onClick={() => scrollToSection(s.anchor)}
+                    className="block w-full rounded-lg px-2 py-1.5 text-left text-[11px] text-white/40 transition-all duration-200 hover:bg-white/6 hover:text-white/70"
+                  >
+                    {s.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         );
       })}
     </div>

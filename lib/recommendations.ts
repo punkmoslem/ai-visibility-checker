@@ -2,6 +2,7 @@
 // Deterministic, rule-based — generates actionable recommendations from run data.
 
 import type { DashboardStatsData } from "./dashboard";
+import { extractKeywords, type KeywordAnalysis } from "./keywords";
 
 export type RecommendationCategory = "geo" | "aeo" | "seo";
 export type RecommendationPriority = "high" | "medium" | "low";
@@ -20,7 +21,12 @@ function pct(rate: number): string {
   return `${Math.round(rate * 100)}%`;
 }
 
-export function generateRecommendations(stats: DashboardStatsData): Recommendation[] {
+export interface RecommendationsResult {
+  recommendations: Recommendation[];
+  keywords: KeywordAnalysis | null;
+}
+
+export function generateRecommendations(stats: DashboardStatsData): RecommendationsResult {
   const recs: Recommendation[] = [];
   const entityWord = stats.entityType === "person" ? "persona" : "brand";
 
@@ -257,6 +263,55 @@ export function generateRecommendations(stats: DashboardStatsData): Recommendati
     });
   }
 
+  // ── Keyword analysis ──
+  const competitorNames = stats.shareOfVoice
+    .filter((e) => !e.isBrand && e.mentions > 0)
+    .map((e) => e.name);
+
+  let keywords: KeywordAnalysis | null = null;
+  if (okResults.length > 0) {
+    keywords = extractKeywords(stats.brandName, competitorNames, okResults as Parameters<typeof extractKeywords>[2]);
+
+    // 9. Keyword gap recommendation
+    if (keywords.gaps.length > 0) {
+      recs.push({
+        category: "geo",
+        priority: keywords.gaps.length >= 5 ? "high" : "medium",
+        title: `${keywords.gaps.length} keyword${keywords.gaps.length === 1 ? "" : "s"} competitors own that you don't`,
+        description: `AI models use these phrases when recommending competitors but not ${stats.brandName}. Create content that associates your ${entityWord} with these terms.`,
+        details: keywords.gaps.slice(0, 10).map(
+          (g) => `"${g.phrase}" — used for ${g.associatedWith.join(", ")} (${g.count}×)`
+        ),
+      });
+    }
+
+    // 10. Brand keyword strengths — reinforce what's working
+    if (keywords.brandKeywords.length >= 3) {
+      recs.push({
+        category: "seo",
+        priority: "low",
+        title: `Reinforce your ${Math.min(keywords.brandKeywords.length, 5)} strongest keyword associations`,
+        description: `AI models already associate these phrases with ${stats.brandName}. Double down on this content to maintain and strengthen these associations.`,
+        details: keywords.brandKeywords.slice(0, 5).map(
+          (k) => `"${k.phrase}" — mentioned ${k.count}× alongside ${stats.brandName}`
+        ),
+      });
+    }
+
+    // 11. Target keyword suggestions for content creation
+    if (keywords.targetKeywords.length > 0) {
+      recs.push({
+        category: "geo",
+        priority: "medium",
+        title: "Target keywords for AI content strategy",
+        description: `Based on how AI models discuss your industry, these are the top keywords to target in your content. Use them in page titles, headings, FAQ answers, and schema markup.`,
+        details: keywords.targetKeywords.map(
+          (kw) => `"${kw}" — create a dedicated page or FAQ answer targeting this phrase`
+        ),
+      });
+    }
+  }
+
   // Sort: high > medium > low, then geo > aeo > seo
   const priorityOrder: Record<string, number> = { high: 0, medium: 1, low: 2 };
   const categoryOrder: Record<string, number> = { geo: 0, aeo: 1, seo: 2 };
@@ -266,7 +321,7 @@ export function generateRecommendations(stats: DashboardStatsData): Recommendati
       categoryOrder[a.category] - categoryOrder[b.category]
   );
 
-  return recs;
+  return { recommendations: recs, keywords };
 }
 
 function extractDomain(url: string): string {
