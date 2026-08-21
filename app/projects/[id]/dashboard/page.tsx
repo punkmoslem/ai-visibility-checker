@@ -10,6 +10,26 @@ import ShareOfVoiceChart, { ShareOfVoiceDatum } from "@/components/charts/ShareO
 import TrendChart, { TrendPointDatum } from "@/components/charts/TrendChart";
 
 const TOOL_LABELS: Record<string, string> = { claude: "Claude", openai: "ChatGPT", gemini: "Gemini" };
+
+interface Recommendation {
+  category: "geo" | "aeo" | "seo";
+  priority: "high" | "medium" | "low";
+  title: string;
+  description: string;
+  details?: string[];
+}
+
+const CATEGORY_META: Record<string, { label: string; fullLabel: string; color: string }> = {
+  geo: { label: "GEO", fullLabel: "Generative Engine Optimization", color: "bg-purple-100 text-purple-800" },
+  aeo: { label: "AEO", fullLabel: "Answer Engine Optimization", color: "bg-blue-100 text-blue-800" },
+  seo: { label: "SEO", fullLabel: "Search Engine Optimization", color: "bg-amber-100 text-amber-800" },
+};
+
+const PRIORITY_STYLES: Record<string, string> = {
+  high: "border-l-red-500",
+  medium: "border-l-amber-400",
+  low: "border-l-brand-teal",
+};
 const SENTIMENT_COLORS: Record<string, string> = {
   positive: "text-brand-teal-dark bg-brand-teal-tint",
   neutral: "text-brand-ink bg-brand-line",
@@ -68,7 +88,9 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
   const [stats, setStats] = useState<DashboardStats | null | undefined>(undefined);
   const [trends, setTrends] = useState<TrendPointDatum[]>([]);
   const [insights, setInsights] = useState<string[]>([]);
+  const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
   const [expandedResultId, setExpandedResultId] = useState<string | null>(null);
+  const [recFilter, setRecFilter] = useState<string>("all");
 
   useEffect(() => {
     const query = runId ? `?runId=${runId}` : "";
@@ -78,6 +100,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
         setStats(data.stats);
         setTrends(data.trends ?? []);
         setInsights(data.insights ?? []);
+        setRecommendations(data.recommendations ?? []);
       });
   }, [id, runId]);
 
@@ -171,6 +194,44 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               </section>
             )}
 
+            {/* GEO / AEO / SEO Recommendations */}
+            {recommendations.length > 0 && (
+              <section className="brand-card p-6">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h2 className="font-bold text-brand-ink">Action Plan</h2>
+                    <p className="text-xs text-brand-muted">GEO, AEO & SEO recommendations based on this run</p>
+                  </div>
+                  <div className="flex gap-1.5">
+                    {["all", "geo", "aeo", "seo"].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setRecFilter(cat)}
+                        className={`rounded-full px-3 py-1.5 text-xs font-bold uppercase transition-all duration-300 ${
+                          recFilter === cat
+                            ? "brand-btn-primary text-white"
+                            : "border border-brand-line bg-white text-brand-muted hover:text-brand-ink"
+                        }`}
+                        style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+                      >
+                        {cat === "all" ? "All" : cat.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-4 space-y-3">
+                  {recommendations
+                    .filter((r) => recFilter === "all" || r.category === recFilter)
+                    .map((rec, i) => (
+                    <RecommendationCard key={i} rec={rec} />
+                  ))}
+                  {recommendations.filter((r) => recFilter === "all" || r.category === recFilter).length === 0 && (
+                    <p className="py-4 text-center text-sm text-brand-muted">No {recFilter.toUpperCase()} recommendations for this run.</p>
+                  )}
+                </div>
+              </section>
+            )}
+
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <section className="brand-card p-6">
                 <h2 className="font-semibold text-brand-ink">Presence Rate by Tool</h2>
@@ -254,6 +315,47 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
         )}
       </div>
     </AppShell>
+  );
+}
+
+function RecommendationCard({ rec }: { rec: Recommendation }) {
+  const [open, setOpen] = useState(false);
+  const meta = CATEGORY_META[rec.category];
+  const borderClass = PRIORITY_STYLES[rec.priority];
+
+  return (
+    <div className={`rounded-xl border border-brand-line border-l-4 ${borderClass} bg-white shadow-[0_1px_2px_rgba(28,42,56,.04),inset_0_1px_0_rgba(255,255,255,.75)] transition-shadow duration-300 hover:shadow-[0_2px_8px_rgba(28,42,56,.08)]`}>
+      <button
+        onClick={() => rec.details && setOpen(!open)}
+        className="flex w-full items-start gap-3 px-4 py-4 text-left"
+      >
+        <div className="flex shrink-0 flex-col items-center gap-1 pt-0.5">
+          <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${meta.color}`}>{meta.label}</span>
+          {rec.priority === "high" && (
+            <span className="rounded-full bg-red-100 px-1.5 py-0.5 text-[9px] font-bold text-red-700 uppercase">urgent</span>
+          )}
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-bold text-brand-ink">{rec.title}</p>
+          <p className="mt-1 text-xs leading-relaxed text-brand-muted">{rec.description}</p>
+        </div>
+        {rec.details && (
+          <span className="mt-1 shrink-0 text-xs text-brand-muted">{open ? "▾" : "▸"}</span>
+        )}
+      </button>
+      {open && rec.details && (
+        <div className="border-t border-brand-line bg-[var(--bg)] px-4 py-3">
+          <ul className="space-y-1.5">
+            {rec.details.map((d, i) => (
+              <li key={i} className="flex gap-2 text-xs leading-relaxed text-brand-ink">
+                <span className="mt-0.5 shrink-0 text-brand-teal">→</span>
+                {d}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
   );
 }
 
