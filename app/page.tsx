@@ -15,7 +15,7 @@ export default async function ProjectsPage() {
       <div className="px-8 py-8">
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-xl font-semibold text-brand-ink">Projects</h1>
+            <h1 className="text-xl font-bold text-brand-ink">Projects</h1>
             <p className="mt-0.5 text-sm text-brand-muted">Manage your AI visibility tracking projects</p>
           </div>
           <Link

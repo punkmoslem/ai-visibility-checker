@@ -1,84 +1,150 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #22333d;
+  /* R&R design system — synced with master-media-list */
+  --navy: #2c3e50;
+  --navy-dark: #1c2a38;
+  --teal: #17a68d;
+  --teal-dark: #128a75;
+  --bg: #f4f7f7;
+  --card: #ffffff;
+  --border: #e2e8e7;
+  --text: #22303a;
+  --muted: rgba(102, 121, 133, 0.57);
+  --muted-solid: #63767f;
+
+  /* Layered "3D" shadows */
+  --shadow: 0 1px 2px rgba(28,42,56,.04), 0 6px 14px rgba(28,42,56,.07), 0 18px 36px rgba(28,42,56,.06);
+  --shadow-lg: 0 2px 4px rgba(28,42,56,.05), 0 14px 28px rgba(28,42,56,.10), 0 32px 60px rgba(28,42,56,.08);
+  --shadow-xl: 0 4px 8px rgba(28,42,56,.05), 0 22px 44px rgba(28,42,56,.13), 0 48px 88px rgba(28,42,56,.10);
+
+  /* Glass highlights */
+  --hl: inset 0 1px 0 rgba(255,255,255,.95);
+  --hl-soft: inset 0 1px 0 rgba(255,255,255,.75);
+
+  /* Surface gradients */
+  --surface: linear-gradient(163deg, #fdfefe 0%, #fafcfc 50%, #f6faf9 100%);
+  --panel: linear-gradient(163deg, #ffffff 0%, #fdfefe 100%);
+
+  --ease-soft: cubic-bezier(.16, 1, .3, 1);
+
+  --background: var(--bg);
+  --foreground: var(--text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-lato), Lato, "Helvetica Neue", Arial, sans-serif;
 
-  /* R&R Communications brand palette — refreshed with sidebar dashboard feel */
-  --color-brand-navy: #2f576e;
-  --color-brand-navy-deep: #1e3d50;
-  --color-brand-navy-darkest: #22333d;
-  --color-brand-ink: #22333d;
-  --color-brand-teal: #12a79c;
-  --color-brand-teal-dark: #0e8981;
+  --color-brand-navy: var(--navy);
+  --color-brand-navy-deep: var(--navy-dark);
+  --color-brand-navy-darkest: var(--navy-dark);
+  --color-brand-ink: var(--text);
+  --color-brand-teal: var(--teal);
+  --color-brand-teal-dark: var(--teal-dark);
   --color-brand-teal-tint: #e7f4f3;
   --color-brand-mist: #8fa5b1;
-  --color-brand-line: #e2e8ee;
-  --color-brand-muted: #5b6d78;
+  --color-brand-line: var(--border);
+  --color-brand-muted: var(--muted-solid);
 
-  /* Sidebar & shell */
-  --color-sidebar-bg: #1a3a2a;
-  --color-shell-bg: #f2f5f8;
+  --color-sidebar-bg: var(--navy-dark);
+  --color-shell-bg: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-lato), Lato, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Sidebar dark forest-teal background */
+/* ── Header / Sidebar — animated navy gradient ── */
 .sidebar-bg {
-  background: linear-gradient(180deg, #1a3a2a 0%, #162e23 100%);
+  background: linear-gradient(120deg, #1c2a38 0%, #2c3e50 35%, #243c4c 60%, #2c3e50 80%, #1c2a38 100%);
+  background-size: 300% 300%;
+  animation: headerShimmer 12s ease infinite;
 }
 
-/* Light gray main area (replaces old brand-shell for authenticated pages) */
+@keyframes headerShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Light gray main area */
 .bg-shell-bg {
-  background: var(--color-shell-bg);
+  background: var(--bg);
 }
 
-/* Legacy dark gradient for login page */
+/* Login page dark gradient */
 .brand-shell {
-  background: linear-gradient(160deg, #1a3a2a 0%, #162e23 55%, #0f1f18 100%);
+  background: linear-gradient(120deg, #1c2a38 0%, #2c3e50 35%, #243c4c 60%, #2c3e50 80%, #1c2a38 100%);
+  background-size: 300% 300%;
+  animation: headerShimmer 12s ease infinite;
 }
 
-/* Card style — soft shadow, rounded */
+/* ── Cards — 3D layered shadow + glass highlight ── */
 .brand-card {
-  background: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  background: var(--panel);
+  border-radius: 18px;
+  box-shadow: var(--shadow), var(--hl);
+  border: 1px solid var(--border);
+  transition: box-shadow 0.4s var(--ease-soft), transform 0.4s var(--ease-soft);
 }
 
-/* Hero / featured card accent (dark teal fill) */
+.brand-card:hover {
+  box-shadow: var(--shadow-lg), var(--hl);
+}
+
+/* Hero card accent */
 .brand-card-hero {
-  background: linear-gradient(135deg, #1a3a2a 0%, #12a79c 150%);
-  border-radius: 1rem;
-  box-shadow: 0 4px 20px rgba(26,58,42,0.25);
+  background: linear-gradient(120deg, #1c2a38 0%, #2c3e50 35%, #243c4c 60%, #2c3e50 80%, #1c2a38 100%);
+  background-size: 300% 300%;
+  animation: headerShimmer 12s ease infinite;
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
 }
 
+/* ── Buttons — pill shape, teal glow ── */
 .brand-btn-primary {
-  background: linear-gradient(135deg, #12a79c 0%, #0e8981 100%);
-  border-radius: 0.5rem;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.32), inset 0 -1px 0 rgba(0,0,0,.1), 0 3px 8px rgba(18,138,117,.30), 0 10px 24px rgba(18,138,117,.24);
+  transition: transform 0.35s var(--ease-soft), box-shadow 0.35s var(--ease-soft);
 }
 
 .brand-btn-primary:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 167, 156, 0.3);
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.32), inset 0 -1px 0 rgba(0,0,0,.1), 0 6px 14px rgba(18,138,117,.35), 0 16px 32px rgba(18,138,117,.28);
 }
 
+.brand-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary / outline button */
+.brand-btn-secondary {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--hl), 0 1px 3px rgba(28,42,56,.06);
+  color: var(--text);
+  transition: box-shadow 0.35s var(--ease-soft), transform 0.35s var(--ease-soft);
+}
+
+.brand-btn-secondary:hover {
+  box-shadow: var(--hl), 0 3px 8px rgba(28,42,56,.1);
+  transform: translateY(-1px);
+}
+
+/* ── Note / info box ── */
 .brand-note {
   background: #f1f6f8;
-  border-left: 4px solid #12a79c;
+  border-left: 4px solid var(--teal);
+  border-radius: 12px;
 }
 
-/* Client report PDF export via the browser print dialog */
+/* ── Client report PDF export ── */
 @media print {
   @page {
     margin: 14mm;

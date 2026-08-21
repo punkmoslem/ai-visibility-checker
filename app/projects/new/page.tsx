@@ -38,15 +38,16 @@ export default function NewProjectPage() {
   }
 
   const isCompany = entityType === "company";
+  const inputClass = "mt-1 block w-full rounded-xl border border-brand-line bg-white px-4 py-3 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_1px_3px_rgba(28,42,56,.06)] transition-shadow duration-300 focus:border-brand-teal focus:outline-none focus:shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_0_0_3px_rgba(23,166,141,.15)]";
 
   return (
     <AppShell>
       <div className="px-8 py-8">
-        <h1 className="text-xl font-semibold text-brand-ink">New Project</h1>
+        <h1 className="text-xl font-bold text-brand-ink">New Project</h1>
         <p className="mt-0.5 text-sm text-brand-muted">Set up a new brand for AI visibility tracking</p>
 
         <div className="brand-card mt-6 max-w-xl p-8">
-          <div className="brand-note mb-6 rounded-lg p-4 text-sm leading-relaxed text-brand-muted">
+          <div className="brand-note mb-6 p-4 text-sm leading-relaxed text-brand-muted">
             <strong className="mb-1 block text-brand-navy">Note:</strong>
             Competitor tracking and custom prompts can be added after creating the project.
           </div>
@@ -54,22 +55,24 @@ export default function NewProjectPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-brand-ink">What are you checking?</label>
-              <div className="mt-2 inline-flex rounded-lg bg-shell-bg p-1">
+              <div className="mt-2 inline-flex rounded-full border border-brand-line bg-[var(--bg)] p-1 shadow-[inset_0_1px_0_rgba(255,255,255,.75)]">
                 <button
                   type="button"
                   onClick={() => setEntityType("company")}
-                  className={`rounded-md px-4 py-2 text-sm font-medium transition ${
-                    isCompany ? "bg-white text-brand-ink shadow-sm" : "text-brand-muted"
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                    isCompany ? "brand-btn-primary text-white" : "text-brand-muted hover:text-brand-ink"
                   }`}
+                  style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
                 >
                   Company / Brand
                 </button>
                 <button
                   type="button"
                   onClick={() => setEntityType("person")}
-                  className={`rounded-md px-4 py-2 text-sm font-medium transition ${
-                    !isCompany ? "bg-white text-brand-ink shadow-sm" : "text-brand-muted"
+                  className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
+                    !isCompany ? "brand-btn-primary text-white" : "text-brand-muted hover:text-brand-ink"
                   }`}
+                  style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
                 >
                   Person / Persona
                 </button>
@@ -86,7 +89,7 @@ export default function NewProjectPage() {
                 value={brandName}
                 onChange={(e) => setBrandName(e.target.value)}
                 placeholder={isCompany ? "e.g. Bank Merah" : "e.g. a public figure's name"}
-                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
+                className={inputClass}
               />
             </div>
             <div>
@@ -99,7 +102,7 @@ export default function NewProjectPage() {
                 value={industry}
                 onChange={(e) => setIndustry(e.target.value)}
                 placeholder={isCompany ? "e.g. digital banking" : "e.g. beauty influencer"}
-                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
+                className={inputClass}
               />
             </div>
             <div>
@@ -111,7 +114,7 @@ export default function NewProjectPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Bank Merah — Q3 2026 tracking"
-                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
+                className={inputClass}
               />
             </div>
 
@@ -120,7 +123,7 @@ export default function NewProjectPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="brand-btn-primary w-full px-3 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50"
+              className="brand-btn-primary w-full px-4 py-3 text-sm font-bold text-white transition disabled:opacity-50"
             >
               {submitting ? "Creating..." : "Create Project"}
             </button>

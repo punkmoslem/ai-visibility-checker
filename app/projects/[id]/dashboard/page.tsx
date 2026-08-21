@@ -92,7 +92,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
         {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-xl font-semibold text-brand-ink">{stats?.brandName ?? ""} — Dashboard</h1>
+            <h1 className="text-xl font-bold text-brand-ink">{stats?.brandName ?? ""} — Dashboard</h1>
             {stats && (
               <p className="mt-0.5 text-sm text-brand-muted">
                 Run from {new Date(stats.runCreatedAt).toLocaleString()}
@@ -104,12 +104,12 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             {stats && (
               <Link
                 href={`/projects/${id}/report?runId=${stats.runId}`}
-                className="brand-btn-primary px-4 py-2.5 text-sm font-semibold text-white transition"
+                className="brand-btn-primary px-5 py-2.5 text-sm font-bold text-white"
               >
                 Export Report
               </Link>
             )}
-            <Link href={`/projects/${id}`} className="rounded-lg border border-brand-line px-3 py-2 text-sm text-brand-muted transition hover:bg-white">
+            <Link href={`/projects/${id}`} className="brand-btn-secondary px-4 py-2.5 text-sm text-brand-muted">
               ← Back
             </Link>
           </div>
@@ -120,7 +120,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             <select
               value={stats.runId}
               onChange={(e) => router.push(`/projects/${id}/dashboard?runId=${e.target.value}`)}
-              className="rounded-lg border-2 border-brand-line bg-white px-3 py-2 text-sm text-brand-ink transition focus:border-brand-teal focus:outline-none"
+              className="rounded-xl border border-brand-line bg-white px-4 py-2.5 text-sm text-brand-ink shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_1px_3px_rgba(28,42,56,.06)] transition-shadow duration-300 focus:border-brand-teal focus:outline-none focus:shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_0_0_3px_rgba(23,166,141,.15)]"
             >
               {[...trends].reverse().map((t) => (
                 <option key={t.runId} value={t.runId}>

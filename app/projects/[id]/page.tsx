@@ -229,7 +229,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
           {latestCompletedRun && (
             <Link
               href={`/projects/${id}/dashboard`}
-              className="shrink-0 rounded-lg bg-white/15 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/25"
+              className="shrink-0 rounded-full bg-white/15 px-5 py-2.5 text-sm font-bold text-white backdrop-blur transition-all duration-300 hover:bg-white/25 hover:-translate-y-0.5"
+              style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
             >
               View Dashboard →
             </Link>
@@ -285,7 +286,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     onChange={(e) => setCustomText(e.target.value)}
                     placeholder="Type a question — English or Bahasa Indonesia both work…"
                     rows={2}
-                    className="flex-1 rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
+                    className="flex-1 rounded-xl border border-brand-line bg-white px-4 py-3 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_1px_3px_rgba(28,42,56,.06)] transition-shadow duration-300 focus:border-brand-teal focus:outline-none focus:shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_0_0_3px_rgba(23,166,141,.15)]"
                   />
                   <button
                     type="submit"
@@ -301,7 +302,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <button
                 onClick={savePromptSelection}
                 disabled={saving}
-                className="mt-5 rounded-lg border-2 border-brand-line px-4 py-2 text-sm font-medium text-brand-ink transition hover:bg-brand-teal-tint disabled:opacity-50"
+                className="brand-btn-secondary mt-5 px-5 py-2.5 text-sm font-medium disabled:opacity-50"
               >
                 {saving ? "Saving..." : "Save Selection"}
               </button>
@@ -344,7 +345,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                     value={competitorName}
                     onChange={(e) => setCompetitorName(e.target.value)}
                     placeholder="Add with commas…"
-                    className="min-w-0 flex-1 rounded-lg border-2 border-brand-line px-3 py-2 text-sm transition focus:border-brand-teal focus:outline-none"
+                    className="min-w-0 flex-1 rounded-xl border border-brand-line bg-white px-4 py-2.5 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_1px_3px_rgba(28,42,56,.06)] transition-shadow duration-300 focus:border-brand-teal focus:outline-none focus:shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_0_0_3px_rgba(23,166,141,.15)]"
                   />
                   <button
                     type="submit"
@@ -424,7 +425,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   value={activeSchedule?.frequency ?? "off"}
                   onChange={(e) => saveSchedule(e.target.value)}
                   disabled={savingSchedule}
-                  className="w-full rounded-lg border-2 border-brand-line px-3 py-2 text-sm transition focus:border-brand-teal focus:outline-none disabled:opacity-50"
+                  className="w-full rounded-xl border border-brand-line bg-white px-4 py-2.5 text-sm shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_1px_3px_rgba(28,42,56,.06)] transition-shadow duration-300 focus:border-brand-teal focus:outline-none focus:shadow-[inset_0_1px_0_rgba(255,255,255,.75),0_0_0_3px_rgba(23,166,141,.15)] disabled:opacity-50"
                 >
                   <option value="off">Off — manual only</option>
                   <option value="weekly">Weekly</option>
