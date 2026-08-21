@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import TopNav from "@/components/TopNav";
+import AppShell from "@/components/AppShell";
 
 type EntityType = "company" | "person";
 
@@ -40,27 +40,26 @@ export default function NewProjectPage() {
   const isCompany = entityType === "company";
 
   return (
-    <div className="brand-shell flex min-h-screen flex-col">
-      <TopNav />
-      <main className="mx-auto w-full max-w-xl flex-1 px-6 py-10">
-        <h1 className="text-2xl font-semibold text-white">New Project</h1>
+    <AppShell>
+      <div className="px-8 py-8">
+        <h1 className="text-xl font-semibold text-brand-ink">New Project</h1>
+        <p className="mt-0.5 text-sm text-brand-muted">Set up a new brand for AI visibility tracking</p>
 
-        <div className="brand-card mt-6 rounded-xl bg-white p-8">
-          <div className="brand-note mb-6 rounded-md p-4 text-sm leading-relaxed text-brand-muted">
+        <div className="brand-card mt-6 max-w-xl p-8">
+          <div className="brand-note mb-6 rounded-lg p-4 text-sm leading-relaxed text-brand-muted">
             <strong className="mb-1 block text-brand-navy">Note:</strong>
-            Competitor tracking and custom prompts can be added in a later phase — this creates
-            a single-entity project for on-demand AI visibility checks.
+            Competitor tracking and custom prompts can be added after creating the project.
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-brand-ink">What are you checking?</label>
-              <div className="mt-1 inline-flex rounded-md bg-brand-teal-tint p-1">
+              <div className="mt-2 inline-flex rounded-lg bg-shell-bg p-1">
                 <button
                   type="button"
                   onClick={() => setEntityType("company")}
-                  className={`rounded px-3 py-1.5 text-sm font-medium transition ${
-                    isCompany ? "bg-white text-brand-navy-deep shadow-sm" : "text-brand-teal-dark"
+                  className={`rounded-md px-4 py-2 text-sm font-medium transition ${
+                    isCompany ? "bg-white text-brand-ink shadow-sm" : "text-brand-muted"
                   }`}
                 >
                   Company / Brand
@@ -68,18 +67,13 @@ export default function NewProjectPage() {
                 <button
                   type="button"
                   onClick={() => setEntityType("person")}
-                  className={`rounded px-3 py-1.5 text-sm font-medium transition ${
-                    !isCompany ? "bg-white text-brand-navy-deep shadow-sm" : "text-brand-teal-dark"
+                  className={`rounded-md px-4 py-2 text-sm font-medium transition ${
+                    !isCompany ? "bg-white text-brand-ink shadow-sm" : "text-brand-muted"
                   }`}
                 >
                   Person / Persona
                 </button>
               </div>
-              <p className="mt-1 text-xs text-brand-muted">
-                {isCompany
-                  ? "A company or brand — prompts ask things like “Is {brand} a trustworthy company?”"
-                  : "A celebrity, influencer, or expert — prompts ask things like “Is {brand} a trustworthy public figure?”"}
-              </p>
             </div>
 
             <div>
@@ -92,7 +86,7 @@ export default function NewProjectPage() {
                 value={brandName}
                 onChange={(e) => setBrandName(e.target.value)}
                 placeholder={isCompany ? "e.g. Bank Merah" : "e.g. a public figure's name"}
-                className="mt-1 block w-full rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
+                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
               />
             </div>
             <div>
@@ -105,19 +99,19 @@ export default function NewProjectPage() {
                 value={industry}
                 onChange={(e) => setIndustry(e.target.value)}
                 placeholder={isCompany ? "e.g. digital banking" : "e.g. beauty influencer"}
-                className="mt-1 block w-full rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
+                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
               />
             </div>
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-brand-ink">
-                Project label <span className="font-normal text-brand-muted">(optional, defaults to name above)</span>
+                Project label <span className="font-normal text-brand-muted">(optional)</span>
               </label>
               <input
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Bank Merah — Q3 2026 tracking"
-                className="mt-1 block w-full rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
+                className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
               />
             </div>
 
@@ -126,13 +120,13 @@ export default function NewProjectPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="brand-btn-primary w-full rounded-md px-3 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50"
+              className="brand-btn-primary w-full px-3 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50"
             >
               {submitting ? "Creating..." : "Create Project"}
             </button>
           </form>
         </div>
-      </main>
-    </div>
+      </div>
+    </AppShell>
   );
 }

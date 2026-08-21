@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useState, use as usePromise } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import TopNav from "@/components/TopNav";
+import AppShell from "@/components/AppShell";
 import PresenceChart, { PresenceDatum } from "@/components/charts/PresenceChart";
 import SentimentChart, { SentimentDatum } from "@/components/charts/SentimentChart";
 import ShareOfVoiceChart, { ShareOfVoiceDatum } from "@/components/charts/ShareOfVoiceChart";
@@ -87,16 +87,16 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
   const totalMentions = stats?.sentimentBreakdown.reduce((sum, s) => sum + s.count, 0) ?? 0;
 
   return (
-    <div className="brand-shell flex min-h-screen flex-col">
-      <TopNav />
-      <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-10">
+    <AppShell>
+      <div className="px-8 py-8">
+        {/* Header */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-semibold text-white">{stats?.brandName ?? ""} — Dashboard</h1>
+            <h1 className="text-xl font-semibold text-brand-ink">{stats?.brandName ?? ""} — Dashboard</h1>
             {stats && (
-              <p className="text-sm text-brand-mist">
+              <p className="mt-0.5 text-sm text-brand-muted">
                 Run from {new Date(stats.runCreatedAt).toLocaleString()}
-                {stats.containsMockData && " · contains simulated demo data"}
+                {stats.containsMockData && " · demo data"}
               </p>
             )}
           </div>
@@ -104,12 +104,12 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             {stats && (
               <Link
                 href={`/projects/${id}/report?runId=${stats.runId}`}
-                className="brand-btn-primary rounded-md px-4 py-2 text-sm font-semibold text-white transition"
+                className="brand-btn-primary px-4 py-2.5 text-sm font-semibold text-white transition"
               >
-                Export Client Report
+                Export Report
               </Link>
             )}
-            <Link href={`/projects/${id}`} className="text-sm text-brand-mist hover:text-white">
+            <Link href={`/projects/${id}`} className="rounded-lg border border-brand-line px-3 py-2 text-sm text-brand-muted transition hover:bg-white">
               ← Back
             </Link>
           </div>
@@ -120,7 +120,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             <select
               value={stats.runId}
               onChange={(e) => router.push(`/projects/${id}/dashboard?runId=${e.target.value}`)}
-              className="rounded-md border border-white/20 bg-white/10 px-3 py-1.5 text-sm text-white focus:outline-none [&>option]:text-brand-ink"
+              className="rounded-lg border-2 border-brand-line bg-white px-3 py-2 text-sm text-brand-ink transition focus:border-brand-teal focus:outline-none"
             >
               {[...trends].reverse().map((t) => (
                 <option key={t.runId} value={t.runId}>
@@ -132,10 +132,10 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
           </div>
         )}
 
-        {stats === undefined && <p className="mt-10 text-brand-mist">Loading dashboard...</p>}
+        {stats === undefined && <p className="mt-10 text-brand-muted">Loading dashboard...</p>}
         {stats === null && (
-          <div className="brand-card mt-6 rounded-xl bg-white p-10 text-center text-brand-muted">
-            No completed runs yet. Trigger a run from the project page to populate this dashboard.
+          <div className="brand-card mt-6 p-10 text-center text-brand-muted">
+            No completed runs yet. Trigger a run from the project page.
           </div>
         )}
 
@@ -143,34 +143,23 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
           <div className="mt-6 space-y-6">
             {/* KPI row */}
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-              <div className="brand-card rounded-xl bg-white px-4 py-5 text-center">
-                <p className="text-xs text-brand-muted">Presence rate</p>
-                <p className="mt-1 text-2xl font-bold text-brand-teal-dark">{Math.round(stats.overallPresenceRate * 100)}%</p>
-              </div>
-              <div className="brand-card rounded-xl bg-white px-4 py-5 text-center">
-                <p className="text-xs text-brand-muted">Avg. rank when listed</p>
-                <p className="mt-1 text-2xl font-bold text-brand-teal-dark">
-                  {brandRank !== null ? `#${brandRank.toFixed(1)}` : "—"}
-                </p>
-              </div>
-              <div className="brand-card rounded-xl bg-white px-4 py-5 text-center">
-                <p className="text-xs text-brand-muted">Positive mentions</p>
-                <p className="mt-1 text-2xl font-bold text-brand-teal-dark">
-                  {totalMentions > 0 ? `${Math.round((positives / totalMentions) * 100)}%` : "—"}
-                </p>
-              </div>
-              <div className="brand-card rounded-xl bg-white px-4 py-5 text-center">
-                <p className="text-xs text-brand-muted">Share of voice</p>
-                <p className="mt-1 text-2xl font-bold text-brand-teal-dark">
-                  {stats.hasCompetitors && brandShare !== null ? `${Math.round(brandShare * 100)}%` : "—"}
-                </p>
-              </div>
+              {[
+                { label: "Presence rate", value: `${Math.round(stats.overallPresenceRate * 100)}%` },
+                { label: "Avg. rank", value: brandRank !== null ? `#${brandRank.toFixed(1)}` : "—" },
+                { label: "Positive mentions", value: totalMentions > 0 ? `${Math.round((positives / totalMentions) * 100)}%` : "—" },
+                { label: "Share of voice", value: stats.hasCompetitors && brandShare !== null ? `${Math.round(brandShare * 100)}%` : "—" },
+              ].map((kpi) => (
+                <div key={kpi.label} className="brand-card px-4 py-5 text-center">
+                  <p className="text-xs text-brand-muted">{kpi.label}</p>
+                  <p className="mt-1 text-2xl font-bold text-brand-teal-dark">{kpi.value}</p>
+                </div>
+              ))}
             </div>
 
             {/* Executive summary */}
             {insights.length > 0 && (
-              <section className="brand-card rounded-xl bg-white p-8">
-                <h2 className="font-medium text-brand-navy-deep">Executive Summary</h2>
+              <section className="brand-card p-6">
+                <h2 className="font-semibold text-brand-ink">Executive Summary</h2>
                 <ul className="mt-3 space-y-2">
                   {insights.map((insight, i) => (
                     <li key={i} className="flex gap-2 text-sm leading-relaxed text-brand-ink">
@@ -183,27 +172,27 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             )}
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <section className="brand-card rounded-xl bg-white p-8">
-                <h2 className="font-medium text-brand-navy-deep">Presence Rate by Tool</h2>
-                <p className="text-sm text-brand-muted">% of prompts where the {stats.entityType === "person" ? "name" : "brand"} was mentioned</p>
+              <section className="brand-card p-6">
+                <h2 className="font-semibold text-brand-ink">Presence Rate by Tool</h2>
+                <p className="text-xs text-brand-muted">% of prompts where the {stats.entityType === "person" ? "name" : "brand"} was mentioned</p>
                 <PresenceChart data={stats.presenceByTool} />
               </section>
-              <section className="brand-card rounded-xl bg-white p-8">
-                <h2 className="font-medium text-brand-navy-deep">Sentiment Breakdown</h2>
-                <p className="text-sm text-brand-muted">Across all mentions in this run</p>
+              <section className="brand-card p-6">
+                <h2 className="font-semibold text-brand-ink">Sentiment Breakdown</h2>
+                <p className="text-xs text-brand-muted">Across all mentions in this run</p>
                 <SentimentChart data={stats.sentimentBreakdown} />
               </section>
             </div>
 
             {stats.hasCompetitors && (
-              <section className="brand-card rounded-xl bg-white p-8">
-                <h2 className="font-medium text-brand-navy-deep">Share of Voice</h2>
-                <p className="text-sm text-brand-muted">How often each tracked name appears across this run&apos;s AI answers</p>
+              <section className="brand-card p-6">
+                <h2 className="font-semibold text-brand-ink">Share of Voice</h2>
+                <p className="text-xs text-brand-muted">How often each tracked name appears across this run&apos;s AI answers</p>
                 <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
                   <ShareOfVoiceChart data={stats.shareOfVoice} />
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-navy uppercase">
+                      <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-muted uppercase">
                         <th className="py-2">Name</th>
                         <th className="py-2 text-right">Mentions</th>
                         <th className="py-2 text-right">Avg. rank</th>
@@ -228,14 +217,14 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               </section>
             )}
 
-            <section className="brand-card rounded-xl bg-white p-8">
-              <h2 className="font-medium text-brand-navy-deep">Visibility Trend</h2>
-              <p className="text-sm text-brand-muted">Presence rate per AI tool across all completed checks</p>
+            <section className="brand-card p-6">
+              <h2 className="font-semibold text-brand-ink">Visibility Trend</h2>
+              <p className="text-xs text-brand-muted">Presence rate per AI tool across all completed checks</p>
               <TrendChart data={trends} />
             </section>
 
-            <section className="brand-card rounded-xl bg-white p-8">
-              <h2 className="font-medium text-brand-navy-deep">Cited Sources</h2>
+            <section className="brand-card p-6">
+              <h2 className="font-semibold text-brand-ink">Cited Sources</h2>
               {stats.citedSources.length === 0 ? (
                 <p className="mt-2 text-sm text-brand-muted">No sources were cited in this run.</p>
               ) : (
@@ -252,19 +241,19 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               )}
             </section>
 
-            <section className="brand-card rounded-xl bg-white p-8">
-              <h2 className="font-medium text-brand-navy-deep">Per-Prompt Results</h2>
-              <p className="text-sm text-brand-muted">How each question performed across every AI tool</p>
+            <section className="brand-card p-6">
+              <h2 className="font-semibold text-brand-ink">Per-Prompt Results</h2>
+              <p className="text-xs text-brand-muted">How each question performed across every AI tool</p>
               <PerPromptTable
                 results={stats.results}
                 expandedResultId={expandedResultId}
-                onToggle={(id) => setExpandedResultId(expandedResultId === id ? null : id)}
+                onToggle={(rid) => setExpandedResultId(expandedResultId === rid ? null : rid)}
               />
             </section>
           </div>
         )}
-      </main>
-    </div>
+      </div>
+    </AppShell>
   );
 }
 
@@ -294,7 +283,7 @@ function PerPromptTable({
     <div className="mt-3 overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-navy uppercase">
+          <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-muted uppercase">
             <th className="py-2 pr-4">Question</th>
             {tools.map((t) => (
               <th key={t} className="py-2 px-2 text-center">
@@ -335,7 +324,7 @@ function PerPromptTable({
                         {r.isMock && <span className="text-[10px] text-brand-muted">mock</span>}
                       </button>
                       {expandedResultId === r.id && (
-                        <div className="mt-2 max-w-xs rounded-md bg-[#F1F6F8] p-2 text-left text-xs text-brand-ink whitespace-pre-wrap">
+                        <div className="mt-2 max-w-xs rounded-lg bg-shell-bg p-3 text-left text-xs text-brand-ink whitespace-pre-wrap">
                           {r.errorMessage ? `Error: ${r.errorMessage}` : r.rawResponse}
                         </div>
                       )}

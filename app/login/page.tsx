@@ -44,14 +44,14 @@ function LoginForm() {
   return (
     <div className="brand-shell flex min-h-screen flex-col items-center justify-center px-4 py-10">
       <div className="w-full max-w-sm text-center">
-        <span className="inline-flex items-center rounded-lg bg-white px-5 py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
+        <span className="inline-flex items-center rounded-xl bg-white px-5 py-3.5 shadow-lg">
           <Image src="/logo.png" alt="R&R Communications" width={168} height={99} className="h-11 w-auto" priority />
         </span>
         <h1 className="mt-5 text-2xl font-semibold text-white">AI Visibility Checker</h1>
-        <p className="mt-1 text-sm tracking-[0.12em] text-brand-mist uppercase">Sign In</p>
+        <p className="mt-1 text-sm tracking-[0.12em] text-white/50 uppercase">Sign In</p>
       </div>
 
-      <div className="brand-card mt-8 w-full max-w-sm rounded-xl bg-white p-8">
+      <div className="brand-card mt-8 w-full max-w-sm p-8">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="username" className="block text-sm font-medium text-brand-ink">
@@ -64,7 +64,7 @@ function LoginForm() {
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="mt-1 block w-full rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
+              className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
             />
           </div>
           <div>
@@ -78,7 +78,7 @@ function LoginForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full rounded-md border-2 border-brand-line px-3 py-2 text-sm focus:border-brand-teal focus:outline-none"
+              className="mt-1 block w-full rounded-lg border-2 border-brand-line px-3 py-2.5 text-sm transition focus:border-brand-teal focus:outline-none"
             />
           </div>
 
@@ -87,7 +87,7 @@ function LoginForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="brand-btn-primary w-full rounded-md px-3 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50"
+            className="brand-btn-primary w-full px-3 py-2.5 text-sm font-semibold text-white transition disabled:opacity-50"
           >
             {submitting ? "Signing in..." : "Sign in"}
           </button>

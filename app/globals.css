@@ -11,8 +11,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* R&R Communications brand palette — matches the Engagement Tracker app
-     so internal tools share one visual language. */
+  /* R&R Communications brand palette — refreshed with sidebar dashboard feel */
   --color-brand-navy: #2f576e;
   --color-brand-navy-deep: #1e3d50;
   --color-brand-navy-darkest: #22333d;
@@ -21,8 +20,12 @@
   --color-brand-teal-dark: #0e8981;
   --color-brand-teal-tint: #e7f4f3;
   --color-brand-mist: #8fa5b1;
-  --color-brand-line: #d9e2e8;
+  --color-brand-line: #e2e8ee;
   --color-brand-muted: #5b6d78;
+
+  /* Sidebar & shell */
+  --color-sidebar-bg: #1a3a2a;
+  --color-shell-bg: #f2f5f8;
 }
 
 body {
@@ -31,23 +34,43 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Dark gradient canvas used behind the white content cards on every page,
-   matching the Engagement Tracker app's tone. */
-.brand-shell {
-  background: linear-gradient(160deg, #2f576e 0%, #1e3d50 55%, #22333d 100%);
+/* Sidebar dark forest-teal background */
+.sidebar-bg {
+  background: linear-gradient(180deg, #1a3a2a 0%, #162e23 100%);
 }
 
+/* Light gray main area (replaces old brand-shell for authenticated pages) */
+.bg-shell-bg {
+  background: var(--color-shell-bg);
+}
+
+/* Legacy dark gradient for login page */
+.brand-shell {
+  background: linear-gradient(160deg, #1a3a2a 0%, #162e23 55%, #0f1f18 100%);
+}
+
+/* Card style — soft shadow, rounded */
 .brand-card {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+}
+
+/* Hero / featured card accent (dark teal fill) */
+.brand-card-hero {
+  background: linear-gradient(135deg, #1a3a2a 0%, #12a79c 150%);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(26,58,42,0.25);
 }
 
 .brand-btn-primary {
-  background: linear-gradient(135deg, #12a79c 0%, #2f576e 100%);
+  background: linear-gradient(135deg, #12a79c 0%, #0e8981 100%);
+  border-radius: 0.5rem;
 }
 
 .brand-btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(18, 167, 156, 0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(18, 167, 156, 0.3);
 }
 
 .brand-note {
