@@ -12,6 +12,24 @@ import { useEffect, useRef, useState } from "react";
  * icon is rendered. The trigger is a span rather than a button so it can sit
  * inside the clickable cells of the per-prompt table without nesting buttons.
  */
+/**
+ * Horizontal limits the bubble must stay inside. The viewport is not the real
+ * boundary — the dashboard's main column scrolls, and the per-prompt table
+ * scrolls sideways, so each clips anything drawn past its own edges.
+ */
+function clippingBounds(from: HTMLElement): { left: number; right: number } {
+  let node = from.parentElement;
+  while (node && node !== document.body) {
+    const { overflowX, overflowY } = getComputedStyle(node);
+    if (/(auto|scroll|hidden)/.test(overflowX) || /(auto|scroll|hidden)/.test(overflowY)) {
+      const rect = node.getBoundingClientRect();
+      return { left: Math.max(rect.left, 0), right: Math.min(rect.right, window.innerWidth) };
+    }
+    node = node.parentElement;
+  }
+  return { left: 0, right: window.innerWidth };
+}
+
 export default function InfoTip({
   label,
   children,
@@ -26,7 +44,7 @@ export default function InfoTip({
   const root = useRef<HTMLSpanElement>(null);
   const bubble = useRef<HTMLSpanElement>(null);
 
-  // A centred bubble runs off screen on the outermost column of a grid or the
+  // A centred bubble runs off the edge on the outermost column of a grid or the
   // trailing column of a table, so anchor it to whichever edge keeps it in
   // view. The bubble stays laid out while hidden, so it can be measured up
   // front and placed in one pass without a visible jump.
@@ -36,9 +54,10 @@ export default function InfoTip({
     if (!trigger || !width) return;
     const rect = trigger.getBoundingClientRect();
     const centre = rect.left + rect.width / 2;
+    const bounds = clippingBounds(trigger);
     const margin = 12;
-    if (centre + width / 2 > window.innerWidth - margin) setPlacement("right");
-    else if (centre - width / 2 < margin) setPlacement("left");
+    if (centre + width / 2 > bounds.right - margin) setPlacement("right");
+    else if (centre - width / 2 < bounds.left + margin) setPlacement("left");
     else setPlacement("center");
   }
 

@@ -33,10 +33,28 @@ interface KeywordAnalysis {
   targetKeywords: string[];
 }
 
-const CATEGORY_META: Record<string, { label: string; fullLabel: string; color: string }> = {
-  geo: { label: "GEO", fullLabel: "Generative Engine Optimization", color: "bg-purple-100 text-purple-800" },
-  aeo: { label: "AEO", fullLabel: "Answer Engine Optimization", color: "bg-blue-100 text-blue-800" },
-  seo: { label: "SEO", fullLabel: "Search Engine Optimization", color: "bg-amber-100 text-amber-800" },
+const CATEGORY_META: Record<string, { label: string; fullLabel: string; description: string; color: string }> = {
+  geo: {
+    label: "GEO",
+    fullLabel: "Generative Engine Optimization",
+    description:
+      "Getting your brand named inside the answers AI writes. Works by publishing authoritative content the models can draw on when composing a response.",
+    color: "bg-purple-100 text-purple-800",
+  },
+  aeo: {
+    label: "AEO",
+    fullLabel: "Answer Engine Optimization",
+    description:
+      "Being the source an AI reaches for when someone asks a direct question. Works through clear question-and-answer content and presence on the sources each model trusts.",
+    color: "bg-blue-100 text-blue-800",
+  },
+  seo: {
+    label: "SEO",
+    fullLabel: "Search Engine Optimization",
+    description:
+      "The classic foundation. AI models lean on search indexes and well-ranked sites, so crawlability and search rankings still feed directly into AI visibility.",
+    color: "bg-amber-100 text-amber-800",
+  },
 };
 
 const PRIORITY_STYLES: Record<string, string> = {
@@ -322,8 +340,14 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               <section id="action-plan" className="brand-card p-6 scroll-mt-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h2 className="font-bold text-brand-ink">Action Plan</h2>
-                    <p className="text-xs text-brand-muted">GEO, AEO & SEO recommendations based on this run</p>
+                    <h2 className="flex items-center gap-1.5 font-bold text-brand-ink">
+                      Action Plan
+                      <InfoTip label="Recommendations generated automatically from this run's results — the gaps found, the competitors ahead of you, and the prompts you were missing from. Ordered by priority, so the top items matter most. Click any card to expand concrete steps." />
+                    </h2>
+                    <p className="flex items-center gap-1.5 text-xs text-brand-muted">
+                      GEO, AEO &amp; SEO recommendations based on this run
+                      <InfoTip label={`Three layers of optimisation:\n\nGEO — ${CATEGORY_META.geo.fullLabel}. ${CATEGORY_META.geo.description}\n\nAEO — ${CATEGORY_META.aeo.fullLabel}. ${CATEGORY_META.aeo.description}\n\nSEO — ${CATEGORY_META.seo.fullLabel}. ${CATEGORY_META.seo.description}`} />
+                    </p>
                   </div>
                   <div className="flex gap-1.5">
                     {["all", "geo", "aeo", "seo"].map((cat) => (
@@ -360,7 +384,10 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               <section id="keywords" className="brand-card p-6 scroll-mt-6">
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div>
-                    <h2 className="font-bold text-brand-ink">Keyword Intelligence</h2>
+                    <h2 className="flex items-center gap-1.5 font-bold text-brand-ink">
+                      Keyword Intelligence
+                      <InfoTip label="These phrases are extracted from the wording of this run's AI answers — they are not search-volume keywords from a traditional SEO tool. They show the language AI already uses around you and your competitors, which is what shapes how AI describes you." />
+                    </h2>
                     <p className="text-xs text-brand-muted">Phrases AI models associate with your {stats.entityType === "person" ? "persona" : "brand"} vs competitors</p>
                   </div>
                   <Link
@@ -374,7 +401,10 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
                 <div className="mt-4 grid gap-6 md:grid-cols-2">
                   {keywords.brandKeywords.length > 0 && (
                     <div>
-                      <h3 className="text-sm font-bold text-brand-ink">Your Keywords</h3>
+                      <h3 className="flex items-center gap-1.5 text-sm font-bold text-brand-ink">
+                        Your Keywords
+                        <InfoTip label={`Phrases that appeared in the same sentence as ${stats.brandName} at least twice across this run. The ×number is how often that happened — higher means a stronger, more consistent association. These are your existing strengths: reinforce them so AI keeps making the connection.`} />
+                      </h3>
                       <p className="mb-3 text-[10px] text-brand-muted">Phrases AI already links to {stats.brandName}</p>
                       <div className="flex flex-wrap gap-1.5">
                         {keywords.brandKeywords.slice(0, 12).map((kw) => (
@@ -392,18 +422,22 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
                   {keywords.gaps.length > 0 && (
                     <div>
-                      <h3 className="text-sm font-bold text-brand-ink">Keyword Gaps</h3>
+                      <h3 className="flex items-center gap-1.5 text-sm font-bold text-brand-ink">
+                        Keyword Gaps
+                        <InfoTip label={`Phrases AI uses when describing your competitors but never alongside ${stats.brandName}. Each is a quality or capability the models currently credit to someone else. Hover a phrase to see which competitor owns it, and publish content connecting it to you.`} />
+                      </h3>
                       <p className="mb-3 text-[10px] text-brand-muted">Phrases competitors own — target these in your content</p>
                       <div className="flex flex-wrap gap-1.5">
                         {keywords.gaps.slice(0, 12).map((kw) => (
-                          <span
+                          <InfoTip
                             key={kw.phrase}
-                            className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
-                            title={`Used for: ${kw.associatedWith.join(", ")}`}
+                            label={`AI used "${kw.phrase}" ${kw.count} ${kw.count === 1 ? "time" : "times"} when describing ${kw.associatedWith.join(", ")} — never alongside ${stats.brandName}.`}
                           >
-                            {kw.phrase}
-                            <span className="text-[10px] text-red-400">×{kw.count}</span>
-                          </span>
+                            <span className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700">
+                              {kw.phrase}
+                              <span className="text-[10px] text-red-400">×{kw.count}</span>
+                            </span>
+                          </InfoTip>
                         ))}
                       </div>
                     </div>
@@ -412,7 +446,10 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
                 {keywords.targetKeywords.length > 0 && (
                   <div className="mt-5 rounded-xl border border-brand-line bg-[var(--bg)] p-4">
-                    <h3 className="text-sm font-bold text-brand-ink">Target Keywords for Content Strategy</h3>
+                    <h3 className="flex items-center gap-1.5 text-sm font-bold text-brand-ink">
+                      Target Keywords for Content Strategy
+                      <InfoTip label="The highest-frequency keyword gaps, shortlisted as your priority targets. Use them in page titles, headings, FAQ answers and schema markup so AI models start associating them with you. The Keyword Strategy Guide shows how to work each one into specific content types." />
+                    </h3>
                     <p className="mb-2 text-[10px] text-brand-muted">Create content around these phrases to close the gap</p>
                     <div className="flex flex-wrap gap-2">
                       {keywords.targetKeywords.map((kw) => (
@@ -447,9 +484,13 @@ function RecommendationCard({ rec }: { rec: Recommendation }) {
         className="flex w-full items-start gap-3 px-4 py-4 text-left"
       >
         <div className="flex shrink-0 flex-col items-center gap-1 pt-0.5">
-          <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${meta.color}`}>{meta.label}</span>
+          <InfoTip label={`${meta.fullLabel} — ${meta.description}`}>
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${meta.color}`}>{meta.label}</span>
+          </InfoTip>
           {rec.priority === "high" && (
-            <span className="rounded-full bg-red-100 px-1.5 py-0.5 text-[9px] font-bold text-red-700 uppercase">urgent</span>
+            <InfoTip label="Urgent items are the biggest drags on your AI visibility in this run — the widest gaps and the ones affecting the most answers. Recommendations are ordered by priority, so working top down tackles the costliest problems first.">
+              <span className="rounded-full bg-red-100 px-1.5 py-0.5 text-[9px] font-bold text-red-700 uppercase">urgent</span>
+            </InfoTip>
           )}
         </div>
         <div className="min-w-0 flex-1">
