@@ -3,6 +3,12 @@ import { toShareOfVoice, ShareOfVoiceEntry } from "./parsing/sov";
 
 export type { ShareOfVoiceEntry } from "./parsing/sov";
 
+const TOOL_LABELS: Record<string, string> = {
+  claude: "Claude",
+  openai: "ChatGPT",
+  gemini: "Gemini",
+};
+
 export async function computeDashboardStats(runId: string) {
   const run = await prisma.run.findUnique({
     where: { id: runId },
@@ -73,7 +79,29 @@ export async function computeDashboardStats(runId: string) {
   const okCount = okResults.length;
   const overallPresenceRate = okCount > 0 ? mentionedResults.filter((r) => !r.errorMessage).length / okCount : 0;
 
+  // Every rate above is a share of the answers that came back, which is the
+  // right denominator but an easy figure to over-read: a run where two engines
+  // failed still reports a confident percentage. Coverage travels with the
+  // numbers so the surfaces showing them can say what they are based on.
+  const coverage = {
+    usable: okCount,
+    total: run.results.length,
+    byTool: tools.map((tool) => {
+      const all = run.results.filter((r) => r.aiTool === tool);
+      const ok = all.filter((r) => !r.errorMessage);
+      return {
+        tool,
+        label: TOOL_LABELS[tool],
+        usable: ok.length,
+        total: all.length,
+        // The first failure explains the rest; they share a cause.
+        reason: ok.length === 0 ? (all.find((r) => r.errorMessage)?.errorMessage ?? null) : null,
+      };
+    }),
+  };
+
   return {
+    coverage,
     runId: run.id,
     runStatus: run.status,
     runCreatedAt: run.createdAt,

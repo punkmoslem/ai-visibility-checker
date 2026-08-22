@@ -8,6 +8,7 @@ import PresenceChart, { PresenceDatum } from "@/components/charts/PresenceChart"
 import SentimentChart, { SentimentDatum } from "@/components/charts/SentimentChart";
 import ShareOfVoiceChart, { ShareOfVoiceDatum } from "@/components/charts/ShareOfVoiceChart";
 import TrendChart, { TrendPointDatum } from "@/components/charts/TrendChart";
+import CoverageNotice, { Coverage } from "@/components/CoverageNotice";
 
 const TOOL_LABELS: Record<string, string> = { claude: "Claude", openai: "ChatGPT", gemini: "Gemini" };
 
@@ -29,6 +30,7 @@ interface ReportStats {
   entityType: string;
   hasCompetitors: boolean;
   containsMockData: boolean;
+  coverage: Coverage;
   overallPresenceRate: number;
   presenceByTool: PresenceDatum[];
   sentimentBreakdown: SentimentDatum[];
@@ -113,6 +115,14 @@ function ReportInner({ params }: { params: Promise<{ id: string }> }) {
         </div>
         <Image src="/logo.png" alt="R&R Communications" width={140} height={83} className="h-14 w-auto" priority />
       </header>
+
+      {/* Sits above the summary: the figures below cannot be read correctly
+          without knowing how many answers they rest on. */}
+      {stats.coverage && (
+        <div className="mt-6">
+          <CoverageNotice coverage={stats.coverage} variant="print" />
+        </div>
+      )}
 
       {/* Executive summary */}
       <section className="mt-8">

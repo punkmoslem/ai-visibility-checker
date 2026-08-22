@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import AppShell from "@/components/AppShell";
 import InfoTip from "@/components/InfoTip";
+import CoverageNotice, { Coverage } from "@/components/CoverageNotice";
 import PresenceChart, { PresenceDatum } from "@/components/charts/PresenceChart";
 import SentimentChart, { SentimentDatum } from "@/components/charts/SentimentChart";
 import ShareOfVoiceChart, { ShareOfVoiceDatum } from "@/components/charts/ShareOfVoiceChart";
@@ -96,6 +97,7 @@ interface DashboardStats {
   entityType: string;
   hasCompetitors: boolean;
   containsMockData: boolean;
+  coverage: Coverage;
   overallPresenceRate: number;
   presenceByTool: PresenceDatum[];
   sentimentBreakdown: SentimentDatum[];
@@ -198,6 +200,8 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
         {stats && (
           <div className="mt-6 space-y-6">
+            {stats.coverage && <CoverageNotice coverage={stats.coverage} />}
+
             {/* KPI row */}
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {[
