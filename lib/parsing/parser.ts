@@ -41,33 +41,60 @@ interface ListItem {
 }
 
 // Detects numbered ("1. Foo", "1) Foo") or bulleted ("- Foo", "* Foo", "• Foo")
-// list lines, in the order they appear, and assigns each a sequential position.
-function extractListItems(text: string): ListItem[] {
-  const lines = text.split("\n");
-  const items: ListItem[] = [];
-  let order = 0;
+// list lines and groups them into contiguous blocks. Numbering restarts per
+// block, so bullets belonging to separate sections of an answer never share a
+// counter — a stray bullet in a later section must not read as "ranked 8th".
+// Blank lines stay inside a block; any other non-list line closes it.
+function extractListBlocks(text: string): ListItem[][] {
   const numberedRe = /^\s*\d+[.)]\s+(.*)/;
   const bulletRe = /^\s*[-*•]\s+(.*)/;
+  const blocks: ListItem[][] = [];
+  let current: ListItem[] = [];
 
-  for (const line of lines) {
-    const numberedMatch = numberedRe.exec(line);
-    const bulletMatch = bulletRe.exec(line);
-    const content = numberedMatch?.[1] ?? bulletMatch?.[1];
+  for (const line of text.split("\n")) {
+    const content = numberedRe.exec(line)?.[1] ?? bulletRe.exec(line)?.[1];
     if (content) {
-      order += 1;
-      items.push({ order, text: content });
+      current.push({ order: current.length + 1, text: content });
+    } else if (line.trim() !== "" && current.length > 0) {
+      blocks.push(current);
+      current = [];
     }
   }
-  return items;
+  if (current.length > 0) blocks.push(current);
+  return blocks;
 }
 
-function rankWithinList(listItems: ListItem[], name: string): number | null {
-  for (const item of listItems) {
-    if (findMentionIndex(item.text, name) >= 0) {
-      return item.order;
+// Ranks tracked names using the list block that names the most of them — the
+// block most likely to be an actual ranking rather than incidental prose.
+// Within that block names are ordered by item first, then left-to-right within
+// an item, so two brands sharing one line get distinct, correctly ordered
+// positions instead of tying. A block naming fewer than two tracked names
+// describes no competitive order, so it is ignored.
+function rankNamesInLists(blocks: ListItem[][], allNames: string[]): Map<string, number> {
+  type Hit = { name: string; order: number; index: number };
+  let best: Hit[] = [];
+  let bestCount = 0;
+
+  for (const block of blocks) {
+    const hits: Hit[] = [];
+    for (const item of block) {
+      for (const name of allNames) {
+        const index = findMentionIndex(item.text, name);
+        if (index >= 0) hits.push({ name, order: item.order, index });
+      }
+    }
+    const distinct = new Set(hits.map((h) => h.name)).size;
+    if (distinct >= 2 && distinct > bestCount) {
+      best = hits;
+      bestCount = distinct;
     }
   }
-  return null;
+
+  const ranks = new Map<string, number>();
+  for (const hit of best.sort((a, b) => a.order - b.order || a.index - b.index)) {
+    if (!ranks.has(hit.name)) ranks.set(hit.name, ranks.size + 1);
+  }
+  return ranks;
 }
 
 function rankByOrderOfMention(text: string, allNames: string[], name: string): number | null {
@@ -81,12 +108,16 @@ function rankByOrderOfMention(text: string, allNames: string[], name: string): n
   return position >= 0 ? position + 1 : null;
 }
 
-function detectRank(text: string, listItems: ListItem[], allNames: string[], name: string): number | null {
-  if (listItems.length > 0) {
-    const rank = rankWithinList(listItems, name);
-    if (rank !== null) return rank;
-    return null;
-  }
+function detectRank(
+  text: string,
+  listRanks: Map<string, number>,
+  allNames: string[],
+  name: string
+): number | null {
+  const fromList = listRanks.get(name);
+  if (fromList !== undefined) return fromList;
+  // A ranking list exists but omits this name — it holds no position in it.
+  if (listRanks.size > 0) return null;
   return rankByOrderOfMention(text, allNames, name);
 }
 
@@ -135,11 +166,11 @@ export const heuristicParser: ResponseParser = {
       (n) => n.toLowerCase() !== ctx.brandName.toLowerCase()
     );
     const allNames = [ctx.brandName, ...competitorNames];
-    const listItems = extractListItems(rawText);
+    const listRanks = rankNamesInLists(extractListBlocks(rawText), allNames);
 
     const brandIndex = findMentionIndex(rawText, ctx.brandName);
     const brandMentioned = brandIndex >= 0;
-    const rankPosition = brandMentioned ? detectRank(rawText, listItems, allNames, ctx.brandName) : null;
+    const rankPosition = brandMentioned ? detectRank(rawText, listRanks, allNames, ctx.brandName) : null;
     const sentiment: Sentiment = brandMentioned ? scoreSentiment(sentenceAround(rawText, brandIndex)) : "neutral";
     const citedSources = extractCitedSources(rawText);
 
@@ -149,7 +180,7 @@ export const heuristicParser: ResponseParser = {
       return {
         name,
         mentioned,
-        rankPosition: mentioned ? detectRank(rawText, listItems, allNames, name) : null,
+        rankPosition: mentioned ? detectRank(rawText, listRanks, allNames, name) : null,
       };
     });
 
