@@ -53,21 +53,41 @@ test("a list naming only one tracked brand yields no rank", () => {
   assert.equal(ranks(text).JOTUN, null);
 });
 
-test("picks the block naming the most tracked brands", () => {
+test("ranks across tiered blocks, keeping brands below the top tier", () => {
+  // Real answers group brands into tiers under separate headings. Ranking one
+  // block only would drop every brand outside the first tier.
   const text = [
-    "Catatan singkat:",
-    "- JOTUN dan Avian tersedia luas",
+    "## Kelas Flagship",
+    "- **Dulux** - cakupan terbaik",
+    "- **Nippon** - tahan cuaca",
     "",
-    "Peringkat resmi:",
-    "1. Dulux",
-    "2. Mowilex",
-    "3. Avian",
-    "4. JOTUN",
+    "## Kelas Menengah",
+    "- **Avian** - harga bersahabat",
+    "",
+    "## Kelas Ekonomis",
+    "- **JOTUN** - pilihan hemat",
   ].join("\n");
 
   const r = ranks(text);
-  assert.equal(r.Dulux, 1, "should rank from the four-brand list, not the two-brand aside");
-  assert.equal(r.JOTUN, 4);
+  assert.equal(r.Dulux, 1);
+  assert.equal(r.Avian, 2);
+  assert.equal(r.JOTUN, 3, "third tier still yields a position");
+});
+
+test("non-brand bullets never occupy a position", () => {
+  const text = [
+    "Pertimbangan:",
+    "1. Budget - berapa dana tersedia?",
+    "2. Prioritas - kamera atau baterai?",
+    "",
+    "Rekomendasi:",
+    "- Dulux",
+    "- JOTUN",
+  ].join("\n");
+
+  const r = ranks(text);
+  assert.equal(r.Dulux, 1, "the two considerations must not push Dulux to #3");
+  assert.equal(r.JOTUN, 2);
 });
 
 test("falls back to order of mention when there is no list", () => {

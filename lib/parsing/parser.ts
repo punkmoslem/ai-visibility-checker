@@ -64,34 +64,30 @@ function extractListBlocks(text: string): ListItem[][] {
   return blocks;
 }
 
-// Ranks tracked names using the list block that names the most of them — the
-// block most likely to be an actual ranking rather than incidental prose.
-// Within that block names are ordered by item first, then left-to-right within
-// an item, so two brands sharing one line get distinct, correctly ordered
-// positions instead of tying. A block naming fewer than two tracked names
-// describes no competitive order, so it is ignored.
+// Ranks tracked names by where they appear across the answer's list blocks,
+// in document order: earlier block first, then earlier item, then left to
+// right within an item. Answers routinely group brands into tiers — flagship,
+// mid-range, budget — each its own block, so ranking must span blocks or every
+// brand below the first tier is lost. Only tracked names contribute, which is
+// what keeps non-brand bullets from occupying positions. Fewer than two
+// tracked names describes no competitive order, so no ranks are emitted.
 function rankNamesInLists(blocks: ListItem[][], allNames: string[]): Map<string, number> {
-  type Hit = { name: string; order: number; index: number };
-  let best: Hit[] = [];
-  let bestCount = 0;
+  const hits: { name: string; block: number; order: number; index: number }[] = [];
 
-  for (const block of blocks) {
-    const hits: Hit[] = [];
+  blocks.forEach((block, blockIndex) => {
     for (const item of block) {
       for (const name of allNames) {
         const index = findMentionIndex(item.text, name);
-        if (index >= 0) hits.push({ name, order: item.order, index });
+        if (index >= 0) hits.push({ name, block: blockIndex, order: item.order, index });
       }
     }
-    const distinct = new Set(hits.map((h) => h.name)).size;
-    if (distinct >= 2 && distinct > bestCount) {
-      best = hits;
-      bestCount = distinct;
-    }
-  }
+  });
 
   const ranks = new Map<string, number>();
-  for (const hit of best.sort((a, b) => a.order - b.order || a.index - b.index)) {
+  if (new Set(hits.map((h) => h.name)).size < 2) return ranks;
+
+  const ordered = hits.sort((a, b) => a.block - b.block || a.order - b.order || a.index - b.index);
+  for (const hit of ordered) {
     if (!ranks.has(hit.name)) ranks.set(hit.name, ranks.size + 1);
   }
   return ranks;
