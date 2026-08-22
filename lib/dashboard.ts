@@ -131,10 +131,20 @@ export interface TrendPoint {
 }
 
 export async function computeTrends(brandProjectId: string): Promise<TrendPoint[]> {
+  // Only these four fields are read below. Pulling whole rows would drag every
+  // stored AI answer along with them — a few hundred kB today, but it grows
+  // with every scheduled run, and none of that text is used here.
   const runs = await prisma.run.findMany({
     where: { brandProjectId, status: "completed" },
     orderBy: { createdAt: "asc" },
-    include: { results: true },
+    select: {
+      id: true,
+      createdAt: true,
+      trigger: true,
+      results: {
+        select: { aiTool: true, brandMentioned: true, errorMessage: true },
+      },
+    },
   });
 
   return runs.map((run) => {

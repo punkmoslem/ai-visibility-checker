@@ -42,7 +42,7 @@ export default function NewProjectPage() {
 
   return (
     <AppShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-6 md:px-8 md:py-8">
         <h1 className="text-xl font-bold text-brand-ink">New Project</h1>
         <p className="mt-0.5 text-sm text-brand-muted">Set up a new brand for AI visibility tracking</p>
 

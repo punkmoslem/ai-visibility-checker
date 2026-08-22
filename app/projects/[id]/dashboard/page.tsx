@@ -147,9 +147,9 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
 
   return (
     <AppShell>
-      <div className="px-8 py-8">
-        {/* Header */}
-        <div className="flex items-start justify-between gap-4">
+      <div className="px-4 py-6 md:px-8 md:py-8">
+        {/* Header — stacks on mobile so the title is not squeezed by the buttons */}
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
           <div>
             <h1 className="text-xl font-bold text-brand-ink">{stats?.brandName ?? ""} — Dashboard</h1>
             {stats && (

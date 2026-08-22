@@ -218,7 +218,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
   return (
     <AppShell>
-      <div className="px-8 py-8">
+      <div className="px-4 py-6 md:px-8 md:py-8">
         {/* Hero header card */}
         <div className="brand-card-hero flex items-center justify-between gap-4 px-8 py-6 text-white">
           <div>

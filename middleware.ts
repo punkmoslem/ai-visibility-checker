@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SESSION_COOKIE, verifySessionToken } from "@/lib/auth";
 
-const PUBLIC_PATHS = ["/login", "/api/auth/login"];
+// /api/cron carries a platform cron's bearer secret rather than a session
+// cookie, so it authenticates itself and must bypass the session gate.
+const PUBLIC_PATHS = ["/login", "/api/auth/login", "/api/cron"];
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;

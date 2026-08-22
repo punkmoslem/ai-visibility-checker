@@ -1,6 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { prisma } from "@/lib/db";
 import { executeRun } from "@/lib/runOrchestrator";
+
+// A batch of prompts across three models takes minutes, not milliseconds.
+// Serverless caps this: 60s on Vercel Hobby, up to 300s on Pro.
+export const maxDuration = 300;
 
 export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -27,11 +31,18 @@ export async function POST(_request: Request, { params }: { params: Promise<{ id
     data: { brandProjectId: id, trigger: "manual", status: "pending" },
   });
 
-  // Fire-and-forget: relies on the Node process staying alive to finish the
-  // batch (true for `next dev`/`next start`). A serverless deployment would
-  // need a queue or the `after()` API instead of this.
-  executeRun(run.id).catch((err) => {
-    console.error(`Run ${run.id} failed:`, err);
+  // The response goes back immediately and the client polls for status, but a
+  // bare fire-and-forget would be killed the moment the function returns on a
+  // serverless host. `after` keeps the invocation alive until the batch settles.
+  after(async () => {
+    try {
+      await executeRun(run.id);
+    } catch (err) {
+      console.error(`Run ${run.id} failed:`, err);
+      await prisma.run
+        .update({ where: { id: run.id }, data: { status: "failed", completedAt: new Date() } })
+        .catch(() => {});
+    }
   });
 
   return NextResponse.json({ run }, { status: 202 });

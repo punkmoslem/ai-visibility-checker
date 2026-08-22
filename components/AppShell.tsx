@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
+  const [navOpen, setNavOpen] = useState(false);
 
   async function handleLogout() {
     await fetch("/api/auth/logout", { method: "POST" });
@@ -21,10 +23,58 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
     router.refresh();
   }
 
+  // A 224px sidebar takes most of a phone screen, so below `md` it slides in
+  // over the content instead of beside it. Any navigation closes it again —
+  // otherwise it stays open on top of the page just navigated to.
+  useEffect(() => {
+    setNavOpen(false);
+  }, [pathname]);
+
   return (
     <div className="flex h-screen">
+      {/* Mobile top bar — the only way to reach the drawer on a phone */}
+      <div className="sidebar-bg fixed inset-x-0 top-0 z-40 flex items-center gap-3 px-4 py-3 md:hidden">
+        <button
+          onClick={() => setNavOpen(true)}
+          aria-label="Open navigation"
+          aria-expanded={navOpen}
+          className="rounded-lg p-1.5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+        >
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+          </svg>
+        </button>
+        <Image src="/logo-mark.png" alt="R&R" width={28} height={28} className="h-7 w-7" />
+        <span className="text-sm font-bold text-white">AI Visibility Checker</span>
+      </div>
+
+      {/* Scrim: closes the drawer and stops the page behind it being tapped */}
+      {navOpen && (
+        <div
+          onClick={() => setNavOpen(false)}
+          className="fixed inset-0 z-40 bg-brand-navy-deep/50 md:hidden"
+          aria-hidden="true"
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className="sidebar-bg flex h-full w-56 shrink-0 flex-col overflow-y-auto">
+      <aside
+        className={`sidebar-bg fixed inset-y-0 left-0 z-50 flex h-full w-56 shrink-0 flex-col overflow-y-auto transition-transform duration-300 md:static md:translate-x-0 ${
+          navOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+        style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+      >
+        {/* Closes the drawer without navigating */}
+        <button
+          onClick={() => setNavOpen(false)}
+          aria-label="Close navigation"
+          className="absolute top-3 right-3 rounded-lg p-1.5 text-white/60 transition-colors hover:bg-white/10 hover:text-white md:hidden"
+        >
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+          </svg>
+        </button>
+
         {/* Logo + app title */}
         <div className="flex flex-col items-center px-5 pt-6 pb-4">
           <Image src="/logo-mark.png" alt="R&R" width={56} height={56} className="h-14 w-14" priority />
@@ -71,8 +121,8 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
         </div>
       </aside>
 
-      {/* Main content */}
-      <main className="flex-1 overflow-y-auto bg-shell-bg">
+      {/* Main content — padded on mobile to clear the fixed top bar */}
+      <main className="flex-1 overflow-y-auto bg-shell-bg pt-14 md:pt-0">
         {children}
         <footer className="flex items-center justify-center py-10 opacity-20">
           <Image src="/logo-mark.png" alt="R&R" width={64} height={64} className="h-16 w-16 grayscale" />
