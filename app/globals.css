@@ -184,7 +184,6 @@ body {
 .brand-tip-bubble {
   background: var(--navy);
   border-radius: 10px;
-  bottom: calc(100% + 8px);
   box-shadow: 0 8px 20px rgba(28, 42, 56, 0.24);
   color: #fff;
   font-size: 11px;
@@ -203,6 +202,15 @@ body {
   width: max-content;
   max-width: 260px;
   z-index: 60;
+}
+
+/* Flipped below the trigger when there is no room above it. */
+.brand-tip-side-top {
+  bottom: calc(100% + 8px);
+}
+
+.brand-tip-side-bottom {
+  top: calc(100% + 8px);
 }
 
 /* Anchored by InfoTip to whichever edge keeps the bubble on screen. */

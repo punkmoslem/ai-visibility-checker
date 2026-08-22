@@ -4,6 +4,7 @@ import { useEffect, useState, use as usePromise } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import AppShell from "@/components/AppShell";
+import InfoTip from "@/components/InfoTip";
 
 interface KeywordEntry {
   phrase: string;
@@ -18,11 +19,18 @@ interface KeywordData {
   targetKeywords: string[];
 }
 
-const CONTENT_STRATEGIES: { type: string; title: string; icon: string; tips: (kw: string) => string[] }[] = [
+const CONTENT_STRATEGIES: {
+  type: string;
+  title: string;
+  icon: string;
+  why: string;
+  tips: (kw: string) => string[];
+}[] = [
   {
     type: "press-release",
     title: "Press Release",
     icon: "📰",
+    why: "Wire services syndicate a release across news sites that AI models treat as authoritative. One release can seed the same phrasing on dozens of indexed domains at once, which is why it moves AI visibility faster than most channels.",
     tips: (kw) => [
       `Use "${kw}" in the headline or subheadline`,
       `Include "${kw}" in the first paragraph (the lead)`,
@@ -34,6 +42,7 @@ const CONTENT_STRATEGIES: { type: string; title: string; icon: string; tips: (kw
     type: "social-media",
     title: "Social Media Caption",
     icon: "📱",
+    why: "Individual posts are only weakly indexed, but they generate the mentions, links and discussion that models do absorb — Reddit and LinkedIn especially, which several AI tools cite directly. Treat this as seeding the conversation rather than a direct win.",
     tips: (kw) => [
       `Lead with a hook that includes "${kw}"`,
       `Use #${kw.replace(/\s+/g, "")} as a hashtag variation`,
@@ -45,6 +54,7 @@ const CONTENT_STRATEGIES: { type: string; title: string; icon: string; tips: (kw
     type: "blog",
     title: "Blog / Article",
     icon: "✍️",
+    why: "Long-form content on your own domain is the most direct way to claim a phrase. Models favour in-depth pages with a clear question-and-answer structure, because that is the shape they need when composing an answer.",
     tips: (kw) => [
       `Use "${kw}" in the H1 title and meta description`,
       `Create a dedicated section or FAQ answering "What is ${kw}?"`,
@@ -56,6 +66,7 @@ const CONTENT_STRATEGIES: { type: string; title: string; icon: string; tips: (kw
     type: "website",
     title: "Website / Landing Page",
     icon: "🌐",
+    why: "Your own pages are what an AI cites when it names you as a source — the strongest form of visibility there is. Structured data and clean headings make the association explicit instead of leaving the model to infer it.",
     tips: (kw) => [
       `Add "${kw}" to page title tags and H1 headings`,
       `Create a dedicated landing page targeting "${kw}"`,
@@ -67,6 +78,7 @@ const CONTENT_STRATEGIES: { type: string; title: string; icon: string; tips: (kw
     type: "video",
     title: "Video Script / YouTube",
     icon: "🎬",
+    why: "Captions and transcripts are indexed as plain text, and YouTube pages rank strongly in search — which several AI models draw on. The phrase you say out loud counts as much as the one you write.",
     tips: (kw) => [
       `Say "${kw}" in the first 30 seconds of the video`,
       `Use "${kw}" in the video title and description`,
@@ -134,7 +146,10 @@ function KeywordStrategyContent({ id }: { id: string }) {
     <div className="space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-brand-ink">Keyword Strategy Guide</h1>
+          <h1 className="flex items-center gap-2 text-2xl font-bold text-brand-ink">
+            Keyword Strategy Guide
+            <InfoTip label={`Turns the keywords found in ${data.brandName}'s AI answers into concrete content actions. Pick a keyword and each card shows where to place it in that format. The goal is to get AI models associating the phrase with ${data.brandName} instead of a competitor.`} />
+          </h1>
           <p className="text-sm text-brand-muted">How to implement keywords across your content for {data.brandName}</p>
         </div>
         <Link
@@ -147,7 +162,10 @@ function KeywordStrategyContent({ id }: { id: string }) {
 
       {/* Keyword selector */}
       <section className="brand-card p-6">
-        <h2 className="text-sm font-bold text-brand-ink">Select a Keyword</h2>
+        <h2 className="flex items-center gap-1.5 text-sm font-bold text-brand-ink">
+          Select a Keyword
+          <InfoTip label={`Red "(gap)" phrases are ones AI uses for your competitors but never for ${data.brandName} — the highest-value targets, since nobody has claimed them on your behalf.\n\nTeal "✓" phrases are already associated with ${data.brandName}; work on these to defend and deepen an existing strength.\n\nThe tips below rewrite themselves for whichever phrase you pick.`} />
+        </h2>
         <p className="mb-3 text-[10px] text-brand-muted">Choose a keyword to see implementation tips across content types</p>
         <div className="flex flex-wrap gap-2">
           {allKeywords.map((kw) => {
@@ -183,7 +201,10 @@ function KeywordStrategyContent({ id }: { id: string }) {
           <section key={strategy.type} className="brand-card p-5">
             <div className="flex items-center gap-2">
               <span className="text-xl">{strategy.icon}</span>
-              <h3 className="font-bold text-brand-ink">{strategy.title}</h3>
+              <h3 className="flex items-center gap-1.5 font-bold text-brand-ink">
+                {strategy.title}
+                <InfoTip label={strategy.why} />
+              </h3>
             </div>
             <ul className="mt-3 space-y-2">
               {strategy.tips(active).map((tip, i) => (
@@ -199,11 +220,17 @@ function KeywordStrategyContent({ id }: { id: string }) {
 
       {/* General strategy */}
       <section className="brand-card p-6">
-        <h2 className="font-bold text-brand-ink">General AI Visibility Strategy</h2>
+        <h2 className="flex items-center gap-1.5 font-bold text-brand-ink">
+          General AI Visibility Strategy
+          <InfoTip label="Principles that hold regardless of which keyword or format you pick. Gap keywords and keywords you already own call for different tactics — one is about claiming new ground, the other about defending it." />
+        </h2>
         <p className="mt-1 text-xs text-brand-muted">Tips that apply across all content types</p>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           <div className="rounded-xl border border-brand-line bg-[var(--bg)] p-4">
-            <h3 className="text-sm font-bold text-brand-teal-dark">For Gap Keywords</h3>
+            <h3 className="flex items-center gap-1.5 text-sm font-bold text-brand-teal-dark">
+              For Gap Keywords
+              <InfoTip label="Claiming ground a competitor holds takes more than one mention — the model has to see the phrase and your brand together across several trusted sources before it forms the association. Expect this to take repeated publishing, not a single page." />
+            </h3>
             <ul className="mt-2 space-y-1.5 text-xs text-brand-ink">
               <li>• Create dedicated content pages targeting each gap keyword</li>
               <li>• Use the keyword in page titles, H1s, and meta descriptions</li>
@@ -213,7 +240,10 @@ function KeywordStrategyContent({ id }: { id: string }) {
             </ul>
           </div>
           <div className="rounded-xl border border-brand-line bg-[var(--bg)] p-4">
-            <h3 className="text-sm font-bold text-brand-teal-dark">For Owned Keywords</h3>
+            <h3 className="flex items-center gap-1.5 text-sm font-bold text-brand-teal-dark">
+              For Owned Keywords
+              <InfoTip label="An existing association decays if competitors publish harder on the same phrase and you go quiet. Re-run the visibility check periodically: a phrase moving from this column into Keyword Gaps is an early warning that you are losing it." />
+            </h3>
             <ul className="mt-2 space-y-1.5 text-xs text-brand-ink">
               <li>• Reinforce these associations with regular content updates</li>
               <li>• Create cornerstone content that definitively covers the topic</li>

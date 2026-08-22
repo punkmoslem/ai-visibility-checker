@@ -17,17 +17,28 @@ import { useEffect, useRef, useState } from "react";
  * boundary — the dashboard's main column scrolls, and the per-prompt table
  * scrolls sideways, so each clips anything drawn past its own edges.
  */
-function clippingBounds(from: HTMLElement): { left: number; right: number } {
+function clippingBounds(from: HTMLElement): {
+  left: number;
+  right: number;
+  top: number;
+  bottom: number;
+} {
+  const viewport = { left: 0, right: window.innerWidth, top: 0, bottom: window.innerHeight };
   let node = from.parentElement;
   while (node && node !== document.body) {
     const { overflowX, overflowY } = getComputedStyle(node);
     if (/(auto|scroll|hidden)/.test(overflowX) || /(auto|scroll|hidden)/.test(overflowY)) {
       const rect = node.getBoundingClientRect();
-      return { left: Math.max(rect.left, 0), right: Math.min(rect.right, window.innerWidth) };
+      return {
+        left: Math.max(rect.left, viewport.left),
+        right: Math.min(rect.right, viewport.right),
+        top: Math.max(rect.top, viewport.top),
+        bottom: Math.min(rect.bottom, viewport.bottom),
+      };
     }
     node = node.parentElement;
   }
-  return { left: 0, right: window.innerWidth };
+  return viewport;
 }
 
 export default function InfoTip({
@@ -41,6 +52,7 @@ export default function InfoTip({
 }) {
   const [pinned, setPinned] = useState(false);
   const [placement, setPlacement] = useState<"center" | "left" | "right">("center");
+  const [side, setSide] = useState<"top" | "bottom">("top");
   const root = useRef<HTMLSpanElement>(null);
   const bubble = useRef<HTMLSpanElement>(null);
 
@@ -56,9 +68,17 @@ export default function InfoTip({
     const centre = rect.left + rect.width / 2;
     const bounds = clippingBounds(trigger);
     const margin = 12;
+
     if (centre + width / 2 > bounds.right - margin) setPlacement("right");
     else if (centre - width / 2 < bounds.left + margin) setPlacement("left");
     else setPlacement("center");
+
+    // A tall bubble on a trigger near the top of the page gets its first lines
+    // cut off, so drop it below when there is not room above.
+    const height = bubble.current?.offsetHeight ?? 0;
+    const roomAbove = rect.top - bounds.top;
+    const roomBelow = bounds.bottom - rect.bottom;
+    setSide(roomAbove < height + margin && roomBelow > roomAbove ? "bottom" : "top");
   }
 
   useEffect(() => {
@@ -107,7 +127,9 @@ export default function InfoTip({
       <span
         ref={bubble}
         role="tooltip"
-        className={`brand-tip-bubble brand-tip-${placement}${pinned ? " is-pinned" : ""}`}
+        className={`brand-tip-bubble brand-tip-${placement} brand-tip-side-${side}${
+          pinned ? " is-pinned" : ""
+        }`}
       >
         {label}
       </span>
