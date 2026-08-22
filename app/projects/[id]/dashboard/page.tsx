@@ -271,8 +271,14 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             )}
 
             <section className="brand-card p-6">
-              <h2 className="font-semibold text-brand-ink">Visibility Trend</h2>
-              <p className="text-xs text-brand-muted">Presence rate per AI tool across all completed checks</p>
+              <h2 className="flex items-center gap-1.5 font-semibold text-brand-ink">
+                Visibility Trend
+                <InfoTip label="Tracks whether your brand is gaining or losing ground in AI answers over time. Each coloured line is one AI tool, and each point is one completed check. Rising lines mean the brand is being mentioned in a larger share of answers." />
+              </h2>
+              <p className="flex items-center gap-1.5 text-xs text-brand-muted">
+                Presence rate per AI tool across all completed checks
+                <InfoTip label="Presence rate is the percentage of that check's prompts where the brand was mentioned at all. 100% means every answer named it; it says nothing about ranking or sentiment — see Avg. rank and Sentiment Breakdown for those." />
+              </p>
               <TrendChart data={trends} />
             </section>
 

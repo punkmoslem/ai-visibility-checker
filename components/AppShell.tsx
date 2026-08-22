@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+// Labelled "Projects" rather than "Dashboard" so it reads distinctly from the
+// per-project Dashboard below it — this one lists every tracked project.
 const NAV_ITEMS = [
-  { href: "/", label: "Dashboard", icon: DashboardIcon },
+  { href: "/", label: "Projects", icon: DashboardIcon },
   { href: "/projects/new", label: "New Project", icon: PlusIcon },
 ];
 

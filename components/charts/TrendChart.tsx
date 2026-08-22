@@ -1,6 +1,7 @@
 "use client";
 
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import InfoTip from "../InfoTip";
 
 export interface TrendPointDatum {
   runId: string;
@@ -37,6 +38,12 @@ export default function TrendChart({ data }: { data: TrendPointDatum[] }) {
     return row;
   });
 
+  // A tool that errored on every prompt plots no line at all, which reads as
+  // absence rather than missing data unless it is called out.
+  const missingTools = TOOL_STYLES.filter((tool) =>
+    chartData.every((row) => row[tool.label] === null)
+  );
+
   return (
     <div>
       <ResponsiveContainer width="100%" height={260}>
@@ -60,11 +67,26 @@ export default function TrendChart({ data }: { data: TrendPointDatum[] }) {
           ))}
         </LineChart>
       </ResponsiveContainer>
-      {data.length === 1 && (
-        <p className="mt-1 text-center text-xs text-brand-muted">
-          One check so far — the trend line grows with every new check.
-        </p>
-      )}
+      <div className="mt-1 flex flex-col items-center gap-1">
+        {data.length === 1 && (
+          <p className="inline-flex items-center gap-1.5 text-center text-xs text-brand-muted">
+            One check so far — the trend line grows with every new check.
+            <InfoTip label="A trend needs at least two checks to draw a line. Each dot is one completed check, so run checks on a regular schedule to see whether visibility is rising or falling." />
+          </p>
+        )}
+        {missingTools.length > 0 && (
+          <p className="inline-flex items-center gap-1.5 text-center text-xs text-brand-muted">
+            No data for {missingTools.map((t) => t.label).join(" and ")}
+            <InfoTip
+              label={`${missingTools
+                .map((t) => t.label)
+                .join(" and ")} returned no successful answers in these checks, so ${
+                missingTools.length === 1 ? "it has" : "they have"
+              } no line to plot. This usually means the API errored or refused the prompt — re-run the check to see if it persists. It is not a sign of zero visibility.`}
+            />
+          </p>
+        )}
+      </div>
     </div>
   );
 }
