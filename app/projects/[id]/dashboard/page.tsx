@@ -182,13 +182,16 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
             {/* KPI row */}
             <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
               {[
-                { label: "Presence rate", value: `${Math.round(stats.overallPresenceRate * 100)}%` },
-                { label: "Avg. rank", value: brandRank !== null ? `#${brandRank.toFixed(1)}` : "—" },
-                { label: "Positive mentions", value: totalMentions > 0 ? `${Math.round((positives / totalMentions) * 100)}%` : "—" },
-                { label: "Share of voice", value: stats.hasCompetitors && brandShare !== null ? `${Math.round(brandShare * 100)}%` : "—" },
+                { label: "Presence rate", value: `${Math.round(stats.overallPresenceRate * 100)}%`, tip: "Percentage of AI responses that mention your brand. Higher is better — 100% means every AI answer includes you." },
+                { label: "Avg. rank", value: brandRank !== null ? `#${brandRank.toFixed(1)}` : "—", tip: "When AI models list multiple brands, this is your average position in those lists. #1 = mentioned first. Lower is better." },
+                { label: "Positive mentions", value: totalMentions > 0 ? `${Math.round((positives / totalMentions) * 100)}%` : "—", tip: "Percentage of AI mentions that frame your brand favorably — praise, recommendations, or highlighted strengths." },
+                { label: "Share of voice", value: stats.hasCompetitors && brandShare !== null ? `${Math.round(brandShare * 100)}%` : "—", tip: "Your brand's share of all tracked-name mentions across AI responses. Higher means AI talks about you more than competitors." },
               ].map((kpi) => (
-                <div key={kpi.label} className="brand-card px-4 py-5 text-center">
-                  <p className="text-xs text-brand-muted">{kpi.label}</p>
+                <div key={kpi.label} className="brand-card px-4 py-5 text-center" title={kpi.tip}>
+                  <p className="text-xs text-brand-muted">
+                    {kpi.label}
+                    <span className="ml-1 inline-block cursor-help text-[10px] text-brand-muted/50">ⓘ</span>
+                  </p>
                   <p className="mt-1 text-2xl font-bold text-brand-teal-dark">{kpi.value}</p>
                 </div>
               ))}
@@ -209,111 +212,7 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               </section>
             )}
 
-            {/* GEO / AEO / SEO Recommendations */}
-            {recommendations.length > 0 && (
-              <section id="action-plan" className="brand-card p-6 scroll-mt-6">
-                <div className="flex flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <h2 className="font-bold text-brand-ink">Action Plan</h2>
-                    <p className="text-xs text-brand-muted">GEO, AEO & SEO recommendations based on this run</p>
-                  </div>
-                  <div className="flex gap-1.5">
-                    {["all", "geo", "aeo", "seo"].map((cat) => (
-                      <button
-                        key={cat}
-                        onClick={() => setRecFilter(cat)}
-                        className={`rounded-full px-3 py-1.5 text-xs font-bold uppercase transition-all duration-300 ${
-                          recFilter === cat
-                            ? "brand-btn-primary text-white"
-                            : "border border-brand-line bg-white text-brand-muted hover:text-brand-ink"
-                        }`}
-                        style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
-                      >
-                        {cat === "all" ? "All" : cat.toUpperCase()}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-                <div className="mt-4 space-y-3">
-                  {recommendations
-                    .filter((r) => recFilter === "all" || r.category === recFilter)
-                    .map((rec, i) => (
-                    <RecommendationCard key={i} rec={rec} />
-                  ))}
-                  {recommendations.filter((r) => recFilter === "all" || r.category === recFilter).length === 0 && (
-                    <p className="py-4 text-center text-sm text-brand-muted">No {recFilter.toUpperCase()} recommendations for this run.</p>
-                  )}
-                </div>
-              </section>
-            )}
-
-            {/* Keyword Intelligence */}
-            {keywords && (keywords.brandKeywords.length > 0 || keywords.gaps.length > 0) && (
-              <section id="keywords" className="brand-card p-6 scroll-mt-6">
-                <h2 className="font-bold text-brand-ink">Keyword Intelligence</h2>
-                <p className="text-xs text-brand-muted">Phrases AI models associate with your {stats.entityType === "person" ? "persona" : "brand"} vs competitors</p>
-
-                <div className="mt-4 grid gap-6 md:grid-cols-2">
-                  {/* Your keywords */}
-                  {keywords.brandKeywords.length > 0 && (
-                    <div>
-                      <h3 className="text-sm font-bold text-brand-ink">Your Keywords</h3>
-                      <p className="mb-3 text-[10px] text-brand-muted">Phrases AI already links to {stats.brandName}</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {keywords.brandKeywords.slice(0, 12).map((kw) => (
-                          <span
-                            key={kw.phrase}
-                            className="inline-flex items-center gap-1 rounded-full bg-brand-teal-tint px-2.5 py-1 text-xs font-medium text-brand-teal-dark"
-                          >
-                            {kw.phrase}
-                            <span className="text-[10px] text-brand-teal-dark/50">×{kw.count}</span>
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Keyword gaps */}
-                  {keywords.gaps.length > 0 && (
-                    <div>
-                      <h3 className="text-sm font-bold text-brand-ink">Keyword Gaps</h3>
-                      <p className="mb-3 text-[10px] text-brand-muted">Phrases competitors own — target these in your content</p>
-                      <div className="flex flex-wrap gap-1.5">
-                        {keywords.gaps.slice(0, 12).map((kw) => (
-                          <span
-                            key={kw.phrase}
-                            className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
-                            title={`Used for: ${kw.associatedWith.join(", ")}`}
-                          >
-                            {kw.phrase}
-                            <span className="text-[10px] text-red-400">×{kw.count}</span>
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Target keywords summary */}
-                {keywords.targetKeywords.length > 0 && (
-                  <div className="mt-5 rounded-xl border border-brand-line bg-[var(--bg)] p-4">
-                    <h3 className="text-sm font-bold text-brand-ink">Target Keywords for Content Strategy</h3>
-                    <p className="mb-2 text-[10px] text-brand-muted">Create content around these phrases to close the gap</p>
-                    <div className="flex flex-wrap gap-2">
-                      {keywords.targetKeywords.map((kw) => (
-                        <span
-                          key={kw}
-                          className="rounded-full border border-brand-teal bg-white px-3 py-1.5 text-xs font-bold text-brand-teal-dark shadow-[0_1px_3px_rgba(23,166,141,.15)]"
-                        >
-                          {kw}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </section>
-            )}
-
+            {/* ── Charts & Data ── */}
             <div id="charts" className="grid grid-cols-1 gap-6 md:grid-cols-2 scroll-mt-6">
               <section className="brand-card p-6">
                 <h2 className="font-semibold text-brand-ink">Presence Rate by Tool</h2>
@@ -337,8 +236,8 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
                     <thead>
                       <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-muted uppercase">
                         <th className="py-2">Name</th>
-                        <th className="py-2 text-right">Mentions</th>
-                        <th className="py-2 text-right">Avg. rank</th>
+                        <th className="py-2 text-right" title="Total number of AI responses that mention this name">Mentions <span className="cursor-help text-brand-muted/50">ⓘ</span></th>
+                        <th className="py-2 text-right" title="Average position when this name appears in AI-generated ranked lists. #1 = mentioned first. Lower is better.">Avg. rank <span className="cursor-help text-brand-muted/50">ⓘ</span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -384,15 +283,134 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
               )}
             </section>
 
+            {/* ── Per-Prompt Results ── */}
             <section id="per-prompt" className="brand-card p-6 scroll-mt-6">
               <h2 className="font-semibold text-brand-ink">Per-Prompt Results</h2>
-              <p className="text-xs text-brand-muted">How each question performed across every AI tool</p>
+              <p className="text-xs text-brand-muted">How each question performed across every AI tool. Hover any badge for details.</p>
+              <div className="mt-2 flex flex-wrap gap-4 text-[10px] text-brand-muted">
+                <span><span className="inline-block rounded-full bg-brand-teal-tint px-1.5 py-0.5 text-brand-teal-dark font-semibold">Mentioned</span> = AI included your brand</span>
+                <span><span className="inline-block rounded-full bg-green-50 px-1.5 py-0.5 text-green-700 font-semibold">positive</span> / <span className="inline-block rounded-full bg-red-50 px-1.5 py-0.5 text-red-700 font-semibold">negative</span> / <span className="inline-block rounded-full bg-brand-line px-1.5 py-0.5 text-brand-muted font-semibold">neutral</span> = how AI framed your brand</span>
+                <span><span className="inline-block rounded-full bg-brand-line px-1.5 py-0.5 text-brand-ink font-semibold">#3</span> = position in AI&apos;s ranked list (#1 = first, lower is better)</span>
+              </div>
               <PerPromptTable
                 results={stats.results}
+                brandName={stats.brandName}
                 expandedResultId={expandedResultId}
                 onToggle={(rid) => setExpandedResultId(expandedResultId === rid ? null : rid)}
               />
             </section>
+
+            {/* ── Action Plan ── */}
+            {recommendations.length > 0 && (
+              <section id="action-plan" className="brand-card p-6 scroll-mt-6">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h2 className="font-bold text-brand-ink">Action Plan</h2>
+                    <p className="text-xs text-brand-muted">GEO, AEO & SEO recommendations based on this run</p>
+                  </div>
+                  <div className="flex gap-1.5">
+                    {["all", "geo", "aeo", "seo"].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setRecFilter(cat)}
+                        className={`rounded-full px-3 py-1.5 text-xs font-bold uppercase transition-all duration-300 ${
+                          recFilter === cat
+                            ? "brand-btn-primary text-white"
+                            : "border border-brand-line bg-white text-brand-muted hover:text-brand-ink"
+                        }`}
+                        style={{ transitionTimingFunction: "cubic-bezier(.16,1,.3,1)" }}
+                      >
+                        {cat === "all" ? "All" : cat.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <div className="mt-4 space-y-3">
+                  {recommendations
+                    .filter((r) => recFilter === "all" || r.category === recFilter)
+                    .map((rec, i) => (
+                    <RecommendationCard key={i} rec={rec} />
+                  ))}
+                  {recommendations.filter((r) => recFilter === "all" || r.category === recFilter).length === 0 && (
+                    <p className="py-4 text-center text-sm text-brand-muted">No {recFilter.toUpperCase()} recommendations for this run.</p>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {/* ── Keyword Intelligence ── */}
+            {keywords && (keywords.brandKeywords.length > 0 || keywords.gaps.length > 0) && (
+              <section id="keywords" className="brand-card p-6 scroll-mt-6">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <h2 className="font-bold text-brand-ink">Keyword Intelligence</h2>
+                    <p className="text-xs text-brand-muted">Phrases AI models associate with your {stats.entityType === "person" ? "persona" : "brand"} vs competitors</p>
+                  </div>
+                  <Link
+                    href={`/projects/${id}/keywords?runId=${stats.runId}`}
+                    className="brand-btn-primary px-5 py-2.5 text-xs font-bold text-white"
+                  >
+                    Keyword Strategy Guide →
+                  </Link>
+                </div>
+
+                <div className="mt-4 grid gap-6 md:grid-cols-2">
+                  {keywords.brandKeywords.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-brand-ink">Your Keywords</h3>
+                      <p className="mb-3 text-[10px] text-brand-muted">Phrases AI already links to {stats.brandName}</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {keywords.brandKeywords.slice(0, 12).map((kw) => (
+                          <span
+                            key={kw.phrase}
+                            className="inline-flex items-center gap-1 rounded-full bg-brand-teal-tint px-2.5 py-1 text-xs font-medium text-brand-teal-dark"
+                          >
+                            {kw.phrase}
+                            <span className="text-[10px] text-brand-teal-dark/50">×{kw.count}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {keywords.gaps.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-bold text-brand-ink">Keyword Gaps</h3>
+                      <p className="mb-3 text-[10px] text-brand-muted">Phrases competitors own — target these in your content</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {keywords.gaps.slice(0, 12).map((kw) => (
+                          <span
+                            key={kw.phrase}
+                            className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-700"
+                            title={`Used for: ${kw.associatedWith.join(", ")}`}
+                          >
+                            {kw.phrase}
+                            <span className="text-[10px] text-red-400">×{kw.count}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {keywords.targetKeywords.length > 0 && (
+                  <div className="mt-5 rounded-xl border border-brand-line bg-[var(--bg)] p-4">
+                    <h3 className="text-sm font-bold text-brand-ink">Target Keywords for Content Strategy</h3>
+                    <p className="mb-2 text-[10px] text-brand-muted">Create content around these phrases to close the gap</p>
+                    <div className="flex flex-wrap gap-2">
+                      {keywords.targetKeywords.map((kw) => (
+                        <span
+                          key={kw}
+                          className="rounded-full border border-brand-teal bg-white px-3 py-1.5 text-xs font-bold text-brand-teal-dark shadow-[0_1px_3px_rgba(23,166,141,.15)]"
+                        >
+                          {kw}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </section>
+            )}
           </div>
         )}
       </div>
@@ -443,12 +461,38 @@ function RecommendationCard({ rec }: { rec: Recommendation }) {
 
 const TOOL_ORDER = ["claude", "openai", "gemini"];
 
+function buildRankTooltip(r: RunResult, brandName: string): string {
+  const entries: { name: string; rank: number }[] = [];
+  if (r.rankPosition !== null) entries.push({ name: `${brandName} (you)`, rank: r.rankPosition });
+  for (const c of r.competitorMentions) {
+    if (c.rankPosition !== null) entries.push({ name: c.competitorName, rank: c.rankPosition });
+  }
+  entries.sort((a, b) => a.rank - b.rank);
+  if (entries.length === 0) return "No ranking data";
+  const header = "Position in AI's ranked list for this question:\n";
+  const list = entries.map((e) => `#${e.rank} ${e.name}`).join("\n");
+  return header + list + "\n\n#1 = mentioned first. Lower is better.";
+}
+
+function buildSentimentTooltip(r: RunResult, brandName: string): string {
+  if (r.errorMessage) return "Error — no sentiment analysis available";
+  if (!r.brandMentioned) return `${brandName} was not mentioned in this response`;
+  const reasons: Record<string, string> = {
+    positive: `AI framed ${brandName} favorably — using praise, recommending it, or highlighting strengths`,
+    negative: `AI framed ${brandName} unfavorably — noting weaknesses, issues, or negative comparisons`,
+    neutral: `AI mentioned ${brandName} factually — no strong positive or negative framing detected`,
+  };
+  return reasons[r.sentiment] ?? r.sentiment;
+}
+
 function PerPromptTable({
   results,
+  brandName,
   expandedResultId,
   onToggle,
 }: {
   results: RunResult[];
+  brandName: string;
   expandedResultId: string | null;
   onToggle: (id: string) => void;
 }) {
@@ -501,10 +545,20 @@ function PerPromptTable({
                         >
                           {r.errorMessage ? "Error" : r.brandMentioned ? "Mentioned" : "Not mentioned"}
                         </span>
-                        <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}>
+                        <span
+                          className={`rounded-full px-2 py-0.5 text-xs font-semibold cursor-help ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}
+                          title={buildSentimentTooltip(r, brandName)}
+                        >
                           {r.sentiment}
-                          {r.rankPosition !== null && ` · #${r.rankPosition}`}
                         </span>
+                        {r.rankPosition !== null && (
+                          <span
+                            className="rounded-full bg-brand-line px-2 py-0.5 text-xs font-semibold text-brand-ink cursor-help"
+                            title={buildRankTooltip(r, brandName)}
+                          >
+                            #{r.rankPosition}
+                          </span>
+                        )}
                         {r.isMock && <span className="text-[10px] text-brand-muted">mock</span>}
                       </button>
                       {expandedResultId === r.id && (

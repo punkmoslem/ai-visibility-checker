@@ -94,10 +94,10 @@ function ProjectLinks({ pathname }: { pathname: string }) {
   const isDashboard = pathname.startsWith(`/projects/${projectId}/dashboard`);
 
   const dashboardSections = [
-    { anchor: "action-plan", label: "Action Plan" },
-    { anchor: "keywords", label: "Keywords" },
     { anchor: "charts", label: "Charts & Data" },
     { anchor: "per-prompt", label: "Per-Prompt Results" },
+    { anchor: "action-plan", label: "Action Plan" },
+    { anchor: "keywords", label: "Keywords" },
   ];
 
   function scrollToSection(anchor: string) {
