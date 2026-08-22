@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState, use as usePromise } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import AppShell from "@/components/AppShell";
+import InfoTip from "@/components/InfoTip";
 import PresenceChart, { PresenceDatum } from "@/components/charts/PresenceChart";
 import SentimentChart, { SentimentDatum } from "@/components/charts/SentimentChart";
 import ShareOfVoiceChart, { ShareOfVoiceDatum } from "@/components/charts/ShareOfVoiceChart";
@@ -187,10 +188,10 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
                 { label: "Positive mentions", value: totalMentions > 0 ? `${Math.round((positives / totalMentions) * 100)}%` : "—", tip: "Percentage of AI mentions that frame your brand favorably — praise, recommendations, or highlighted strengths." },
                 { label: "Share of voice", value: stats.hasCompetitors && brandShare !== null ? `${Math.round(brandShare * 100)}%` : "—", tip: "Your brand's share of all tracked-name mentions across AI responses. Higher means AI talks about you more than competitors." },
               ].map((kpi) => (
-                <div key={kpi.label} className="brand-card px-4 py-5 text-center" title={kpi.tip}>
-                  <p className="text-xs text-brand-muted">
+                <div key={kpi.label} className="brand-card px-4 py-5 text-center">
+                  <p className="flex items-center justify-center gap-1.5 text-xs text-brand-muted">
                     {kpi.label}
-                    <span className="ml-1 inline-block cursor-help text-[10px] text-brand-muted/50">ⓘ</span>
+                    <InfoTip label={kpi.tip} />
                   </p>
                   <p className="mt-1 text-2xl font-bold text-brand-teal-dark">{kpi.value}</p>
                 </div>
@@ -236,8 +237,18 @@ function DashboardInner({ params }: { params: Promise<{ id: string }> }) {
                     <thead>
                       <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-muted uppercase">
                         <th className="py-2">Name</th>
-                        <th className="py-2 text-right" title="Total number of AI responses that mention this name">Mentions <span className="cursor-help text-brand-muted/50">ⓘ</span></th>
-                        <th className="py-2 text-right" title="Average position when this name appears in AI-generated ranked lists. #1 = mentioned first. Lower is better.">Avg. rank <span className="cursor-help text-brand-muted/50">ⓘ</span></th>
+                        <th className="py-2 text-right">
+                          <span className="inline-flex items-center gap-1.5">
+                            Mentions
+                            <InfoTip label="Total number of AI responses that mention this name." />
+                          </span>
+                        </th>
+                        <th className="py-2 text-right">
+                          <span className="inline-flex items-center gap-1.5">
+                            Avg. rank
+                            <InfoTip label="Average position when this name appears in AI-generated ranked lists. #1 = mentioned first, so lower is better." />
+                          </span>
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -507,8 +518,10 @@ function PerPromptTable({
     byPrompt.get(r.promptText)!.set(r.aiTool, r);
   }
 
+  // Horizontal scrolling clips overflow vertically too, so the first row needs
+  // headroom for its tooltips to stay visible.
   return (
-    <div className="mt-3 overflow-x-auto">
+    <div className="mt-3 overflow-x-auto pt-12">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b-2 border-brand-line text-left text-xs tracking-wide text-brand-muted uppercase">
@@ -545,19 +558,19 @@ function PerPromptTable({
                         >
                           {r.errorMessage ? "Error" : r.brandMentioned ? "Mentioned" : "Not mentioned"}
                         </span>
-                        <span
-                          className={`rounded-full px-2 py-0.5 text-xs font-semibold cursor-help ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}
-                          title={buildSentimentTooltip(r, brandName)}
-                        >
-                          {r.sentiment}
-                        </span>
-                        {r.rankPosition !== null && (
+                        <InfoTip label={buildSentimentTooltip(r, brandName)}>
                           <span
-                            className="rounded-full bg-brand-line px-2 py-0.5 text-xs font-semibold text-brand-ink cursor-help"
-                            title={buildRankTooltip(r, brandName)}
+                            className={`rounded-full px-2 py-0.5 text-xs font-semibold ${SENTIMENT_COLORS[r.sentiment] ?? ""}`}
                           >
-                            #{r.rankPosition}
+                            {r.sentiment}
                           </span>
+                        </InfoTip>
+                        {r.rankPosition !== null && (
+                          <InfoTip label={buildRankTooltip(r, brandName)}>
+                            <span className="rounded-full bg-brand-line px-2 py-0.5 text-xs font-semibold text-brand-ink">
+                              #{r.rankPosition}
+                            </span>
+                          </InfoTip>
                         )}
                         {r.isMock && <span className="text-[10px] text-brand-muted">mock</span>}
                       </button>

@@ -144,6 +144,105 @@ body {
   border-radius: 12px;
 }
 
+/* ── Info tooltip ── */
+.brand-tip {
+  display: inline-flex;
+  position: relative;
+  vertical-align: middle;
+}
+
+.brand-tip-icon {
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: help;
+  display: inline-flex;
+  font-size: 9px;
+  font-style: italic;
+  font-weight: 700;
+  height: 14px;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.3s var(--ease-soft), color 0.3s var(--ease-soft);
+  user-select: none;
+  width: 14px;
+}
+
+.brand-tip:hover .brand-tip-icon,
+.brand-tip-icon:focus-visible {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+
+.brand-tip-wrap {
+  cursor: help;
+  display: inline-flex;
+}
+
+.brand-tip-bubble {
+  background: var(--navy);
+  border-radius: 10px;
+  bottom: calc(100% + 8px);
+  box-shadow: 0 8px 20px rgba(28, 42, 56, 0.24);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  opacity: 0;
+  padding: 8px 10px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  text-transform: none;
+  transition: opacity 0.25s var(--ease-soft), transform 0.25s var(--ease-soft), visibility 0.25s;
+  visibility: hidden;
+  white-space: pre-line;
+  width: max-content;
+  max-width: 260px;
+  z-index: 60;
+}
+
+/* Anchored by InfoTip to whichever edge keeps the bubble on screen. */
+.brand-tip-center {
+  left: 50%;
+  transform: translate(-50%, 4px);
+}
+
+.brand-tip-left {
+  left: 0;
+  transform: translate(0, 4px);
+}
+
+.brand-tip-right {
+  right: 0;
+  transform: translate(0, 4px);
+}
+
+.brand-tip:hover .brand-tip-bubble,
+.brand-tip:focus-within .brand-tip-bubble,
+.brand-tip-bubble.is-pinned {
+  opacity: 1;
+  visibility: visible;
+}
+
+.brand-tip:hover .brand-tip-center,
+.brand-tip:focus-within .brand-tip-center,
+.brand-tip-center.is-pinned {
+  transform: translate(-50%, 0);
+}
+
+.brand-tip:hover .brand-tip-left,
+.brand-tip:focus-within .brand-tip-left,
+.brand-tip-left.is-pinned,
+.brand-tip:hover .brand-tip-right,
+.brand-tip:focus-within .brand-tip-right,
+.brand-tip-right.is-pinned {
+  transform: translate(0, 0);
+}
+
 /* ── Client report PDF export ── */
 @media print {
   @page {
